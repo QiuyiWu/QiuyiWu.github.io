@@ -1,0 +1,937 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="en">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+  <link rel="manifest" href="/images/manifest.json">
+
+
+  <meta name="msapplication-config" content="/images/browserconfig.xml">
+
+
+
+  <meta name="keywords" content="TensorFlow, Deep Learning, Python,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Qiuyi Wu" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="I’m learning how to use Google’s TensorFlow framework to create artificial neural networks for deep learning with Python from Udemy. I’m using Jupiter notebook to practice and blog my learning progres">
+<meta name="keywords" content="TensorFlow, Deep Learning, Python">
+<meta property="og:type" content="article">
+<meta property="og:title" content="TensorFlow for Deep Learning 1">
+<meta property="og:url" content="https://qiuyiwu.github.io/2018/01/16/Tensorflow-for-Deep-Learning-1/index.html">
+<meta property="og:site_name" content="Qiuyi Wu">
+<meta property="og:description" content="I’m learning how to use Google’s TensorFlow framework to create artificial neural networks for deep learning with Python from Udemy. I’m using Jupiter notebook to practice and blog my learning progres">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https://qiuyiwu.github.io/images/2018/01/TF1.png">
+<meta property="og:image" content="https://qiuyiwu.github.io/images/2018/01/TF2.png">
+<meta property="og:image" content="https://qiuyiwu.github.io/images/2018/01/TF3.png">
+<meta property="og:image" content="https://qiuyiwu.github.io/images/2018/01/TF4.png">
+<meta property="og:image" content="https://qiuyiwu.github.io/images/2018/01/TF5.png">
+<meta property="og:image" content="https://qiuyiwu.github.io/images/2018/01/TF6.png">
+<meta property="og:image" content="https://qiuyiwu.github.io/images/2018/01/TF7.png">
+<meta property="og:image" content="https://qiuyiwu.github.io/images/2018/01/TF8.png">
+<meta property="og:image" content="https://qiuyiwu.github.io/images/2018/01/TF9.png">
+<meta property="og:updated_time" content="2018-01-22T19:48:32.354Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="TensorFlow for Deep Learning 1">
+<meta name="twitter:description" content="I’m learning how to use Google’s TensorFlow framework to create artificial neural networks for deep learning with Python from Udemy. I’m using Jupiter notebook to practice and blog my learning progres">
+<meta name="twitter:image" content="https://qiuyiwu.github.io/images/2018/01/TF1.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"display":"always","offset":12,"b2t":false,"scrollpercent":true,"onmobile":true},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://qiuyiwu.github.io/2018/01/16/Tensorflow-for-Deep-Learning-1/">
+
+
+
+
+
+  <title>TensorFlow for Deep Learning 1 | Qiuyi Wu</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container  page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Qiuyi Wu</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">Research Fellow</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            About
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-schedule">
+          <a href="/schedule/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-calendar"></i> <br>
+            
+            Schedule
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-sitemap">
+          <a href="/sitemap.xml" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br>
+            
+            Sitemap
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://qiuyiwu.github.io/2018/01/16/Tensorflow-for-Deep-Learning-1/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Qiuyi Wu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Qiuyi Wu">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">TensorFlow for Deep Learning 1</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-01-16T18:04:34-05:00">
+                2018-01-16
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/TensorFlow/" itemprop="url" rel="index">
+                    <span itemprop="name">TensorFlow</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>I’m learning how to use Google’s TensorFlow framework to create artificial neural networks for deep learning with Python from Udemy. I’m using Jupiter notebook to practice and blog my learning progress here.<br><a id="more"></a><br>TensorFlow is an open source software library for numerical computation using data flow graphs. Nodes in the graph represent mathematical operations, while the graph edges represent the multidimensional data arrays (tensors) communicated between them. This architecture allows users to deploy computation to one or more CPUs or GPUs, in a desktop, server, or mobile device with a single API (Application programming interface).</p>
+<h1 id="Install-TensorFlow-Environment"><a href="#Install-TensorFlow-Environment" class="headerlink" title="Install TensorFlow Environment"></a>Install TensorFlow Environment</h1><p><a href="https://www.anaconda.com/download/#macos" target="_blank" rel="noopener">Download Anaconda Distribution</a> for Python 3.6 Version. Tutorial comes in that page.<br>For MacOS: Open Terminal, use <code>cd</code> to the target directory<br>Create the environment file: run <code>conda env create -f tfdl_env.yml</code><br>Activate the file: run <code>source activate tfdeeplearning</code><br>Now you are in the virtual environment of tfdeeplearning<br>If you want to get out of this, run <code>source deactivate</code></p>
+<p><strong>Note:</strong> <a href="https://stackoverflow.com/questions/42096280/how-is-anaconda-related-to-python#comment71363474_42096429" target="_blank" rel="noopener">How is Anaconda related to Python?</a><br>Anaconda is a python and R distribution. It aims to provide everything you need (python wise) for data science “out of the box”.<br>It includes:</p>
+<ul>
+<li>The core python language</li>
+<li>100+ python “packages” (libraries)</li>
+<li>Spyder (IDE/editor - like pycharm) and Jupyter</li>
+<li><code>conda</code>, Anaconda’s own package manager, used for updating Anaconda and packages</li>
+</ul>
+<p>Also Anaconda is used majorly for the data science. which manipulates large datasets based on statistical methods. ie. Many statistical packages are already available in anaconda libraries(packages) </p>
+<p>Vanilla python installed from python.org comew with <a href="https://docs.python.org/3/library/" target="_blank" rel="noopener">standard library</a> is okay, in which case using <a href="https://pypi.python.org/pypi/pip" target="_blank" rel="noopener">pip</a> to install manually (which comes with most python dists and you should have it if you downloaded from python.org).<br>Learn more: <a href="https://www.continuum.io/anaconda-overview" target="_blank" rel="noopener">Anaconda overview</a>; <a href="https://docs.python.org/3/tutorial/" target="_blank" rel="noopener">Python 3 tutorial</a></p>
+<h1 id="TensorFlow-Basic-Syntax"><a href="#TensorFlow-Basic-Syntax" class="headerlink" title="TensorFlow Basic Syntax"></a>TensorFlow Basic Syntax</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> tensorflow <span class="keyword">as</span> tf</span><br><span class="line">print(tf.__version__)</span><br></pre></td></tr></table></figure>
+<p>Output: <code>1.3.0</code></p>
+<p><strong>Create a tensor ($\approx$ n-dimension array), the basic one (constant)</strong><br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hello = tf.constant(<span class="string">'Hello'</span>)</span><br><span class="line">world = tf.constant(<span class="string">'World'</span>)</span><br><span class="line">type (hello)</span><br></pre></td></tr></table></figure></p>
+<p>Output: <code>tensorflow.python.framework.ops.Tensor</code></p>
+<p><strong>Run this operation inside of a session:</strong><br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">with</span> tf.Session() <span class="keyword">as</span> sess:</span><br><span class="line">    result = sess.run(hello + world)</span><br><span class="line">print(result)</span><br></pre></td></tr></table></figure></p>
+<p>Output: <code>b&#39;HelloWorld&#39;</code><br>Note:<br>Use <code>with</code> is to make sure we don’t close the session until we run a block of code then close the session.<br>The <code>b</code> character prefix signifies that <code>HelloWorld</code> is a <a href="https://stackoverflow.com/questions/6224052/what-is-the-difference-between-a-string-and-a-byte-string" target="_blank" rel="noopener">byte string</a>, use <code>result.decode(&#39;utf-8&#39;)</code> to convert byte str to str.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">a = tf.constant(<span class="number">10</span>)</span><br><span class="line">b = tf.constant(<span class="number">20</span>)</span><br><span class="line"><span class="keyword">with</span> tf.Session() <span class="keyword">as</span> sess:</span><br><span class="line">    c = sess.run( a + b )</span><br><span class="line">print(c)</span><br></pre></td></tr></table></figure>
+<p>Output: <code>30</code></p>
+<p><strong>Numpy Operations:</strong><br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">const = tf.constant(<span class="number">10</span>)        <span class="comment"># constant operation</span></span><br><span class="line">fill_mat = tf.fill((<span class="number">4</span>,<span class="number">4</span>),<span class="number">10</span>)   <span class="comment"># matrix operation 4x4</span></span><br><span class="line">myzeros = tf.zeros((<span class="number">4</span>,<span class="number">4</span>))      <span class="comment"># 4x4 zeors</span></span><br><span class="line">myones = tf.ones((<span class="number">4</span>,<span class="number">4</span>))        <span class="comment"># 4x4 ones</span></span><br><span class="line">myrandn = tf.random_normal((<span class="number">4</span>,<span class="number">4</span>), mean = <span class="number">0</span>, stddev = <span class="number">1.0</span>)         <span class="comment"># random normal distribution </span></span><br><span class="line">myrandu = tf.random_uniform((<span class="number">4</span>,<span class="number">4</span>), minval = <span class="number">0</span>, maxval = <span class="number">1.0</span>)      <span class="comment"># random uniform distribution </span></span><br><span class="line"></span><br><span class="line">my_ops = [const, fill_mat, myzeros, myones, myrandn, myrandu]</span><br><span class="line"></span><br><span class="line">sess = tf.InteractiveSession()      <span class="comment"># Interactive Session</span></span><br><span class="line"><span class="keyword">for</span> op <span class="keyword">in</span> my_ops:</span><br><span class="line">    print(sess.run(op),<span class="string">'\n'</span>)</span><br></pre></td></tr></table></figure></p>
+<p>Note:<br><code>Interactive Session</code> is particularly useful for Jupyter Notebook, it allows you to constantly call it through multiple cells.<br>In the Interactive Session, instead of using <code>sess.run(op)</code>, we can use <code>op.eval()</code>, it means “evaluate this operation”, and generates the same result.</p>
+<p><strong>Matrix multiplication (common in neural networks)</strong><br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">a = tf.constant([[<span class="number">1</span>,<span class="number">2</span>],[<span class="number">3</span>,<span class="number">4</span>]])</span><br><span class="line">b = tf.constant([[<span class="number">10</span>],[<span class="number">100</span>]])</span><br><span class="line">result = tf.matmul(a,b)</span><br><span class="line">sess.run(result)</span><br></pre></td></tr></table></figure></p>
+<span>$$\begin{align*}
+    \begin{bmatrix}
+        1 &amp; 2 \\
+        3 &amp; 4
+    \end{bmatrix} \times \begin{bmatrix}
+      10 \\ 100
+    \end{bmatrix} = \begin{bmatrix}
+      210 \\ 430
+    \end{bmatrix}
+\end{align*}$$</span><!-- Has MathJax -->
+<p>Note: <code>sess.run(result)</code> can also use <code>result.eval()</code> instead.</p>
+<h1 id="TensorFlow-Graphs"><a href="#TensorFlow-Graphs" class="headerlink" title="TensorFlow Graphs"></a>TensorFlow Graphs</h1><p>Graphs are sets of connected <em>nodes</em>(vertices), and the connections are called <em>edges</em>. In TensorFlow each node is an operation with possible inputs that can supply some outputs. When TenserFlow is started, a default graph is created.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">print(tf.get_default_graph())</span><br><span class="line">print(tf.Graph())</span><br></pre></td></tr></table></figure>
+<p>Output:<br>fixed default graph: <code>&lt;tensorflow.python.framework.ops.Graph object at 0x11f4c92b0&gt;</code><br>Dynamic random graph: <code>&lt;tensorflow.python.framework.ops.Graph object at 0x11f707dd8&gt;</code></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">graph_one = tf.Graph()</span><br><span class="line">graph_two = tf.get_default_graph()</span><br><span class="line"><span class="keyword">with</span> graph_one.as_default():</span><br><span class="line">    print(graph_one <span class="keyword">is</span> tf.get_default_graph())</span><br></pre></td></tr></table></figure>
+<p>Output: <code>True</code><br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print(graph_one <span class="keyword">is</span> tf.get_default_graph())</span><br></pre></td></tr></table></figure></p>
+<p>Output: <code>False</code></p>
+<h1 id="Variables-and-Placeholders"><a href="#Variables-and-Placeholders" class="headerlink" title="Variables and Placeholders"></a>Variables and Placeholders</h1><p><em>Variables</em> and <em>Placeholders</em> are two main types of tensor objects in a Graph. During the optimization process, TensorFlow tunes the parameters of the model. <em>Variables</em> can hold the values of weights and biases throughout the session. <strong><em>Variables</em> need to be initialized</strong>. <em>Placeholders</em> are initially empty and are used to feed in the actual training examples. However they do need a declared expected data type (tf.float32) with an optiional shape argument.<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">### Variable ###</span></span><br><span class="line">sess = tf.InteractiveSession()</span><br><span class="line">my_tensor = tf.random_uniform((<span class="number">4</span>,<span class="number">4</span>), <span class="number">0</span>,<span class="number">1</span>)</span><br><span class="line">my_var = tf.Variable(initial_value = my_tensor)  <span class="comment"># give value to variable </span></span><br><span class="line"><span class="comment"># sess.run(my_var) cannot be directly run here, need initialized first!</span></span><br><span class="line">init = tf.global_variables_initializer()</span><br><span class="line">sess.run(init)</span><br><span class="line">sess.run(my_var) <span class="comment"># Now it's the time!</span></span><br></pre></td></tr></table></figure></p>
+<p>Output: <code>array([[ 0.27756679,  0.82726526,  0.80544853,  0.43891859],
+        [ 0.56279469,  0.57444489,  0.82595968,  0.63165414],
+        [ 0.16034544,  0.86095798,  0.74416387,  0.17536163],
+        [ 0.44427669,  0.69035304,  0.55842543,  0.00723565]], dtype=float32)</code></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">### Placeholder ###</span></span><br><span class="line">ph = tf.placeholder(tf.float32, shape = (<span class="number">4</span>,<span class="number">4</span>)) </span><br><span class="line">ph = tf.placeholder(tf.float32, shape = (<span class="keyword">None</span>,<span class="number">5</span>)) <span class="comment"># can be fed in the actually number of sampes</span></span><br><span class="line">ph = tf.placeholder(tf.float32) <span class="comment"># no shape</span></span><br></pre></td></tr></table></figure>
+<h1 id="TensorFlow-Neural-Network"><a href="#TensorFlow-Neural-Network" class="headerlink" title="TensorFlow Neural Network"></a>TensorFlow Neural Network</h1><p>Create a neuron that performs a simple linear fit to some 2-D data. Graph of $wx+b = z$</p>
+<ol>
+<li>Build a Graph</li>
+<li>Initiate the Session</li>
+<li>Feed Data In and get Output</li>
+<li>Add in the cost function in order to train the network to optimize the parameters<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> tensorflow <span class="keyword">as</span> tf</span><br><span class="line"></span><br><span class="line"><span class="comment">### Build a simple Graph ###</span></span><br><span class="line">np.random.seed(<span class="number">101</span>)</span><br><span class="line">tf.set_random_seed(<span class="number">101</span>)</span><br><span class="line"></span><br><span class="line">rand_a = np.random.uniform(<span class="number">0</span>,<span class="number">100</span>, (<span class="number">5</span>,<span class="number">5</span>))</span><br><span class="line">rand_b = np.random.uniform(<span class="number">0</span>,<span class="number">100</span>, (<span class="number">5</span>,<span class="number">1</span>))</span><br><span class="line">a = tf.placeholder(tf.float32) <span class="comment"># default shape</span></span><br><span class="line">b = tf.placeholder(tf.float32) <span class="comment"># default shape</span></span><br><span class="line"><span class="comment"># Two ways to do the operation: </span></span><br><span class="line"><span class="comment">#tf.add(a, b)  |  tf.multiply(a, b)  |  tf.matmul(a, b) </span></span><br><span class="line">add_op = a + b</span><br><span class="line">mul_op = a * b</span><br><span class="line"><span class="keyword">with</span> tf.Session() <span class="keyword">as</span> sess:</span><br><span class="line">    add_result = sess.run(add_op, feed_dict = &#123; a:rand_a, b:rand_b&#125;) </span><br><span class="line">    print(add_result, <span class="string">'\n'</span>)</span><br><span class="line">    mul_result = sess.run(mul_op, feed_dict = &#123; a:rand_a, b:rand_b&#125;)</span><br><span class="line">    print(mul_result)</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>Output:<br>`[[ 151.07165527  156.49855042  102.27921295  116.58396149  167.95948792]<br> [ 135.45622253   82.76316071  141.42784119  124.22093201   71.06043243]<br> [ 113.30171204   93.09214783   76.06819153  136.43911743  154.42727661]<br> [  96.7172699    81.83804321  133.83674622  146.38117981  101.10578918]<br> [ 122.72680664  105.98292542   59.04463196   67.98310089   72.89292145]] </p>
+<p>[[ 5134.64404297  5674.25         283.12432861  1705.47070312  6813.83154297]<br> [ 4341.8125      1598.26696777  4652.73388672  3756.8293457    988.9463501 ]<br> [ 3207.8112793   2038.10290527  1052.77416992  4546.98046875  5588.11572266]<br> [ 1707.37902832   614.02526855  4434.98876953  5356.77734375  2029.85546875]<br> [ 3714.09838867  2806.64379883   262.76763916   747.19854736 1013.29199219]]`</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">### Build a Neural Network ### </span></span><br><span class="line">n_features = <span class="number">10</span>      <span class="comment"># input layer</span></span><br><span class="line">n_dense_neurons = <span class="number">3</span>  <span class="comment"># hidden layer</span></span><br><span class="line">x = tf.placeholder(tf.float32, (<span class="keyword">None</span>, n_features))</span><br><span class="line">W = tf.Variable(tf.random_normal([n_features, n_dense_neurons]))</span><br><span class="line">b = tf.Variable(tf.ones([n_dense_neurons]))</span><br><span class="line"></span><br><span class="line">xW = tf.matmul(x, W) </span><br><span class="line">z = tf.add(xW, b)</span><br><span class="line"><span class="comment"># a = tf.nn.relu | tf.tahn</span></span><br><span class="line">a = tf.sigmoid(z)</span><br><span class="line"></span><br><span class="line">init = tf.global_variables_initializer()</span><br><span class="line"><span class="keyword">with</span> tf.Session() <span class="keyword">as</span> sess:</span><br><span class="line">    sess.run(init)        <span class="comment"># DON'T FORGET!</span></span><br><span class="line">    layer_out = sess.run(a, feed_dict = &#123; x: np.random.random([<span class="number">1</span>,n_features])&#125;)</span><br><span class="line">print(layer_out)</span><br></pre></td></tr></table></figure>
+<p>Output: <code>[[ 0.81314439  0.98195159  0.73793817]]</code></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">### Simple Regression Example ###</span></span><br><span class="line">x_data = np.linspace(<span class="number">0</span>,<span class="number">10</span>,<span class="number">10</span>) + np.random.uniform(<span class="number">-1.5</span>,<span class="number">1.5</span>,<span class="number">10</span>)  <span class="comment"># with noise</span></span><br><span class="line">y_label = np.linspace(<span class="number">0</span>,<span class="number">10</span>,<span class="number">10</span>) + np.random.uniform(<span class="number">-1.5</span>,<span class="number">1.5</span>,<span class="number">10</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line">%matplotlib inline     </span><br><span class="line"><span class="comment"># %matplotlib inline    just for Jupyter notebook   </span></span><br><span class="line">plt.plot(x_data, y_label, <span class="string">'*'</span>)</span><br></pre></td></tr></table></figure>
+<p><img src="/images/2018/01/TF1.png" alt="Sample Image Added via Markdown"><br>Now I want the neural network to solve $ y = mx + b$ with 10 training steps:<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># create two random variables</span></span><br><span class="line">m = tf.Variable(<span class="number">0.44</span>)</span><br><span class="line">b = tf.Variable(<span class="number">0.87</span>)</span><br><span class="line"></span><br><span class="line">error = <span class="number">0</span>  <span class="comment"># create an error starting from 0</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> x,y <span class="keyword">in</span> zip(x_data, y_label):   <span class="comment"># zip makes a list of x,y</span></span><br><span class="line">    y_hat = m * x + b</span><br><span class="line">    error += (y - y_hat) ** <span class="number">2</span>       <span class="comment"># cost function</span></span><br><span class="line"></span><br><span class="line">optimizer = tf.train.GradientDescentOptimizer(learning_rate = <span class="number">0.001</span>)</span><br><span class="line">train = optimizer.minimize(error)</span><br><span class="line"></span><br><span class="line">init = tf.global_variables_initializer()</span><br><span class="line"><span class="keyword">with</span> tf.Session() <span class="keyword">as</span> sess:</span><br><span class="line">    sess.run(init)</span><br><span class="line">    training_steps = <span class="number">10</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(training_steps):</span><br><span class="line">        sess.run(train)</span><br><span class="line">    final_slope, final_intercept = sess.run([m,b])</span><br><span class="line"></span><br><span class="line"><span class="comment"># Test </span></span><br><span class="line">x_test = np.linspace(<span class="number">-1</span>,<span class="number">11</span>,<span class="number">10</span>)</span><br><span class="line">y_pred = final_slope * x_test + final_intercept </span><br><span class="line"></span><br><span class="line">plt.plot(x_test, y_pred, <span class="string">'r'</span>)</span><br><span class="line">plt.plot(x_test, y_label,<span class="string">'*'</span>)</span><br></pre></td></tr></table></figure></p>
+<p><img src="/images/2018/01/TF2.png" alt="Sample Image Added via Markdown"></p>
+<h1 id="TensorFlow-Regression"><a href="#TensorFlow-Regression" class="headerlink" title="TensorFlow Regression"></a>TensorFlow Regression</h1><p>Regression example with huge dataset:<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line">%matplotlib inline</span><br><span class="line"><span class="keyword">import</span> tensorflow <span class="keyword">as</span> tf</span><br><span class="line"></span><br><span class="line">x_data = np.linspace(<span class="number">0.0</span>,<span class="number">10.0</span>,<span class="number">1000000</span>)  <span class="comment"># huge dataset</span></span><br><span class="line">noise = np.random.randn(len(x_data))    <span class="comment"># add noise</span></span><br><span class="line"><span class="comment"># y = mx + b | b = 5, m = 0.5</span></span><br><span class="line">y_true = (<span class="number">0.5</span> * x_data) + <span class="number">5</span> + noise</span><br><span class="line"></span><br><span class="line">x_df = pd.DataFrame(data = x_data, columns = [<span class="string">'X Data'</span>])</span><br><span class="line">y_df = pd.DataFrame(data = y_true, columns = [<span class="string">'Y'</span>])</span><br><span class="line">my_data = pd.concat([x_df, y_df], axis = <span class="number">1</span>)  <span class="comment"># axis = 1 column concatenate</span></span><br><span class="line">my_data.sample(n = <span class="number">25</span>) <span class="comment"># random 25 samples</span></span><br><span class="line">my_data.sample(n=<span class="number">250</span>).plot(kind = <span class="string">'scatter'</span>, x = <span class="string">'X Data'</span>, y = <span class="string">'Y'</span>)</span><br></pre></td></tr></table></figure></p>
+<p><img src="/images/2018/01/TF3.png" alt="Sample Image Added via Markdown"><br>For real cases, usually the datasets are humongous and we do not use all of them at once. Instead, we use batch method to feed the data batch by batch into the network to save the time. The number of batches depends on the size of the data. Here we feed 1000 batches of data, with each batch has 8 corresponding data points (x data points with corresponding y labels). To make batches useful, we grab 8 random data points via <code>rand_ind = np.random.randint(len(x_data), size = batch_size)</code>, then train the optimizer.<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">batch_size = <span class="number">8</span></span><br><span class="line">m = tf.Variable(<span class="number">0.81</span>)</span><br><span class="line">b = tf.Variable(<span class="number">0.17</span>)</span><br><span class="line"></span><br><span class="line">xph = tf.placeholder(tf.float32,[batch_size])</span><br><span class="line">yph = tf.placeholder(tf.float32,[batch_size])</span><br><span class="line"></span><br><span class="line">y_model = m * xph + b    <span class="comment"># the Graph I want to compute</span></span><br><span class="line"><span class="comment"># Loss function</span></span><br><span class="line">error = tf.reduce_sum(tf.square(yph - y_model)) <span class="comment"># tf.reduce_sum: Computes the sum of elements across dimensions of a tensor.</span></span><br><span class="line"><span class="comment"># Optimizer</span></span><br><span class="line">optimizer = tf.train.GradientDescentOptimizer(learning_rate = <span class="number">0.001</span>)     <span class="comment"># This is gradient decent optimizer, there are many other optimizers</span></span><br><span class="line">train = optimizer.minimize(error)</span><br><span class="line"></span><br><span class="line">init = tf.global_variables_initializer()</span><br><span class="line"><span class="keyword">with</span> tf.Session() <span class="keyword">as</span> sess:</span><br><span class="line">    sess.run(init)</span><br><span class="line">    batches = <span class="number">1000</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(batches):</span><br><span class="line">        rand_ind = np.random.randint(len(x_data), size = batch_size)    <span class="comment"># random index</span></span><br><span class="line">        feed = &#123;xph: x_data[rand_ind], yph: y_true[rand_ind]&#125;</span><br><span class="line">        sess.run(train, feed_dict = feed)</span><br><span class="line">    model_m, model_b = sess.run([m, b])</span><br><span class="line"></span><br><span class="line">y_hat = x_data * model_m + model_b</span><br><span class="line">my_data.sample(<span class="number">250</span>).plot(kind = <span class="string">'scatter'</span>, x = <span class="string">'X Data'</span>, y = <span class="string">'Y'</span>)</span><br><span class="line">plt.plot(x_data, y_hat, <span class="string">'r'</span>)</span><br></pre></td></tr></table></figure></p>
+<p><img src="/images/2018/01/TF4.png" alt="Sample Image Added via Markdown"></p>
+<h1 id="TensorFlow-Estimator-API"><a href="#TensorFlow-Estimator-API" class="headerlink" title="TensorFlow Estimator API"></a>TensorFlow Estimator API</h1><p>This section is to solve the regression task with TensorFlow estimator API. Wait a minute, what is API?  Technically, API stands for <em>Application Programming Interface</em>, but still, what is that? Basically, it is part of the server, that can be distinctively separated from its environment, that receives requests and sends responses. Here is an excellent article from Petr Gazarov explaining <a href="https://medium.freecodecamp.org/what-is-an-api-in-english-please-b880a3214a82" target="_blank" rel="noopener"><strong>API</strong></a>.<br>There are many other higher levels of APIs (Keras, Layers…). The tf.estimator API has several model types to choose from:</p>
+<ul>
+<li>tf.estimator.LinearClassifier: Constructs a linear classification model</li>
+<li>tf.estimator.LinearRegressor: Constructs a linear regression model</li>
+<li>tf.estimator.DNNClassifier: Constructs a neural network classification model</li>
+<li>tf.estimator.DNNRegressor: Constructs a neural network regression model</li>
+<li>tf.estimator.DNNLinearCombinedRegressor: Constructs a neural network and linear combined regression model</li>
+</ul>
+<p><br><br>Steps for using the Estimator API:</p>
+<ul>
+<li>Define a list of feature columns</li>
+<li>Create the Estimator Model</li>
+<li>Create a Data Input Function</li>
+<li>Call train, evaluate, and predict methods on the estimator object</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">feat_cols = [tf.feature_column.numeric_column(<span class="string">'x'</span>, shape = <span class="number">1</span>)]  <span class="comment"># set all feature columns</span></span><br><span class="line">estimator = tf.estimator.LinearRegressor(feature_columns = feat_cols)  <span class="comment"># set estimator</span></span><br><span class="line"><span class="comment"># Split the data</span></span><br><span class="line"><span class="keyword">from</span> sklearn.model_selection <span class="keyword">import</span> train_test_split</span><br><span class="line">x_train, x_test, y_train, y_test = train_test_split(x_data, y_true, test_size = <span class="number">0.3</span>, random_state = <span class="number">101</span>)</span><br><span class="line"><span class="comment"># Set up Estimator Inputs</span></span><br><span class="line">input_func = tf.estimator.inputs.numpy_input_fn(&#123;<span class="string">'x'</span>: x_train&#125;, y_train, batch_size = <span class="number">8</span>, num_epochs = <span class="keyword">None</span>, shuffle = <span class="keyword">True</span>)     <span class="comment"># we can also use "tf.estimator.inputs.pandas_input_fn"</span></span><br><span class="line">train_input_func = tf.estimator.inputs.numpy_input_fn(&#123;<span class="string">'x'</span>: x_train&#125;, y_train, batch_size = <span class="number">8</span>, num_epochs = <span class="number">1000</span>, shuffle = <span class="keyword">False</span>)     <span class="comment"># change num_epochs and shuffle</span></span><br><span class="line">test_input_func = tf.estimator.inputs.numpy_input_fn(&#123;<span class="string">'x'</span>: x_test&#125;, y_test, batch_size = <span class="number">8</span>, num_epochs = <span class="number">1000</span>, shuffle = <span class="keyword">False</span>)     <span class="comment"># change num_epochs and shuffle, and the dataset</span></span><br><span class="line"><span class="comment"># Train the estimator</span></span><br><span class="line">estimator.train(input_fn = input_func, steps = <span class="number">1000</span>)</span><br><span class="line"><span class="comment"># Evaluation</span></span><br><span class="line">train_matrics = estimator.evaluate(input_fn = train_input_func, steps = <span class="number">1000</span>)</span><br><span class="line">test_matrics = estimator.evaluate(input_fn = test_input_func, steps = <span class="number">1000</span>)</span><br><span class="line"></span><br><span class="line">print(<span class="string">'Training data matrics'</span>)</span><br><span class="line">print(train_matrics)</span><br><span class="line">print(<span class="string">'Test data matrics'</span>)</span><br><span class="line">print(test_matrics)</span><br></pre></td></tr></table></figure>
+<p>Output:<br><code>Training data matrics
+{&#39;loss&#39;: 8.7310658, &#39;average_loss&#39;: 1.0913832, &#39;global_step&#39;: 1000}
+Test data matrics
+{&#39;loss&#39;: 8.6690454, &#39;average_loss&#39;: 1.0836307, &#39;global_step&#39;: 1000}</code><br>This is a good way to check if the model is overfitting (very low loss on training data but very high loss on test data). We want the loss of training data and test data are very close to each other.<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Get predict value</span></span><br><span class="line">brand_new_data = np.linspace(<span class="number">0</span>,<span class="number">10</span>,<span class="number">10</span>)</span><br><span class="line">input_fn_predict = tf.estimator.inputs.numpy_input_fn(&#123;<span class="string">'x'</span>: brand_new_data&#125;, shuffle = <span class="keyword">False</span>)</span><br><span class="line">estimator.predict(input_fn = input_fn_predict)</span><br><span class="line">list(estimator.predict(input_fn = input_fn_predict))</span><br></pre></td></tr></table></figure></p>
+<p>Output:<br><code>[{&#39;predictions&#39;: array([ 4.43396044], dtype=float32)},
+ {&#39;predictions&#39;: array([ 5.06833887], dtype=float32)},
+ {&#39;predictions&#39;: array([ 5.7027173], dtype=float32)},
+ {&#39;predictions&#39;: array([ 6.33709526], dtype=float32)},
+ {&#39;predictions&#39;: array([ 6.97147369], dtype=float32)},
+ {&#39;predictions&#39;: array([ 7.60585213], dtype=float32)},
+ {&#39;predictions&#39;: array([ 8.24023056], dtype=float32)},
+ {&#39;predictions&#39;: array([ 8.87460899], dtype=float32)},
+ {&#39;predictions&#39;: array([ 9.50898743], dtype=float32)},
+ {&#39;predictions&#39;: array([ 10.14336586], dtype=float32)}]</code><br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># plot the prediction</span></span><br><span class="line">predictions = []</span><br><span class="line"><span class="keyword">for</span> pred <span class="keyword">in</span> estimator.predict(input_fn = input_fn_predict):</span><br><span class="line">    predictions.append(pred[<span class="string">'predictions'</span>])</span><br><span class="line">my_data.sample(<span class="number">250</span>).plot(kind = <span class="string">'scatter'</span>, x = <span class="string">'X Data'</span>, y = <span class="string">'Y'</span>)</span><br><span class="line">plt.plot(brand_new_data, predictions, <span class="string">'r'</span>)</span><br></pre></td></tr></table></figure></p>
+<p><img src="/images/2018/01/TF5.png" alt="Sample Image Added via Markdown"></p>
+<h1 id="TensorFlow-Classification"><a href="#TensorFlow-Classification" class="headerlink" title="TensorFlow Classification"></a>TensorFlow Classification</h1><p>Use real dataset “Pima Indians Diabetes Dataset”, including both categorical and continuous features, to use tf.estimator switching models – from linear classifier to dense neural network classifier. </p>
+<h2 id="Linear-Classifier"><a href="#Linear-Classifier" class="headerlink" title="Linear Classifier"></a>Linear Classifier</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">diabetes = pd.read_csv(<span class="string">'pima-indians-diabetes.csv'</span>)</span><br><span class="line">diabetes.head()</span><br></pre></td></tr></table></figure>
+<p><img src="/images/2018/01/TF6.png" alt="Sample Image Added via Markdown"><br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">diabetes.columns</span><br></pre></td></tr></table></figure></p>
+<p>Output: <code>Index([&#39;Number_pregnant&#39;, &#39;Glucose_concentration&#39;, &#39;Blood_pressure&#39;, &#39;Triceps&#39;,
+       &#39;Insulin&#39;, &#39;BMI&#39;, &#39;Pedigree&#39;, &#39;Age&#39;, &#39;Class&#39;, &#39;Group&#39;],
+      dtype=&#39;object&#39;)</code><br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># normalize the data except the catagorical part (Age, Class, Group)</span></span><br><span class="line">cols_to_norm = [<span class="string">'Number_pregnant'</span>, <span class="string">'Glucose_concentration'</span>, <span class="string">'Blood_pressure'</span>, <span class="string">'Triceps'</span>,</span><br><span class="line">       <span class="string">'Insulin'</span>, <span class="string">'BMI'</span>, <span class="string">'Pedigree'</span>]</span><br><span class="line">diabetes[cols_to_norm] = diabetes[cols_to_norm].apply(<span class="keyword">lambda</span> x: (x - x.min())/(x.max() - x.min()))</span><br><span class="line">diabetes.head()</span><br></pre></td></tr></table></figure></p>
+<p><img src="/images/2018/01/TF7.png" alt="Sample Image Added via Markdown"><br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># create feature columns</span></span><br><span class="line"><span class="comment"># continuous value</span></span><br><span class="line">num_preg = tf.feature_column.numeric_column(<span class="string">'Number_pregnant'</span>)</span><br><span class="line">plasma_gluc = tf.feature_column.numeric_column(<span class="string">'Glucose_concentration'</span>)</span><br><span class="line">dias_press = tf.feature_column.numeric_column(<span class="string">'Blood_pressure'</span>)</span><br><span class="line">tricep = tf.feature_column.numeric_column(<span class="string">'Triceps'</span>)</span><br><span class="line">insulin = tf.feature_column.numeric_column(<span class="string">'Insulin'</span>)</span><br><span class="line">bmi = tf.feature_column.numeric_column(<span class="string">'BMI'</span>)</span><br><span class="line">diabetes_pedigree = tf.feature_column.numeric_column(<span class="string">'Pedigree'</span>)</span><br><span class="line">age = tf.feature_column.numeric_column(<span class="string">'Age'</span>)</span><br><span class="line"><span class="comment"># catagorical value</span></span><br><span class="line">assigned_group = tf.feature_column.categorical_column_with_vocabulary_list(<span class="string">'Group'</span>, [<span class="string">'A'</span>,<span class="string">'B'</span>,<span class="string">'C'</span>,<span class="string">'D'</span>])     </span><br><span class="line"><span class="comment"># assigned_group = tf.feature_column.categorical_column_with_hash_bucket('Group', hash_bucket_size = 10)  </span></span><br><span class="line"><span class="comment"># For many groups scenario we can use hash_bucket, as long as we set the hash_bucket_size &gt; # of groups</span></span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line">%matplotlib inline</span><br><span class="line">diabetes[<span class="string">'Age'</span>].hist(bins = <span class="number">20</span>)</span><br></pre></td></tr></table></figure></p>
+<p><img src="/images/2018/01/TF8.png" alt="Sample Image Added via Markdown"><br>The distribution of Age from the histgram shows that most of the people are 20s. And instead of treating this variable as a continuous variable, we can bucket these values together, making boundary for each decade or so. <strong>Basically we use bucket system to transform continuous variable into categorial variable.</strong><br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">age_bucket = tf.feature_column.bucketized_column(age, boundaries = [<span class="number">20</span>,<span class="number">30</span>,<span class="number">40</span>,<span class="number">50</span>,<span class="number">60</span>,<span class="number">70</span>,<span class="number">80</span>])</span><br><span class="line"><span class="comment"># feature columns</span></span><br><span class="line">feat_cols = [num_preg ,plasma_gluc,dias_press ,tricep ,insulin,bmi,diabetes_pedigree ,assigned_group, age_bucket]</span><br><span class="line"><span class="comment"># train test split</span></span><br><span class="line">x_data = diabetes.drop(<span class="string">'Class'</span>, axis = <span class="number">1</span>)   <span class="comment"># Class column is Y</span></span><br><span class="line">labels = diabetes[<span class="string">'Class'</span>]</span><br><span class="line"><span class="keyword">from</span> sklearn.model_selection <span class="keyword">import</span> train_test_split</span><br><span class="line">X_train, X_test, y_train, y_test = train_test_split(x_data, labels, test_size = <span class="number">0.3</span>, random_state = <span class="number">101</span>)</span><br></pre></td></tr></table></figure></p>
+<p>Create the model!<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">## Create the model</span></span><br><span class="line">input_func = tf.estimator.inputs.pandas_input_fn(x = X_train, y = y_train, batch_size = <span class="number">10</span>, num_epochs = <span class="number">1000</span>, shuffle = <span class="keyword">True</span>)</span><br><span class="line">model = tf.estimator.LinearClassifier(feature_columns = feat_cols, n_classes = <span class="number">2</span>)</span><br><span class="line">model.train(input_fn = input_func, steps = <span class="number">1000</span>)</span><br><span class="line"><span class="comment">## Evaluate the model</span></span><br><span class="line">eval_input_func = tf.estimator.inputs.pandas_input_fn(x = X_test, y = y_test, batch_size = <span class="number">10</span>, num_epochs = <span class="number">1</span>, shuffle = <span class="keyword">False</span>)</span><br><span class="line">results = model.evaluate(eval_input_func)</span><br><span class="line">results</span><br></pre></td></tr></table></figure></p>
+<p>Output:<br><code>{&#39;accuracy&#39;: 0.73160172,
+ &#39;accuracy_baseline&#39;: 0.64935064,
+ &#39;auc&#39;: 0.79658431,
+ &#39;auc_precision_recall&#39;: 0.6441071,
+ &#39;average_loss&#39;: 0.52852213,
+ &#39;global_step&#39;: 1000,
+ &#39;label/mean&#39;: 0.35064936,
+ &#39;loss&#39;: 5.0870256,
+ &#39;prediction/mean&#39;: 0.35784912}</code><br>The accuracy is 73.16%.</p>
+<p> Prediction!<br> <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># No y value in prediction, put new data set in x</span></span><br><span class="line">pred_input_func = tf.estimator.inputs.pandas_input_fn(x = X_test, batch_size = <span class="number">10</span>, num_epochs = <span class="number">1</span>, shuffle = <span class="keyword">False</span>)</span><br><span class="line">predictions = model.predict(pred_input_func)</span><br><span class="line">my_pred = list(predictions)</span><br><span class="line">my_pred</span><br></pre></td></tr></table></figure></p>
+<p><img src="/images/2018/01/TF9.png" alt="Sample Image Added via Markdown"></p>
+<h2 id="Dense-Neural-Network-Classifier"><a href="#Dense-Neural-Network-Classifier" class="headerlink" title="Dense Neural Network Classifier"></a>Dense Neural Network Classifier</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Create a three-layer neural network, with 10 neurons in each layer </span></span><br><span class="line">dnn_model = tf.estimator.DNNClassifier(hidden_units = [<span class="number">10</span>,<span class="number">10</span>,<span class="number">10</span>], feature_columns = feat_cols, n_classes = <span class="number">2</span>)</span><br><span class="line"><span class="comment">### If use the same of the previous step error will show up -- because of the categorial columns, so we need to use embeded group </span></span><br><span class="line">embedded_group_col = tf.feature_column.embedding_column(assigned_group, dimension = <span class="number">4</span>)</span><br><span class="line"><span class="comment">### Reset the feature columns</span></span><br><span class="line">feat_cols = [num_preg ,plasma_gluc,dias_press ,tricep ,insulin,bmi,diabetes_pedigree , embedded_group_col, age_bucket]</span><br><span class="line"><span class="comment">### Now do as the previous -- train the model</span></span><br><span class="line">input_func = tf.estimator.input.pandas_inputs_fn(X_train, y_train, batch_size = <span class="number">10</span>, num_epochs = <span class="number">1000</span>, shuffle = <span class="keyword">True</span>)</span><br><span class="line">dnn_model = tf.estimator.DNNClassifier(hidden_units = [<span class="number">10</span>,<span class="number">10</span>,<span class="number">10</span>], feature_columns = feat_cols, n_classes = <span class="number">2</span>)</span><br><span class="line">dnn_model.train(input_fn = input_func, steps = <span class="number">1000</span>)</span><br><span class="line"><span class="comment"># Evaluate the model</span></span><br><span class="line">eval_input_func = tf.estimator.inputs.pandas_input_fn(x = X_test, y = y_test, batch_size = <span class="number">10</span>, num_epochs = <span class="number">1</span>, shuffle = <span class="keyword">False</span>)</span><br><span class="line">dnn_model.evaluate(eval_input_func)</span><br></pre></td></tr></table></figure>
+<p>Output:<br><code>{&#39;accuracy&#39;: 0.75757575,
+ &#39;accuracy_baseline&#39;: 0.64935064,
+ &#39;auc&#39;: 0.82814813,
+ &#39;auc_precision_recall&#39;: 0.67539084,
+ &#39;average_loss&#39;: 0.49014509,
+ &#39;global_step&#39;: 1000,
+ &#39;label/mean&#39;: 0.35064936,
+ &#39;loss&#39;: 4.7176466,
+ &#39;prediction/mean&#39;: 0.36287409}</code></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/TensorFlow-Deep-Learning-Python/" rel="tag"># TensorFlow, Deep Learning, Python</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/01/09/LeetCode1/" rel="next" title="LeetCode in Python3 - Two Sum">
+                <i class="fa fa-chevron-left"></i> LeetCode in Python3 - Two Sum
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/01/21/TensorFlow-for-Deep-Learning-2/" rel="prev" title="TensorFlow for Deep Learning 2">
+                TensorFlow for Deep Learning 2 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+      <div id="sidebar-dimmer"></div>
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Qiuyi Wu</p>
+              <p class="site-description motion-element" itemprop="description">PhD applicant</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Install-TensorFlow-Environment"><span class="nav-number">1.</span> <span class="nav-text">Install TensorFlow Environment</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#TensorFlow-Basic-Syntax"><span class="nav-number">2.</span> <span class="nav-text">TensorFlow Basic Syntax</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#TensorFlow-Graphs"><span class="nav-number">3.</span> <span class="nav-text">TensorFlow Graphs</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Variables-and-Placeholders"><span class="nav-number">4.</span> <span class="nav-text">Variables and Placeholders</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#TensorFlow-Neural-Network"><span class="nav-number">5.</span> <span class="nav-text">TensorFlow Neural Network</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#TensorFlow-Regression"><span class="nav-number">6.</span> <span class="nav-text">TensorFlow Regression</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#TensorFlow-Estimator-API"><span class="nav-number">7.</span> <span class="nav-text">TensorFlow Estimator API</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#TensorFlow-Classification"><span class="nav-number">8.</span> <span class="nav-text">TensorFlow Classification</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Linear-Classifier"><span class="nav-number">8.1.</span> <span class="nav-text">Linear Classifier</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Dense-Neural-Network-Classifier"><span class="nav-number">8.2.</span> <span class="nav-text">Dense Neural Network Classifier</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2017 &mdash; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Qiuyi Wu</span>
+
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config("");
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="custom_mathjax_source">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->
+  
+
+
+  
+
+  
+
+</body>
+</html>
