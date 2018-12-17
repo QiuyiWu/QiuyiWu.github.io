@@ -87,17 +87,17 @@
 
 
 
-<meta name="description" content="PhD applicant">
+<meta name="description" content="AV.initialize(&quot;app_id&quot;, &quot;app_key&quot;);  var time=0 var title=&quot;&quot; var url=&quot;&quot; var query = new AV.Query(&apos;Counter&apos;); query.notEqualTo(&apos;id&apos;,0); query.descending(&apos;time&apos;); query.limit(1000); query.find().then(">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Research">
 <meta property="og:url" content="https://qiuyiwu.github.io/Research/index.html">
 <meta property="og:site_name" content="Qiuyi Wu">
-<meta property="og:description" content="PhD applicant">
+<meta property="og:description" content="AV.initialize(&quot;app_id&quot;, &quot;app_key&quot;);  var time=0 var title=&quot;&quot; var url=&quot;&quot; var query = new AV.Query(&apos;Counter&apos;); query.notEqualTo(&apos;id&apos;,0); query.descending(&apos;time&apos;); query.limit(1000); query.find().then(">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-12-17T02:56:07.268Z">
+<meta property="og:updated_time" content="2018-12-17T16:29:21.720Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Research">
-<meta name="twitter:description" content="PhD applicant">
+<meta name="twitter:description" content="AV.initialize(&quot;app_id&quot;, &quot;app_key&quot;);  var time=0 var title=&quot;&quot; var url=&quot;&quot; var query = new AV.Query(&apos;Counter&apos;); query.notEqualTo(&apos;id&apos;,0); query.descending(&apos;time&apos;); query.limit(1000); query.find().then(">
 
 
 
@@ -293,7 +293,33 @@
       <div class="post-body">
         
         
-          
+          <p><div id="top"></div></p>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script>AV.initialize("app_id", "app_key");</script>
+<script type="text/javascript">
+var time=0
+var title=""
+var url=""
+var query = new AV.Query('Counter');
+query.notEqualTo('id',0);
+query.descending('time');
+query.limit(1000);
+query.find().then(function (todo) {
+for (var i=0;i<1000;i++){
+var result=todo[i].attributes;
+time=result.time;
+title=result.title;
+url=result.url;
+var content="<a href='"+"https://reuixiy.github.io"+url+"'>"+title+"</a>"+"<br />"+"<font color='#555'>"+"阅读次数："+time+"</font>"+"<br /><br />";
+document.getElementById("top").innerHTML+=content
+}
+}, function (error) {
+console.log("error");
+});
+</script>
+
+<style>.post-description { display: none; }</style>
+
         
       </div>
       
