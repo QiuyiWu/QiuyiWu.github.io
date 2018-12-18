@@ -1816,7 +1816,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #3c7a66;
+  background: #99397d;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3398,16 +3398,6 @@ code.description {
     margin: 0px 10px !important;
   }
 }
-.myButton {
-  margin: -80px 0px 60px 0px;
-  background-color: #fff;
-  padding: 106px 36px 36px 36px;
-  display: inline-block;
-  color: rgba(0,0,0,0.5);
-  font-family: Arial;
-  font-size: 17px;
-  text-decoration: none;
-}
 .column-left {
   float: left;
   width: 30%;
@@ -3417,6 +3407,16 @@ code.description {
   float: right;
   width: 70%;
   text-align: left;
+}
+.myButton {
+  margin: -80px 0px 60px 0px;
+  background-color: #fff;
+  padding: 106px 36px 36px 36px;
+  display: inline-block;
+  color: rgba(0,0,0,0.5);
+  font-family: Arial;
+  font-size: 17px;
+  text-decoration: none;
 }
 @-moz-keyframes heartAnimate {
   0%, 100% {
