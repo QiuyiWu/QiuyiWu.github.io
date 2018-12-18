@@ -1816,7 +1816,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #77ff73;
+  background: #f9f;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3089,6 +3089,49 @@ img:hover {
   background-color: #fff;
   box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
 }
+.tag-cloud {
+  margin: -80px 50px 40px 50px;
+  box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
+  background-color: #fff;
+  padding: 86px 36px 36px 36px;
+}
+.tag-cloud-title {
+  margin-bottom: 15px;
+}
+@media (max-width: 767px) {
+  .tag-cloud {
+    margin: -73px 15px 50px 15px;
+    padding: 86px 5px 36px 5px;
+  }
+}
+#Research {
+  display: block;
+  text-align: center;
+  margin: -100px 50px 40px 50px;
+  box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
+  background-color: #fff;
+  padding: 106px 36px 10px 36px;
+}
+@media (max-width: 767px) {
+  #Research {
+    margin: -93px 15px 50px 15px;
+    padding: 96px 10px 0px 10px;
+  }
+}
+#Teaching {
+  display: block;
+  text-align: center;
+  margin: -100px 50px 40px 50px;
+  box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
+  background-color: #fff;
+  padding: 106px 36px 10px 36px;
+}
+@media (max-width: 767px) {
+  #Teaching {
+    margin: -93px 15px 50px 15px;
+    padding: 96px 10px 0px 10px;
+  }
+}
 .post-block.page {
   margin-top: 40px;
 }
@@ -3104,21 +3147,6 @@ img:hover {
   }
   .category-all-page .category-all-title {
     margin-top: -5px;
-  }
-}
-.tag-cloud {
-  margin: -80px 50px 40px 50px;
-  box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
-  background-color: #fff;
-  padding: 86px 36px 36px 36px;
-}
-.tag-cloud-title {
-  margin-bottom: 15px;
-}
-@media (max-width: 767px) {
-  .tag-cloud {
-    margin: -73px 15px 50px 15px;
-    padding: 86px 5px 36px 5px;
   }
 }
 .about-page {
