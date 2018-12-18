@@ -7,7 +7,7 @@
 
 <html class="theme-next muse use-motion" lang="en">
 <head><meta name="generator" content="Hexo 3.8.0">
-  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
+  <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="theme-color" content="#222">
@@ -51,6 +51,9 @@
 <link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
 
 <link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+<link rel="stylesheet" href="<%- config.root %>css/font-awesome.css" media="screen" type="text/css">
+
 
 
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
@@ -132,7 +135,7 @@
 
 
 
-  <title>LeetCode in Python3 - Two Sum | Qiuyi Wu</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  <title>LeetCode in Python3 - Two Sum | Qiuyi Wu</title>
   
 
 
@@ -149,7 +152,7 @@
   
   
 
-  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container  page-post-detail">
+  <div class="container  page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
@@ -165,7 +168,7 @@
       </a>
     </div>
       
-        <p class="site-subtitle">Research Fellow</p>
+        <h1 class="site-subtitle" itemprop="description">Research Fellow</h1>
       
   </div>
 
@@ -221,26 +224,6 @@
               <i class="menu-item-icon fa fa-fw fa-calendar"></i> <br>
             
             Teaching
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-tags">
-          <a href="/tags/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
-            
-            Tags
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-categories">
-          <a href="/categories/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
-            
-            Categories
           </a>
         </li>
       
@@ -304,7 +287,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">LeetCode in Python3 - Two Sum</h1>
+          <h2 class="post-title" itemprop="name headline">LeetCode in Python3 - Two Sum</h2>
         
 
         <div class="post-meta">
@@ -473,7 +456,9 @@
       <span class="sidebar-toggle-line sidebar-toggle-line-last" style="width: 100%; top: -5px; transform: rotateZ(45deg); opacity: 1; left: 0px;"></span>
     </div>
   </div>
-<!--
+
+
+<!--  自动弹出sidebar：
   <div class="sidebar-toggle">
     <div class="sidebar-toggle-line-wrap">
       <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
@@ -498,29 +483,39 @@
           <p class="site-description motion-element" itemprop="description" style="opacity: 1; display: block; transform: translateX(0px);">见天地 见众生 见自己</p>
 
 
+        <nav class="site-state motion-element" style="opacity: 1; display: block; transform: translateX(0px);">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives/ || archive">
+              <span class="site-state-item-count">9</span>
+              <span class="site-state-item-name">posts</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              
+                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-name">categories</span>
+              
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              
+                <span class="site-state-item-count">9</span>
+                <span class="site-state-item-name">tags</span>
+              
+            </div>
+          
+        </nav>
+
+<!--
 
                      
                       
-                        <span class="links-of-author-item" ,="" style="opacity: 1;display: inline-block;float: center; margin: 8px; margin-left: 60px; margin-bottom: 10px">
-                          <a href="https://github.com/QiuyiWu" target="_blank" title="GitHub">
-                            
-                              <i class="fa fa-fw fa-github"></i>
-                            
-                            GitHub
-                          </a>
-                        </span>
-                      
-                        <span class="links-of-author-item" ,="" style="opacity: 1;display: inline-block;float: center; margin: 8px; margin-left: 60px; margin-bottom: 10px">
-                          <a href="https://www.linkedin.com/in/qiuyi-wu" target="_blank" title="LinkedIn">
-                            
-                              <i class="fa fa-fw fa-linkedin"></i>
-                            
-                            LinkedIn
-                          </a>
-                        </span>
-                      
-                        <span class="links-of-author-item" ,="" style="opacity: 1;display: inline-block;float: center; margin: 8px; margin-left: 60px; margin-bottom: 10px">
-                          <a href="http://www.choweewu.com" target="_blank" title="Website">
+                        <span class="links-of-author-item", style="opacity: 1;display: inline-block;float: center; margin: 8px; margin-left: 60px; margin-bottom: 10px">
+                          <a href="http://www.choweewu.com ||" target="_blank" title="Website">
                             
                               <i class="fa fa-fw fa-globe"></i>
                             
@@ -528,8 +523,26 @@
                           </a>
                         </span>
                       
-                        <span class="links-of-author-item" ,="" style="opacity: 1;display: inline-block;float: center; margin: 8px; margin-left: 60px; margin-bottom: 10px">
-                          <a href="mailto:qw2199@columbia.edu" target="_blank" title="E-Mail">
+                        <span class="links-of-author-item", style="opacity: 1;display: inline-block;float: center; margin: 8px; margin-left: 60px; margin-bottom: 10px">
+                          <a href="https://github.com/QiuyiWu || github" target="_blank" title="GitHub">
+                            
+                              <i class="fa fa-fw fa-github"></i>
+                            
+                            GitHub
+                          </a>
+                        </span>
+                      
+                        <span class="links-of-author-item", style="opacity: 1;display: inline-block;float: center; margin: 8px; margin-left: 60px; margin-bottom: 10px">
+                          <a href="https://twitter.com/ChoweeWu || twitter" target="_blank" title="Twitter">
+                            
+                              <i class="fa fa-fw fa-twitter"></i>
+                            
+                            Twitter
+                          </a>
+                        </span>
+                      
+                        <span class="links-of-author-item", style="opacity: 1;display: inline-block;float: center; margin: 8px; margin-left: 60px; margin-bottom: 10px">
+                          <a href="mailto:qw2199@columbia.edu || envelope" target="_blank" title="E-Mail">
                             
                               <i class="fa fa-fw fa-envelope"></i>
                             
@@ -537,9 +550,33 @@
                           </a>
                         </span>
                       
+                        <span class="links-of-author-item", style="opacity: 1;display: inline-block;float: center; margin: 8px; margin-left: 60px; margin-bottom: 10px">
+                          <a href="https://www.linkedin.com/in/qiuyi-wu || linkedin" target="_blank" title="LinkedIn">
+                            
+                              <i class="fa fa-fw fa-linkedin"></i>
+                            
+                            LinkedIn
+                          </a>
+                        </span>
+                      
+                        <span class="links-of-author-item", style="opacity: 1;display: inline-block;float: center; margin: 8px; margin-left: 60px; margin-bottom: 10px">
+                          <a href="https://www.researchgate.net/profile/Qiuyi_Wu5 || university" target="_blank" title="RG">
+                            
+                              <i class="fa fa-fw fa-globe"></i>
+                            
+                            RG
+                          </a>
+                        </span>
+                      
                     
 
         </div>
+
+-->
+
+
+
+
 <!--
   <aside id="sidebar" class="sidebar">
     
@@ -569,38 +606,10 @@
                 alt="Qiuyi Wu" />
             
               <p class="site-author-name" itemprop="name">Qiuyi Wu</p>
-              <p class="site-description motion-element" itemprop="description">PhD applicant</p>
+              <p class="site-description motion-element" itemprop="description"></p>
           </div>
--->
-
-
-        <nav class="site-state motion-element" style="opacity: 1; display: block; transform: translateX(0px);">
-          <div class="site-state-item site-state-posts">
-            <a href="/archives/ || archive">
-              <span class="site-state-item-count">9</span>
-              <span class="site-state-item-name">posts</span>
-            </a>
-          </div>
-
-          
-            <div class="site-state-item site-state-categories">
-              <a href="/categories/ || th">
-                <span class="site-state-item-count">5</span>
-                <span class="site-state-item-name">categories</span>
-              </a>
-            </div>
-          
-
-          
-            <div class="site-state-item site-state-tags">
-              <a href="/tags/ || tags">
-                <span class="site-state-item-count">9</span>
-                <span class="site-state-item-name">tags</span>
-              </a>
-            </div>
-          
-        </nav>
       </div>
+-->
 
 
 
@@ -623,6 +632,20 @@
       <link rel="stylesheet" type="text/css" href="../lib/style/zns_style.css">
       <script type="text/javascript" src="../lib/js/zns_3dsc.js"></script>
 
+    <div id="days">已运行274天04小时55分06秒</div>
+        <script language="javascript">function show_date_time(){window.setTimeout("show_date_time()",1e3),BirthDay=new Date("12/31/2017 21:59:28"),today=new Date,timeold=today.getTime()-BirthDay.getTime(),sectimeold=timeold/1e3,secondsold=Math.floor(sectimeold),msPerDay=864e5,e_daysold=timeold/msPerDay,daysold=Math.floor(e_daysold),e_hrsold=24*(e_daysold-daysold),hrsold=setzero(Math.floor(e_hrsold)),e_minsold=60*(e_hrsold-hrsold),minsold=setzero(Math.floor(60*(e_hrsold-hrsold))),seconds=setzero(Math.floor(60*(e_minsold-minsold))),document.getElementById("days").innerHTML="Qiuyi's Blog has been running for <br/>"+daysold+" days "+hrsold+" hrs "+minsold+" mins "+seconds+" secs✨"}function setzero(e){return e<10&&(e="0"+e),e}show_date_time()</script> 
+
+
+
+        <div class="feed-link motion-element" style="opacity: 1; display: block; transform: translateX(0px); float: center">
+          <!--<a href="/atom.xml" rel="alternate " target="_blank"> -->
+          <a href="/atom.xml" rel="alternate" target="_blank"> 
+            <i class="fa fa-rss"></i> 
+            RSS 
+          </a>
+        </div>
+        <div class="links-of-author motion-element" style="opacity: 1; display: block; transform: translateX(0px);">
+        </div>
 
 <!--
           <nav class="site-state motion-element">
@@ -662,39 +685,13 @@
 
           </nav>
 -->
-        <div class="feed-link motion-element" style="opacity: 1; display: block; transform: translateX(0px);">
-          <!--<a href="/atom.xml" rel="alternate " target="_blank">-->
-          <a href="/atom.xml" rel="alternate" target="_blank"> 
-            <i class="fa fa-rss"></i> 
-            RSS 
-          </a>
-        </div>
-        <div class="links-of-author motion-element" style="opacity: 1; display: block; transform: translateX(0px);">
-        </div>
-
-
-        <div id="days">已运行274天04小时55分06秒</div>
-        <script language="javascript">function show_date_time(){window.setTimeout("show_date_time()",1e3),BirthDay=new Date("12/31/2017 21:59:28"),today=new Date,timeold=today.getTime()-BirthDay.getTime(),sectimeold=timeold/1e3,secondsold=Math.floor(sectimeold),msPerDay=864e5,e_daysold=timeold/msPerDay,daysold=Math.floor(e_daysold),e_hrsold=24*(e_daysold-daysold),hrsold=setzero(Math.floor(e_hrsold)),e_minsold=60*(e_hrsold-hrsold),minsold=setzero(Math.floor(60*(e_hrsold-hrsold))),seconds=setzero(Math.floor(60*(e_minsold-minsold))),document.getElementById("days").innerHTML="Qiuyi's Blog has been running for <br/>"+daysold+" days "+hrsold+" hrs "+minsold+" mins "+seconds+" secs✨"}function setzero(e){return e<10&&(e="0"+e),e}show_date_time()</script> 
 
 
 
-
-
-<!--
+  
+<link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
           
             <div class="links-of-author motion-element">
-                
-                  <span class="links-of-author-item">
-                    <a href="https://github.com/QiuyiWu" target="_blank" title="GitHub">
-                      
-                        <i class="fa fa-fw fa-globe"></i>GitHub</a>
-                  </span>
-                
-                  <span class="links-of-author-item">
-                    <a href="https://www.linkedin.com/in/qiuyi-wu" target="_blank" title="LinkedIn">
-                      
-                        <i class="fa fa-fw fa-globe"></i>LinkedIn</a>
-                  </span>
                 
                   <span class="links-of-author-item">
                     <a href="http://www.choweewu.com" target="_blank" title="Website">
@@ -703,14 +700,38 @@
                   </span>
                 
                   <span class="links-of-author-item">
+                    <a href="https://github.com/QiuyiWu" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://twitter.com/ChoweeWu" target="_blank" title="Twitter">
+                      
+                        <i class="fa fa-fw fa-twitter"></i>Twitter</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
                     <a href="mailto:qw2199@columbia.edu" target="_blank" title="E-Mail">
                       
-                        <i class="fa fa-fw fa-globe"></i>E-Mail</a>
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.linkedin.com/in/qiuyi-wu" target="_blank" title="LinkedIn">
+                      
+                        <i class="fa fa-fw fa-linkedin"></i>LinkedIn</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.researchgate.net/profile/Qiuyi_Wu5" target="_blank" title="RG">
+                      
+                        <i class="fa fa-fw fa-university"></i>RG</a>
                   </span>
                 
             </div>
           
--->
+
 
 
 
@@ -748,7 +769,7 @@
 
 
     </div>
-  </section></aside>
+  </div></div></section></aside>
 
 
         
@@ -952,24 +973,7 @@
         }
       });
     </script>
-    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Config("");
-</script>
-
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Queue(function() {
-    var all = MathJax.Hub.getAllJax(), i;
-    for(i=0; i < all.length; i += 1) {
-      all[i].SourceElement().parentNode.className += ' has-jax';
-    }
-  });
-</script>
-
-<script type="text/javascript" src="custom_mathjax_source">
-</script>
-<!-- End: Injected MathJax -->
-<!-- hexo-inject:end -->
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
   
 
 
