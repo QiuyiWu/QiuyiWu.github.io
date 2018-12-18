@@ -1816,7 +1816,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #f9f;
+  background: #3c7a66;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2691,7 +2691,7 @@ body {
   background: url("/images/avatar1.png");
 }
 .container {
-  background-color: rgba(0,0,0,0.7);
+  background-color: rgba(0,0,0,0.75);
 }
 .header-inner {
   padding-top: 0px;
@@ -3397,6 +3397,26 @@ code.description {
   .menu .menu-item {
     margin: 0px 10px !important;
   }
+}
+.myButton {
+  margin: -80px 0px 60px 0px;
+  background-color: #fff;
+  padding: 106px 36px 36px 36px;
+  display: inline-block;
+  color: rgba(0,0,0,0.5);
+  font-family: Arial;
+  font-size: 17px;
+  text-decoration: none;
+}
+.column-left {
+  float: left;
+  width: 30%;
+  text-align: left;
+}
+.column-right {
+  float: right;
+  width: 70%;
+  text-align: left;
 }
 @-moz-keyframes heartAnimate {
   0%, 100% {
