@@ -1816,7 +1816,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #54ff79;
+  background: #f09c1f;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2681,7 +2681,7 @@ embed {
   display: inline-block;
 }
 .myButton {
-  background-color: #f2cf4a;
+  background-color: rgba(242,208,74,0.612);
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
   border-radius: 15px;
@@ -2695,7 +2695,7 @@ embed {
   text-shadow: 0px 1px 0px #428aa0;
 }
 .myButton:hover {
-  background-color: #bf402a;
+  background-color: rgba(191,64,42,0.635);
 }
 .myButton:active {
   position: relative;
