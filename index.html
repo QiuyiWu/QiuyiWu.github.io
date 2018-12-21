@@ -561,7 +561,8 @@
 <li>Can we efficiently use text mining approach in music field?</li>
 <li>Why music from diverse culture can bring people so many different feelings?</li>
 <li>What’s the similarity between music from different culture, or composers, or genres?</li>
-<li>To what extend do people grasp the meaning behind each piece of music expressed by the composer?
+<li>To what extend do people grasp the meaning behind each piece of music expressed by the composer?</li>
+</ul>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2018/12/20/MusicMining/#more" rel="contents">
@@ -571,7 +572,7 @@
           <!--/noindex-->
         
       
-    </li></ul></div>
+    </div>
     
     
     
@@ -708,7 +709,8 @@
       
         
           
-            
+            <p><center><br>Ongoing resaerch projects in SAMSI Program on Model Uncertainty.<br>To be announced in January, 2019.</center></p>
+
           
         
       
@@ -849,6 +851,14 @@
       
         
           <p>Use different Topic Modeling approaches on Political Blogs to see the performance of diverse methods.</p>
+<h1 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h1><h2 id="Types-of-Models-in-Comparison"><a href="#Types-of-Models-in-Comparison" class="headerlink" title="Types of Models in Comparison"></a>Types of Models in Comparison</h2><ul>
+<li>General LDA (<a href="https://cran.r-project.org/web/packages/lda/lda.pdf" target="_blank" rel="noopener">R package</a>)</li>
+<li>Supervised LDA (<a href="https://arxiv.org/pdf/1003.0783.pdf" target="_blank" rel="noopener">David M. Blei, Jon D. McAuliffe</a>)</li>
+<li>Relational Topic Model (<a href="http://proceedings.mlr.press/v5/chang09a/chang09a.pdf" target="_blank" rel="noopener">Jonathan Chang, David M. Blei</a>)</li>
+<li>Topic Link Block Model (Derek Owens-Oas)</li>
+<li>Poisson Factor Modeling (<a href="http://people.ee.duke.edu/~lcarin/Mingyuan_PAMI_6.pdf" target="_blank" rel="noopener">Beta Negative Binomial Process Topic Model</a>)</li>
+<li>Dynamic Text Network Model (<a href="https://arxiv.org/pdf/1610.05756.pdf" target="_blank" rel="noopener">Teague Henry, David Banks et al.</a>)</li>
+</ul>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2018/06/05/Public-Policy-Blogs/#more" rel="contents">
@@ -994,7 +1004,8 @@
 
       
         
-          <p>Continue the learning process of Convolutional Neural Networks and Recurrent Neural Networks with TensorFlow in Jupyter Notebook.<br>
+          <p>Continue the learning process of Convolutional Neural Networks and Recurrent Neural Networks with TensorFlow in Jupyter Notebook.</p>
+<h1 id="RNN-with-TensorFlow"><a href="#RNN-with-TensorFlow" class="headerlink" title="RNN with TensorFlow"></a>RNN with TensorFlow</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> tensorflow <span class="keyword">as</span> tf</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line">%matplotlib inline</span><br><span class="line"><span class="comment"># class: create the data, generate the batches to send it back</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">TimeSeriesData</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, num_points, xmin, xmax)</span>:</span></span><br><span class="line">        self.xmin = xmin</span><br><span class="line">        self.xmax = xmax</span><br><span class="line">        self.num_points = num_points</span><br><span class="line">        self.resolution = (xmax - xmin)/num_points</span><br><span class="line">        self.x_data = np.linspace(xmin, xmax, num_points)</span><br><span class="line">        self.y_true = np.sin(self.x_data)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">ret_true</span><span class="params">(self, x_series)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> np.sin(x_series)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">next_batch</span><span class="params">(self, batch_size, steps, return_batch_ts = False)</span>:</span></span><br><span class="line">        <span class="comment"># grab a random starting point for each batch</span></span><br><span class="line">        random_start = np.random.rand(batch_size,<span class="number">1</span>)</span><br><span class="line">        <span class="comment"># convert the data to TS</span></span><br><span class="line">        ts_start = random_start * (self.xmax - self.xmin - (steps * self.resolution))</span><br><span class="line">        <span class="comment"># create batch time series on the x axis</span></span><br><span class="line">        batch_ts = ts_start + np.arange(<span class="number">0.0</span>,steps+<span class="number">1</span>) * self.resolution</span><br><span class="line">        <span class="comment"># create the Y data for the time series x axis from previous step</span></span><br><span class="line">        y_batch = np.sin(batch_ts)</span><br><span class="line">        <span class="comment"># formatting for RNN</span></span><br><span class="line">        <span class="keyword">if</span> return_batch_ts:</span><br><span class="line">            <span class="keyword">return</span> y_batch[:,:<span class="number">-1</span>].reshape(<span class="number">-1</span>,steps,<span class="number">1</span>), y_batch[:,<span class="number">1</span>:].reshape(<span class="number">-1</span>,steps,<span class="number">1</span>), batch_ts</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">return</span> y_batch[:,:<span class="number">-1</span>].reshape(<span class="number">-1</span>,steps,<span class="number">1</span>), y_batch[:,<span class="number">1</span>:].reshape(<span class="number">-1</span>,steps,<span class="number">1</span>)</span><br><span class="line">            <span class="comment"># original y_batch and y_batch shifted over 1 step in the future</span></span><br></pre></td></tr></table></figure>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2018/01/22/TensorFlow-for-Deep-Learning-3/#more" rel="contents">
@@ -1004,7 +1015,7 @@
           <!--/noindex-->
         
       
-    </p></div>
+    </div>
     
     
     
@@ -1141,6 +1152,19 @@
       
         
           <p>Here I’ll give the theory part of Neural Networks, sepecifically three kinds of NN: Normal Neural Networks, Convolutional Neural Networks, Recurrent Neural Networks. </p>
+<h1 id="Neural-Networks"><a href="#Neural-Networks" class="headerlink" title="Neural Networks"></a>Neural Networks</h1><h2 id="In-single-neuron"><a href="#In-single-neuron" class="headerlink" title="In single neuron:"></a>In single neuron:</h2><span>$$\begin{align*}
+z &amp;= Wx + b \\
+a &amp;= \sigma (z)
+\end{align*}$$</span><!-- Has MathJax -->
+<h2 id="Activation-Function"><a href="#Activation-Function" class="headerlink" title="Activation Function"></a>Activation Function</h2><ul>
+<li><strong>Perceptron:</strong> binary classifier, small changes are not reflected.<span>$$\begin{align*}
+f(x) = \begin{cases}
+1 &amp; \text{if } Wx+b&gt;0\\ 
+0 &amp; \text{otherwise}
+\end{cases}
+\end{align*}$$</span><!-- Has MathJax -->
+</li>
+</ul>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2018/01/21/TensorFlow-for-Deep-Learning-2/#more" rel="contents">
@@ -1286,7 +1310,8 @@
 
       
         
-          <p>I’m learning how to use Google’s TensorFlow framework to create artificial neural networks for deep learning with Python from Udemy. I’m using Jupiter notebook to practice and blog my learning progress here.<br>
+          <p>I’m learning how to use Google’s TensorFlow framework to create artificial neural networks for deep learning with Python from Udemy. I’m using Jupiter notebook to practice and blog my learning progress here.</p>
+<p>TensorFlow is an open source software library for numerical computation using data flow graphs. Nodes in the graph represent mathematical operations, while the graph edges represent the multidimensional data arrays (tensors) communicated between them. This architecture allows users to deploy computation to one or more CPUs or GPUs, in a desktop, server, or mobile device with a single API (Application programming interface).</p>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2018/01/16/Tensorflow-for-Deep-Learning-1/#more" rel="contents">
@@ -1296,7 +1321,7 @@
           <!--/noindex-->
         
       
-    </p></div>
+    </div>
     
     
     
@@ -1724,7 +1749,8 @@
 
       
         
-          <p>This chapter talks about k Nearest Neighbors (kNN) as a metholodogy for both classification and regression problems. The kNN method serves a basic and easy to understand foundational machine learning and data mining technique. The kNN method is an excellent baseline machine learning technique, and also allows many extensions. It usually performs reasonable well or sometimes very well when compared to more sophisticated techniques.<br>
+          <p>This chapter talks about k Nearest Neighbors (kNN) as a metholodogy for both classification and regression problems. The kNN method serves a basic and easy to understand foundational machine learning and data mining technique. The kNN method is an excellent baseline machine learning technique, and also allows many extensions. It usually performs reasonable well or sometimes very well when compared to more sophisticated techniques.</p>
+<p>kNN classification basically means the estimated class of a vector $\mathbf{x}$ is the most frequent class label in the neighborhood of $\mathbf{x}$. kNN classifiers are inherently naturally multi-class, and are used extensively in applications such as image processing, character recognition and general pattern recognition tasks. For kNN regression, the estimated response value of a vector $\mathbf{x}$ is the average of the response values in the neighborhood of $\mathbf{x}$.<br>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2018/01/06/Data-Mining-Note3/#more" rel="contents">

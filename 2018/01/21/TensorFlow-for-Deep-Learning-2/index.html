@@ -129,13 +129,13 @@
 
 
 
-<meta name="description" content="Here I’ll give the theory part of Neural Networks, sepecifically three kinds of NN: Normal Neural Networks, Convolutional Neural Networks, Recurrent Neural Networks.">
+<meta name="description" content="Here I’ll give the theory part of Neural Networks, sepecifically three kinds of NN: Normal Neural Networks, Convolutional Neural Networks, Recurrent Neural Networks.  Neural NetworksIn single neuron:$">
 <meta name="keywords" content="TensorFlow, DNN, CNN, RNN">
 <meta property="og:type" content="article">
 <meta property="og:title" content="TensorFlow for Deep Learning 2">
 <meta property="og:url" content="https://qiuyiwu.github.io/2018/01/21/TensorFlow-for-Deep-Learning-2/index.html">
 <meta property="og:site_name" content="Qiuyi Wu">
-<meta property="og:description" content="Here I’ll give the theory part of Neural Networks, sepecifically three kinds of NN: Normal Neural Networks, Convolutional Neural Networks, Recurrent Neural Networks.">
+<meta property="og:description" content="Here I’ll give the theory part of Neural Networks, sepecifically three kinds of NN: Normal Neural Networks, Convolutional Neural Networks, Recurrent Neural Networks.  Neural NetworksIn single neuron:$">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://qiuyiwu.github.io/images/2018/01/activation1.png">
 <meta property="og:image" content="https://qiuyiwu.github.io/images/2018/01/activation2.png">
@@ -150,10 +150,10 @@
 <meta property="og:image" content="https://qiuyiwu.github.io/images/2018/01/pooling.png">
 <meta property="og:image" content="https://qiuyiwu.github.io/images/2018/01/diagram.png">
 <meta property="og:image" content="https://qiuyiwu.github.io/images/2018/01/RNN.png">
-<meta property="og:updated_time" content="2018-12-19T19:47:00.608Z">
+<meta property="og:updated_time" content="2018-12-21T04:54:31.318Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="TensorFlow for Deep Learning 2">
-<meta name="twitter:description" content="Here I’ll give the theory part of Neural Networks, sepecifically three kinds of NN: Normal Neural Networks, Convolutional Neural Networks, Recurrent Neural Networks.">
+<meta name="twitter:description" content="Here I’ll give the theory part of Neural Networks, sepecifically three kinds of NN: Normal Neural Networks, Convolutional Neural Networks, Recurrent Neural Networks.  Neural NetworksIn single neuron:$">
 <meta name="twitter:image" content="https://qiuyiwu.github.io/images/2018/01/activation1.png">
 
 
@@ -425,7 +425,6 @@
 
       
         <p>Here I’ll give the theory part of Neural Networks, sepecifically three kinds of NN: Normal Neural Networks, Convolutional Neural Networks, Recurrent Neural Networks. </p>
-<a id="more"></a>
 <h1 id="Neural-Networks"><a href="#Neural-Networks" class="headerlink" title="Neural Networks"></a>Neural Networks</h1><h2 id="In-single-neuron"><a href="#In-single-neuron" class="headerlink" title="In single neuron:"></a>In single neuron:</h2><span>$$\begin{align*}
 z &amp;= Wx + b \\
 a &amp;= \sigma (z)
@@ -437,19 +436,19 @@ f(x) = \begin{cases}
 0 &amp; \text{otherwise}
 \end{cases}
 \end{align*}$$</span><!-- Has MathJax -->
-<center><br><img src="/images/2018/01/activation1.png" width="50%" height="50%"><br></center></li>
-<li><strong>Sigmoid:</strong> special case of the logistic function with S shape curve, more dynamic<span>$$\begin{align*}
+</li>
+</ul>
+<a id="more"></a>
+<center><br><img src="/images/2018/01/activation1.png" width="50%" height="50%"><br></center><br><em> <strong>Sigmoid:</strong> special case of the logistic function with S shape curve, more dynamic<br><span>$$\begin{align*}
 S(x) = \frac{1}{1 + e^{-x}} = \frac{e^x}{e^x +1} 
-\end{align*}$$</span><!-- Has MathJax -->
-<center><br><img src="/images/2018/01/activation2.png" width="50%" height="50%"><br></center></li>
-<li><p><strong>Hyperbolic Tangent</strong>: Tanh(z)</p>
-<span>$$\begin{align*}
+\end{align*}$$</span><!-- Has MathJax --><br><center><br><img src="/images/2018/01/activation2.png" width="50%" height="50%"><br></center>
+</em> <strong>Hyperbolic Tangent</strong>: Tanh(z)<br><span>$$\begin{align*}
 cosh x &amp;= \frac{e^x + e^{-x}}{2}\\ 
 sinh x &amp;= \frac{e^x - e^{-x}}{2}\\ 
 tanh x &amp;= \frac{cosh x}{sinh x }
-\end{align*}$$</span><!-- Has MathJax -->
-<center><br><img src="/images/2018/01/activation3.png" width="50%" height="50%"><br></center>
-</li>
+\end{align*}$$</span><!-- Has MathJax --><br><center><br><img src="/images/2018/01/activation3.png" width="50%" height="50%"><br></center>
+
+<ul>
 <li><p><strong>ReLU (Rectified Linear Unit):</strong> max(0,z)<br><center><br><img src="/images/2018/01/activation4.png" width="50%" height="50%"><br></center><br>ReLU and tanh tend to have the best performance.</p>
 </li>
 <li><p><strong>Softmax Regression:</strong> </p>
