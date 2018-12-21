@@ -129,18 +129,21 @@
 
 
 
-<meta name="description" content="PhD applicant">
+<meta name="description" content="Music and text are similar in the way that both of them can be regraded as information carrier and emotion deliverer. People get daily information from reading newspaper, magazines, blogs etc., and th">
 <meta name="keywords" content="music, key detection, bayesian">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Music Mining">
 <meta property="og:url" content="https://qiuyiwu.github.io/2018/12/20/MusicMining/index.html">
 <meta property="og:site_name" content="Qiuyi Wu">
-<meta property="og:description" content="PhD applicant">
+<meta property="og:description" content="Music and text are similar in the way that both of them can be regraded as information carrier and emotion deliverer. People get daily information from reading newspaper, magazines, blogs etc., and th">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-12-20T22:18:46.194Z">
+<meta property="og:image" content="https://qiuyiwu.github.io/images/2018/12/titanic.png">
+<meta property="og:image" content="https://qiuyiwu.github.io/images/2018/12/music.png">
+<meta property="og:updated_time" content="2018-12-21T02:29:13.313Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Music Mining">
-<meta name="twitter:description" content="PhD applicant">
+<meta name="twitter:description" content="Music and text are similar in the way that both of them can be regraded as information carrier and emotion deliverer. People get daily information from reading newspaper, magazines, blogs etc., and th">
+<meta name="twitter:image" content="https://qiuyiwu.github.io/images/2018/12/titanic.png">
 
 
 
@@ -410,7 +413,27 @@
       
 
       
-        
+        <p>Music and text are similar in the way that both of them can be regraded as information carrier and emotion deliverer. People get daily information from reading newspaper, magazines, blogs etc., and they can also write diary or personal journal to reflect on daily life, let out pent up emotions, record ideas and experience. Same power could come from music! Composers express their feelings through music with different combinations of notes, diverse tempo, and dynamics levels, as another version of language. All these similarities drive people to ask questions like:</p>
+<ul>
+<li>Could music deliver information tantamount to text?</li>
+<li>Can we efficiently use text mining approach in music field?</li>
+<li>Why music from diverse culture can bring people so many different feelings?</li>
+<li>What’s the similarity between music from different culture, or composers, or genres?</li>
+<li>To what extend do people grasp the meaning behind each piece of music expressed by the composer?<a id="more"></a>
+</li>
+</ul>
+<p>Take the tragedy Titanic as an example, we learn the tragedy from the newspaper and feel anguished, but we can also get the mourning from the song <em>My Heart Will Go On</em>. The melody contains a lot of minor keys (e.g. $D\flat$, $F\sharp$, $A\flat$), which are more likely to trigger the dissonance via two closely spaced notes hitting the ear simultaneously and thus to make people feel sad.</p>
+<center><br><img class="left" src="/images/2018/12/titanic.png" width="80%" height="80%"><br></center>
+
+<p>In this project we employ latent Dirichlet allocation model into the music concept. Assume an album, as a collection of songs, are the mixture of different topics (melodies). These topics are the distributions over a series of notes (left part of the figure). In each song, notes in every measure are chosen based on the topic assignments (colorful tokens), while the topic assignments are drawn from the document-topic distribution.</p>
+<center><br><img class="left" src="/images/2018/12/music.png" width="80%" height="80%"><br></center>
+
+
+<p>More details can be found in my <a href="https://arxiv.org/abs/1811.12802" target="_blank" rel="noopener">paper</a> and <a href="https://scholarworks.rit.edu/theses/9932/" target="_blank" rel="noopener">thesis</a>.</p>
+<p>All rights reserved &copy; Copyright 2018, Qiuyi Wu.</p>
+<p>Recommended Citation:<br>[1] Wu, Qiuyi, and Ernest Fokoue. “Naive Dictionary On Musical Corpora: From Knowledge Representation To Pattern Recognition.” arXiv preprint arXiv:1811.12802 (2018).</p>
+<p>[2] Wu, Qiuyi, “Statistical Aspects of Music Mining: Naive Dictionary Representation” (2018). Thesis. Rochester Institute of Technology. Accessed from <a href="https://scholarworks.rit.edu/theses/9932" target="_blank" rel="noopener">https://scholarworks.rit.edu/theses/9932</a></p>
+
       
     </div>
     
