@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://qiuyiwu.github.io/Book/index.html</loc>
+    
+    <lastmod>2018-12-24T18:24:45.876Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://qiuyiwu.github.io/2018/12/19/StormSurge/</loc>
     
     <lastmod>2018-12-21T16:14:41.497Z</lastmod>
@@ -89,13 +96,6 @@
     <loc>https://qiuyiwu.github.io/2018/01/07/Data-Mining-Note4/</loc>
     
     <lastmod>2018-12-19T19:47:00.595Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://qiuyiwu.github.io/Book/index.html</loc>
-    
-    <lastmod>2018-12-19T16:15:22.488Z</lastmod>
     
   </url>
   
