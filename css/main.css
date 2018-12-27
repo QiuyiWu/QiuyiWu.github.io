@@ -1816,7 +1816,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #6233f5;
+  background: #bae0ff;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3447,6 +3447,16 @@ code.description {
 .column-right {
   float: right;
   width: 65%;
+  text-align: left;
+}
+.c-left {
+  float: left;
+  width: 45%;
+  text-align: left;
+}
+.c-right {
+  float: right;
+  width: 50%;
   text-align: left;
 }
 @-moz-keyframes heartAnimate {
