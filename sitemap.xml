@@ -2,16 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://qiuyiwu.github.io/2018/12/24/NoteAstro/</loc>
+    <loc>https://qiuyiwu.github.io/about/index.html</loc>
     
-    <lastmod>2018-12-25T05:52:20.386Z</lastmod>
+    <lastmod>2018-12-27T04:49:39.590Z</lastmod>
     
   </url>
   
   <url>
     <loc>https://qiuyiwu.github.io/Book/index.html</loc>
     
-    <lastmod>2018-12-24T18:24:45.876Z</lastmod>
+    <lastmod>2018-12-25T16:24:21.086Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://qiuyiwu.github.io/2018/12/24/NoteAstro/</loc>
+    
+    <lastmod>2018-12-25T05:52:20.386Z</lastmod>
     
   </url>
   
@@ -103,13 +110,6 @@
     <loc>https://qiuyiwu.github.io/2018/01/07/Data-Mining-Note4/</loc>
     
     <lastmod>2018-12-19T19:47:00.595Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://qiuyiwu.github.io/about/index.html</loc>
-    
-    <lastmod>2018-12-18T23:21:54.721Z</lastmod>
     
   </url>
   
