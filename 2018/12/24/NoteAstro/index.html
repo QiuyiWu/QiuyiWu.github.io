@@ -137,7 +137,7 @@
 <meta property="og:site_name" content="Qiuyi Wu">
 <meta property="og:description" content="I’m starting to read Feigelson &amp;amp; Babu’s Modern Statistical Methods for Astronomy this Christmas and hope to finish it before Spring break in March, 2019. This book covers the fundamental statistic">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-12-27T16:46:48.859Z">
+<meta property="og:updated_time" content="2019-01-01T20:46:51.677Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Reading Note for Astrostatistics">
 <meta name="twitter:description" content="I’m starting to read Feigelson &amp;amp; Babu’s Modern Statistical Methods for Astronomy this Christmas and hope to finish it before Spring break in March, 2019. This book covers the fundamental statistic">
@@ -411,10 +411,22 @@
 
       
         <p>I’m starting to read Feigelson &amp; Babu’s <em>Modern Statistical Methods for Astronomy</em> this Christmas and hope to finish it before Spring break in March, 2019. This book covers the fundamental statistics theories and methodologies in application on Astronomy. It also aims to help astronomers perceive megadatas from celestial objects via modern statistical analysis and interpret cosmic phenomena in advanced statistical language. It is the bible for Astrostatistics! I take notes and record here for myself better understanding this fantastic field. </p>
-<h1 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h1><h2 id="Astronomy"><a href="#Astronomy" class="headerlink" title="Astronomy"></a>Astronomy</h2><h3 id="Term"><a href="#Term" class="headerlink" title="Term:"></a>Term:</h3><p><strong>Astronomy</strong>: the observational study of matter beyond Earth.<br><strong>Astrophysics</strong>: the study of intrinsic nature of astronomical bodies and the processes by which they binteract and evolve. </p>
+<h1 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h1><p>Collaborations betweeen astronomers and statisticians:<br><a href="http://hea-www.harvard.edu/AstroStat" target="_blank" rel="noopener">California–Harvard Astro-Statistical Collaboration</a><br><a href="http://www.incagroup.org" target="_blank" rel="noopener">International Computational Astrostatistics Group centered in Pittsburgh</a><br><a href="http://astrostatistics.psu.edu" target="_blank" rel="noopener">Center for Astrostatistics at Penn State</a></p>
+<h2 id="Astronomy"><a href="#Astronomy" class="headerlink" title="Astronomy"></a>Astronomy</h2><h3 id="Term"><a href="#Term" class="headerlink" title="Term:"></a>Term:</h3><p><strong>Astronomy</strong>: the observational study of matter beyond Earth.<br><strong>Astrophysics</strong>: the study of intrinsic nature of astronomical bodies and the processes by which they binteract and evolve. </p>
 <a id="more"></a>
 <h3 id="Fields"><a href="#Fields" class="headerlink" title="Fields:"></a>Fields:</h3><p><strong>Planetary Astronomer</strong>: study the Solar System and sxtra-solar planetary system<br><strong>Solar Physicist</strong>: study the Sun<br><strong>Stellar Astronomer</strong>: study other stars<br><strong>Galactic Astronomer</strong>: study Milky Way Galaxy<br><strong>Extragalactic Astronomer</strong>: study other galaxies<br><strong>Cosmologist</strong>: study the Universe as a whole</p>
-<h2 id="Statistics"><a href="#Statistics" class="headerlink" title="Statistics"></a>Statistics</h2><p><span style="color:red"><em>To be continue…</em></span></p>
+<h2 id="Statistics"><a href="#Statistics" class="headerlink" title="Statistics"></a>Statistics</h2><p>Limitations of the spectrograph and observing conditions lead to uncertainty in the measured radial velocities. The uncertainty in our knowledge could be due to the current level of understanding of the phenomenon, which could be reduced in the future. The uncertainty of our knowledge could be due to future choices or events. </p>
+<h3 id="Space-and-Event"><a href="#Space-and-Event" class="headerlink" title="Space and Event"></a>Space and Event</h3><p><strong>Outcome space/sample space</strong>: The set of all outcomes $\Omega$ of an experiment<br><strong>Event</strong>: subset of a sample space<br><strong>Discrete sample space</strong>: A finite (or countably infinite) sample space</p>
+<p>Astronomers deal with both countable space (such as the number of stars in the Galaxy, or the set of photons from a quasar arriving at a detector) and uncountable spaces (such as the variability characteristics of a quasar, or the background noise in an image constructed from interferometry observations).</p>
+<h3 id="Axioms-of-Probability"><a href="#Axioms-of-Probability" class="headerlink" title="Axioms of Probability"></a>Axioms of Probability</h3><p><strong>Probability space</strong>: $(\Omega, \mathcal{F}, P)$ where $\Omega$ is sample space, $\mathcal{F}$ is a class of events, and $P$ is function that assigns probability to events in $\mathcal{F}$.</p>
+<p><strong>Axiom 1</strong>: $0\leq P(A) \leq 1$, for all events $A$<br><strong>Axiom 2</strong>: $P(\Omega) = 1$<br><strong>Axiom 3</strong>: For mutually exclusive (pairwise disjoint) events $A_1, A_2,…,$ we have $P(A_1\cup A_2\cup A_3 …) = P(A_1)+P(A_2)+P(A_3)+…$<br>$\qquad \qquad$  So if for all $i\neq j, A_i \cap A_j = \emptyset$, then $ P( \bigcup_{i=1}^\infty A_i ) = \sum_{i=1}^\infty P(A_i)  $<br><br><br>The generalization to $n$ events, $E_1,…,E_n$ below is called the <strong>inclusion-exclusion formula</strong>:<br><span>$$\begin{align*}
+P(E_1\cup E_2\cup ...\cup E_n ) &amp;= \sum_{i=1}^\infty P(E_i) - \sum_{ i_1 &lt; i_2 } P(E_{i_1}\cap E_{i_2}) +... \\
+&amp;+  (-1)^{r+1} \sum_{ i_1 &lt; i_2 &lt; ... &lt; i_r} P(E_{i_1}\cap E_{i_2} \cap ... \cap E_{i_r})  + ...\\
+&amp;+  (-1)^{n+1} P(E_1\cap E_2 \cap ... \cap E_n) 
+\end{align*}$$</span><!-- Has MathJax --></p>
+<p><strong>Multiplication rule</strong>: $P(A_1\cap A_2\cap … \cap A_n ) = P(A_1)\times P(A_2|A_1)…P(A_{n-1}|A_1,…A_{n-2})\times P(A_{n}|A_1,…A_{n-1})$</p>
+<p>Except for the rare circumstance when an entirely new phenomenon is discovered, astronomers are measuring properties of celestial bodies or populations for which some distinctive properties are already available. Consider, for example, a subpopulation of galaxies found to exhibit Seyfert-like spectra in the optical band (property A) that have already been examined for nonthermal lobes in the radio band (property B). Then the conditional probability that a galaxy has a Seyfert nucleus given that it also has radio lobes is given by Equation $P(A|B) = \frac{P(A\cap B)}{P(B)}$, and this probability can be estimated from careful study of galaxy samples. The composition of a Solar System minor body can be predominately ices or rock. Icy bodies are more common at large orbital distances and show spectral signatures of water (or other) ice rather than the spectral signatures of silicates. The probability that a given asteroid, comet or Kuiper Belt Object is mostly icy is then conditioned on its semi-major axis and spectral characteristics.</p>
+<p><span style="color:red"><em>To be continue…</em></span></p>
 
       
     </div>
@@ -636,7 +648,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Introduction"><span class="nav-number">1.</span> <span class="nav-text">Introduction</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Astronomy"><span class="nav-number">1.1.</span> <span class="nav-text">Astronomy</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Term"><span class="nav-number">1.1.1.</span> <span class="nav-text">Term:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Fields"><span class="nav-number">1.1.2.</span> <span class="nav-text">Fields:</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Statistics"><span class="nav-number">1.2.</span> <span class="nav-text">Statistics</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Introduction"><span class="nav-number">1.</span> <span class="nav-text">Introduction</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Astronomy"><span class="nav-number">1.1.</span> <span class="nav-text">Astronomy</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Term"><span class="nav-number">1.1.1.</span> <span class="nav-text">Term:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Fields"><span class="nav-number">1.1.2.</span> <span class="nav-text">Fields:</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Statistics"><span class="nav-number">1.2.</span> <span class="nav-text">Statistics</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Space-and-Event"><span class="nav-number">1.2.1.</span> <span class="nav-text">Space and Event</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Axioms-of-Probability"><span class="nav-number">1.2.2.</span> <span class="nav-text">Axioms of Probability</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
@@ -677,7 +689,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; 2017 &mdash; <span itemprop="copyrightYear">2018</span>
+        <div class="copyright">&copy; 2017 &mdash; <span itemprop="copyrightYear">2019</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
