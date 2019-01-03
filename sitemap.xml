@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://qiuyiwu.github.io/about/index.html</loc>
+    
+    <lastmod>2019-01-03T16:31:19.125Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://qiuyiwu.github.io/2018/12/20/DataFusion/</loc>
     
     <lastmod>2019-01-03T03:11:47.848Z</lastmod>
@@ -12,13 +19,6 @@
     <loc>https://qiuyiwu.github.io/2018/12/24/NoteAstro/</loc>
     
     <lastmod>2019-01-01T20:46:51.677Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://qiuyiwu.github.io/about/index.html</loc>
-    
-    <lastmod>2018-12-28T18:25:42.789Z</lastmod>
     
   </url>
   
