@@ -2,9 +2,37 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://qiuyiwu.github.io/Teaching/index.html</loc>
+    
+    <lastmod>2019-01-22T02:09:28.281Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://qiuyiwu.github.io/categories/index.html</loc>
+    
+    <lastmod>2019-01-22T02:08:41.257Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://qiuyiwu.github.io/Research/index.html</loc>
+    
+    <lastmod>2019-01-22T02:08:38.843Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://qiuyiwu.github.io/Book/index.html</loc>
+    
+    <lastmod>2019-01-22T02:08:01.461Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://qiuyiwu.github.io/about/index.html</loc>
     
-    <lastmod>2019-01-16T14:07:19.590Z</lastmod>
+    <lastmod>2019-01-22T02:07:25.053Z</lastmod>
     
   </url>
   
@@ -19,20 +47,6 @@
     <loc>https://qiuyiwu.github.io/2018/12/24/NoteAstro/</loc>
     
     <lastmod>2018-12-31T05:00:00.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://qiuyiwu.github.io/Teaching/index.html</loc>
-    
-    <lastmod>2018-12-27T19:34:30.323Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://qiuyiwu.github.io/Book/index.html</loc>
-    
-    <lastmod>2018-12-25T16:24:21.086Z</lastmod>
     
   </url>
   
@@ -100,13 +114,6 @@
   </url>
   
   <url>
-    <loc>https://qiuyiwu.github.io/Research/index.html</loc>
-    
-    <lastmod>2018-12-21T02:07:53.620Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://qiuyiwu.github.io/2018/01/09/LeetCode1/</loc>
     
     <lastmod>2018-12-19T19:47:00.598Z</lastmod>
@@ -124,13 +131,6 @@
     <loc>https://qiuyiwu.github.io/images/manifest.json</loc>
     
     <lastmod>2018-01-03T11:39:36.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://qiuyiwu.github.io/categories/index.html</loc>
-    
-    <lastmod>2018-01-03T05:04:52.000Z</lastmod>
     
   </url>
   
