@@ -87,7 +87,7 @@
   
     
     
-    <link href="//fonts.googleapis.com/css?family=Monda:300,300italic,400,400italic,700,700italic|Monda:300,300italic,400,400italic,700,700italic|Lato:300,300italic,400,400italic,700,700italic|Roboto Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+    <link href="//fonts.lug.ustc.edu.cn/css?family=Monda:300,300italic,400,400italic,700,700italic|Monda:300,300italic,400,400italic,700,700italic|Lato:300,300italic,400,400italic,700,700italic|Roboto Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
   
 
 
@@ -410,7 +410,7 @@
                   <i class="fa fa-comment-o"></i>
                 </span>
                 <a href="/2018/01/06/Data-Mining-Note3/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/01/06/Data-Mining-Note3/" itemprop="commentCount"></span>
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/01/06/Data-Mining-Note3/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -715,14 +715,7 @@ w_i = \frac{ \frac{1}{1+d_i^*}}{\sum_{l=1}^k  \frac{1}{1+d_l^*} }
 
   
     <div class="comments" id="comments">
-      <div id="disqus_thread">
-        <noscript>
-          Please enable JavaScript to view the
-          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
-        </noscript>
-      </div>
     </div>
-
   
 
 
@@ -1059,26 +1052,6 @@ w_i = \frac{ \frac{1}{1+d_i^*}}{\sum_{l=1}^k  \frac{1}{1+d_l^*} }
 
   
 
-    
-      <script id="dsq-count-scr" src="https://https-qiuyiwu-github-io.disqus.com/count.js" async></script>
-    
-
-    
-      <script type="text/javascript">
-        var disqus_config = function () {
-          this.page.url = 'https://qiuyiwu.github.io/2018/01/06/Data-Mining-Note3/';
-          this.page.identifier = '2018/01/06/Data-Mining-Note3/';
-          this.page.title = 'Data Mining Note 3 - K Nearest Neighbors';
-        };
-        var d = document, s = d.createElement('script');
-        s.src = 'https://https-qiuyiwu-github-io.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', '' + +new Date());
-        (d.head || d.body).appendChild(s);
-      </script>
-    
-
-  
-
 
 
 
@@ -1094,12 +1067,38 @@ w_i = \frac{ \frac{1}{1+d_i^*}}{\sum_{l=1}^k  \frac{1}{1+d_l^*} }
 
 
 
+  
 
 
 
 
 
 
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: '1o3sOD05aTh1aPaM0VhpMH6h-gzGzoHsz',
+        appKey: 'V58dJ7DT4VxfBmDHsMmI7GAL',
+        placeholder: 'Comment here...',
+        avatar:'retro',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
 
 
 

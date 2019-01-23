@@ -87,7 +87,7 @@
   
     
     
-    <link href="//fonts.googleapis.com/css?family=Monda:300,300italic,400,400italic,700,700italic|Monda:300,300italic,400,400italic,700,700italic|Lato:300,300italic,400,400italic,700,700italic|Roboto Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+    <link href="//fonts.lug.ustc.edu.cn/css?family=Monda:300,300italic,400,400italic,700,700italic|Monda:300,300italic,400,400italic,700,700italic|Lato:300,300italic,400,400italic,700,700italic|Roboto Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
   
 
 
@@ -138,7 +138,7 @@
 <meta name="keywords" content="Qiuyi Wu,qiuyiwu,choweewu, qiuyi wu">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Qiuyi&#39;s Blog">
-<meta property="og:url" content="https://qiuyiwu.github.io/categories/Tensorflow/index.html">
+<meta property="og:url" content="https://qiuyiwu.github.io/categories/TensorFlow/index.html">
 <meta property="og:site_name" content="Qiuyi&#39;s Blog">
 <meta property="og:locale" content="en">
 <meta name="twitter:card" content="summary">
@@ -172,13 +172,13 @@
 
 
 
-  <link rel="canonical" href="https://qiuyiwu.github.io/categories/Tensorflow/">
+  <link rel="canonical" href="https://qiuyiwu.github.io/categories/TensorFlow/">
 
 
 
 
 
-  <title>Category: Tensorflow | Qiuyi's Blog</title>
+  <title>Category: TensorFlow | Qiuyi's Blog</title>
   
 
 
@@ -316,7 +316,7 @@
 
     <div id="posts" class="posts-collapse">
       <div class="collection-title">
-        <h2>Tensorflow<small>Category</small>
+        <h2>TensorFlow<small>Category</small>
         </h2>
       </div>
 
@@ -328,17 +328,43 @@
 
       <h3 class="post-title">
         
-            <a class="post-title-link" href="/2018/01/22/TensorFlow-for-Deep-Learning-3/" itemprop="url">
+            <a class="post-title-link" href="/2018/01/21/TensorFlow-for-Deep-Learning-2/" itemprop="url">
               
-                <span itemprop="name">TensorFlow for Deep Learning 3</span>
+                <span itemprop="name">TensorFlow for Deep Learning 2</span>
               
             </a>
         
       </h3>
 
       <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2018-01-22T20:44:46-05:00" content="2018-01-22">
-          01-22
+        <time class="post-time" itemprop="dateCreated" datetime="2018-01-21T13:50:21-05:00" content="2018-01-21">
+          01-21
+        </time>
+      </div>
+
+    </header>
+  </article>
+
+
+      
+        
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <h3 class="post-title">
+        
+            <a class="post-title-link" href="/2018/01/16/Tensorflow-for-Deep-Learning-1/" itemprop="url">
+              
+                <span itemprop="name">TensorFlow for Deep Learning 1</span>
+              
+            </a>
+        
+      </h3>
+
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated" datetime="2018-01-16T18:04:34-05:00" content="2018-01-16">
+          01-16
         </time>
       </div>
 
@@ -667,14 +693,6 @@
 
   
 
-    
-      <script id="dsq-count-scr" src="https://https-qiuyiwu-github-io.disqus.com/count.js" async></script>
-    
-
-    
-
-  
-
 
 
 
@@ -690,12 +708,38 @@
 
 
 
+  
 
 
 
 
 
 
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: '1o3sOD05aTh1aPaM0VhpMH6h-gzGzoHsz',
+        appKey: 'V58dJ7DT4VxfBmDHsMmI7GAL',
+        placeholder: 'Comment here...',
+        avatar:'retro',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
 
 
 
@@ -840,33 +884,6 @@
   
     <script type="text/x-mathjax-config">
       MathJax.Hub.Config({
-        tex2jax: {
-          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
-          processEscapes: true,
-          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-        }
-      });
-    </script>
-
-    <script type="text/x-mathjax-config">
-      MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax(), i;
-        for (i=0; i < all.length; i += 1) {
-          all[i].SourceElement().parentNode.className += ' has-jax';
-        }
-      });
-    </script>
-    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-  
-
-
-  
-
-  
-
-</body>
-</html>
-b.Config({
         tex2jax: {
           inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
           processEscapes: true,
