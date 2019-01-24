@@ -1,10 +1,10 @@
 $(function () {
     // Initialize Firebase
     var config = {
-        apiKey: "{your apiKey}",
-        authDomain: "{your authDomain}",
-        databaseURL: "{your databaseURL}",
-    };
+        apiKey: "AIzaSyAfOecWUXuyuRQh_oCDhcr2O5DviJEQHvo",
+        authDomain: "blog-e517a.firebaseapp.com",
+        databaseURL: "https://blog-e517a.firebaseio.com"
+         };
     firebase.initializeApp(config);
 
     var database = firebase.database();

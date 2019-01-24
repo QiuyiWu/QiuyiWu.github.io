@@ -1515,9 +1515,6 @@ pre .javascript .function {
   font-size: 14px;
   margin-top: 2px;
 }
-.post-wordcount {
-  display: inline-block;
-}
 .post-meta-divider {
   margin: 0 0.5em;
 }
@@ -1819,7 +1816,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #c7e4ff;
+  background: #ffd64a;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2384,6 +2381,29 @@ pre .javascript .function {
   content: "|";
   padding-left: 10px;
 }
+#needsharebutton-postbottom {
+  position: relative;
+  cursor: pointer;
+  height: 26px;
+}
+#needsharebutton-postbottom .btn {
+  display: initial;
+  padding: 1px 4px;
+  border: 1px solid #222;
+  border-radius: 3px;
+}
+#needsharebutton-float {
+  position: fixed;
+  bottom: 38px;
+  left: -8px;
+  z-index: 9999;
+  cursor: pointer;
+}
+#needsharebutton-float .btn {
+  padding: 0 10px 0 14px;
+  border: 1px solid #222;
+  border-radius: 4px;
+}
 .page-archive .archive-page-counter {
   position: relative;
   top: 3px;
@@ -2703,6 +2723,12 @@ embed {
   position: relative;
   top: 1px;
 }
+.comments {
+  background-color: rgba(168,201,50,0);
+  box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.35);
+  margin: 50px -50px 20px -50px;
+  padding: 2rem;
+}
 .headband {
   height: 10px;
   background-image: linear-gradient(90deg, #f79533 0%, #f37055 15%, #ef4e7b 30%, #a166ab 44%, #5073b8 58%, #1098ad 72%, #07b39b 86%, #6dba82 100%);
@@ -2776,8 +2802,8 @@ body {
   border-bottom-color: rgba(161,102,171,0);
 }
 .post {
-  margin-left: -100px;
-  margin-right: -100px;
+  margin-left: -50px;
+  margin-right: -50px;
   padding: 45px 36px 36px 36px;
   box-shadow: 0px 0px 0px 0px rgba(0,0,0,0.5);
   background-color: #fff;
@@ -2826,13 +2852,13 @@ body {
 }
 .pagination .page-number.current {
   border-radius: 100%;
-  box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
+  box-shadow: -200px 0px -200px 0px rgba(0,0,0,0.5);
   background-color: rgba(255,255,255,0.35);
 }
 .pagination .prev,
 .pagination .next,
 .pagination .page-number {
-  margin-bottom: 10px;
+  margin-bottom: -200px;
   border: none;
 }
 .pagination .space {
@@ -2873,11 +2899,6 @@ body {
 .post-nav-item a:hover {
   color: #a166ab;
   font-weight: bold;
-}
-.comments {
-  background-color: #fff;
-  box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.35);
-  margin: 50px -100px 100px -100px;
 }
 a {
   color: #5073b8;
