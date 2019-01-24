@@ -1162,11 +1162,7 @@
   <script src="https://www.gstatic.com/firebasejs/4.6.0/firebase.js"></script>
   <script src="https://www.gstatic.com/firebasejs/4.6.0/firebase-firestore.js"></script>
   
-  
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bluebird/3.5.1/bluebird.core.min.js"></script>
-  
-
-
   
   <script>
     (function () {
@@ -1175,7 +1171,6 @@
         apiKey: 'AIzaSyC8zI_jjXsznIE2dCCcOAiY-EAnMUymtm0',
         projectId: 'hexo-next-1'
       })
-
 
       function getCount(doc, increaseCount) {
         //increaseCount will be false when not in article page
@@ -1219,9 +1214,9 @@
               $('<span>').addClass('post-meta-divider').text('|')
             ).append(
               $('<span>').addClass('post-meta-item-icon').append(
-                $('<i>').addClass('fa fa-users')
+                $('<i>').addClass('fa fa-eye')
               )
-              ).append($('<span>').text('Visitors ' + count))
+              ).append($('<span>').text('Views: ' + count))
           )
         }
       }
@@ -1229,10 +1224,10 @@
       var db = firebase.firestore()
       var articles = db.collection('articles')
 
-      //https://hexo.io/zh-tw/docs/variables.html
+      //https://hexo.io/docs/variables.html
       var isPost = ''.length > 0
       var isArchive = '' === 'true'
-      var isCategory = ''.length > 0
+      var isCategory = 'Data Mining'.length > 0
       var isTag = ''.length > 0
 
       if (isPost) { //is article page
