@@ -137,13 +137,13 @@
 
 
 
-<meta name="description" content="Hexo as a static site generators has become a popular choice for blogger. When using something like WordPress or Medium you get a comment section out of the box sponstaneously, it is not as straightfo">
+<meta name="description" content="Hexo as a static site generator has become a popular choice for bloggers. When using something like WordPress or Medium you get a comment section out of the box sponstaneously, it is not as straightfo">
 <meta name="keywords" content="hexo, blog, comment, disqus, valine">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Add Comments to Your Hexo Site">
 <meta property="og:url" content="https://qiuyiwu.github.io/2019/01/25/Hexo-Comment/index.html">
 <meta property="og:site_name" content="Qiuyi&#39;s Blog">
-<meta property="og:description" content="Hexo as a static site generators has become a popular choice for blogger. When using something like WordPress or Medium you get a comment section out of the box sponstaneously, it is not as straightfo">
+<meta property="og:description" content="Hexo as a static site generator has become a popular choice for bloggers. When using something like WordPress or Medium you get a comment section out of the box sponstaneously, it is not as straightfo">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://qiuyiwu.github.io/images/2019/01/s1.png">
 <meta property="og:image" content="https://qiuyiwu.github.io/images/2019/01/s2.png">
@@ -153,10 +153,10 @@
 <meta property="og:image" content="https://qiuyiwu.github.io/images/2019/01/v1.gif">
 <meta property="og:image" content="https://qiuyiwu.github.io/images/2019/01/v2.gif">
 <meta property="og:image" content="https://qiuyiwu.github.io/images/2019/01/tag.png">
-<meta property="og:updated_time" content="2019-01-26T05:14:30.716Z">
+<meta property="og:updated_time" content="2019-01-26T06:27:44.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Add Comments to Your Hexo Site">
-<meta name="twitter:description" content="Hexo as a static site generators has become a popular choice for blogger. When using something like WordPress or Medium you get a comment section out of the box sponstaneously, it is not as straightfo">
+<meta name="twitter:description" content="Hexo as a static site generator has become a popular choice for bloggers. When using something like WordPress or Medium you get a comment section out of the box sponstaneously, it is not as straightfo">
 <meta name="twitter:image" content="https://qiuyiwu.github.io/images/2019/01/s1.png">
 
 
@@ -425,7 +425,7 @@
               
                 <span class="post-meta-item-text">Post modified&#58;</span>
               
-              <time title="Post modified" itemprop="dateModified" datetime="2019-01-26T00:14:30-05:00">
+              <time title="Post modified" itemprop="dateModified" datetime="2019-01-26T01:27:44-05:00">
                 2019-01-26
               </time>
             
@@ -523,12 +523,12 @@
       
 
       
-        <p>Hexo as a static site generators has become a popular choice for blogger. When using something like WordPress or Medium you get a comment section out of the box sponstaneously, it is not as straightforward in a static environment. In this article, I will summarize two options to provide your audience with a way to leave a comment.</p>
+        <p>Hexo as a static site generator has become a popular choice for bloggers. When using something like WordPress or Medium you get a comment section out of the box sponstaneously, it is not as straightforward in a static environment. In this article, I will summarize two options to provide your audience with a way to leave a comment.</p>
 <ul>
-<li>Disqus Comments</li>
-<li>Valine Comments</li>
+<li>Option 1: Disqus Comment</li>
+<li>Option 2: Valine Comment</li>
 </ul>
-<h2 id="Disque-Comments"><a href="#Disque-Comments" class="headerlink" title="Disque Comments"></a>Disque Comments</h2><p>Disqus comments are a great way to let people comment on your articles. Disqus has automatic setup for nearly every Content management system except Hexo.  Here is the easy way to set this up:<br><a id="more"></a></p>
+<h2 id="Disque-Comments"><a href="#Disque-Comments" class="headerlink" title="Disque Comments"></a>Disque Comments</h2><p>Disqus Comment is a great way to let people comment on your articles. Disqus has automatic setup for nearly every Content Management System (CMS) except Hexo.  Here is the easy way to set this up:<br><a id="more"></a></p>
 <ol>
 <li>Create an account in <a href="https://disqus.com/" target="_blank" rel="noopener">Disqus</a>. As part of that process, you will choose a shortname value. Copy that value. It’s a little tough to find because there are TWO setting pages in Disqus - one for your account and one for your site.</li>
 </ol>
@@ -544,12 +544,12 @@
 <li><p>Open your <strong>_config.yml</strong>, and then enter the <code>disqus_shortname</code> parameter and assign it to your shortname, like so:</p>
 <figure class="highlight m"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">disqus:</span><br><span class="line">  enable: <span class="built_in">true</span></span><br><span class="line">  shortname: YOUR SHORTNAME</span><br><span class="line">  count: <span class="built_in">true</span></span><br></pre></td></tr></table></figure>
 </li>
-<li><p>If you use <a href="https://github.com/theme-next" target="_blank" rel="noopener">Next Theme</a>, congratulation! everything is done now.<br>If you build your blog from scratch, then now you need to open <strong>footer.ejs</strong> file, and write the universal disqus code as below:</p>
+<li><p>If you use <a href="https://github.com/theme-next" target="_blank" rel="noopener">Next Theme</a>, <strong>congratulation! everything is settled now.</strong><br>If you build your blog from scratch, then now you need to open <strong>footer.ejs</strong> file, and write the universal disqus code as below:</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">%</span> <span class="attr">if</span> (<span class="attr">config.disqus_shortname</span>)&#123; %&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="xml">  var disqus_shortname = '<span class="tag">&lt;<span class="name">%=</span> <span class="attr">config.disqus_shortname</span> %&gt;</span>';</span></span><br><span class="line"><span class="xml">  <span class="tag">&lt;<span class="name">%</span> <span class="attr">if</span> (<span class="attr">page.permalink</span>)&#123; %&gt;</span></span></span><br><span class="line"><span class="xml">  var disqus_url = '<span class="tag">&lt;<span class="name">%=</span> <span class="attr">page.permalink</span> %&gt;</span>';</span></span><br><span class="line"><span class="xml">  <span class="tag">&lt;<span class="name">%</span> &#125; %&gt;</span></span></span><br><span class="line"><span class="undefined">  (function()&#123;</span></span><br><span class="line"><span class="undefined">    var dsq = document.createElement('script');</span></span><br><span class="line"><span class="undefined">    dsq.type = 'text/javascript';</span></span><br><span class="line"><span class="undefined">    dsq.async = true;</span></span><br><span class="line"><span class="xml">    dsq.src = '//go.disqus.com/<span class="tag">&lt;<span class="name">%</span> <span class="attr">if</span> (<span class="attr">page.comments</span>)&#123; %&gt;</span>embed.js<span class="tag">&lt;<span class="name">%</span> &#125; <span class="attr">else</span> &#123; %&gt;</span>count.js<span class="tag">&lt;<span class="name">%</span> &#125; %&gt;</span>';</span></span><br><span class="line"><span class="undefined">    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);</span></span><br><span class="line"><span class="undefined">  &#125;)();</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">%</span> &#125; %&gt;</span></span><br></pre></td></tr></table></figure>
 </li>
 </ol>
 <p>Then paste <code>&lt;div id=&quot;disqus_thread&quot;&gt;&lt;/div&gt;</code> where you want the comments to go.<br><strong>Now you are settled!</strong></p>
-<h2 id="Valine-Comments"><a href="#Valine-Comments" class="headerlink" title="Valine Comments"></a>Valine Comments</h2><p><a href="https://valine.js.org/en/hexo.html" target="_blank" rel="noopener">Valine</a> was designed in August 7, 2017. It’s a fast, simple &amp; efficient Leancloud based no back end comment system. Theoretically, but not limited to static blog. Hexo, Jekyll, Typecho, Hugo and other blog programs are currently using Valine. </p>
+<h2 id="Valine-Comments"><a href="#Valine-Comments" class="headerlink" title="Valine Comments"></a>Valine Comments</h2><p><a href="https://valine.js.org/en/hexo.html" target="_blank" rel="noopener">Valine</a> was designed in August 7, 2017. It’s a fast, simple &amp; efficient Leancloud-based no-back-end comment system. It is, theoretically, but not limited to static blog. Hexo, Jekyll, Typecho, Hugo and other blog programs are currently using Valine. </p>
 <p><em>Note: Valine is a Chinese friendly system.</em></p>
 <h3 id="Features"><a href="#Features" class="headerlink" title="Features"></a>Features</h3><ul>
 <li>Emoji 😉</li>
