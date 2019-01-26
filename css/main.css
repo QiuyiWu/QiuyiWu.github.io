@@ -1819,7 +1819,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #0bffff;
+  background: #ffff3b;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3389,8 +3389,8 @@ code.description {
   h4,
   h5,
   h6 {
-    margin-left: -15px;
-    padding-left: 11px;
+    margin-left: 0px;
+    padding-left: 30px;
   }
   .posts-expand .post-tags {
     margin-top: 10px;
@@ -3431,7 +3431,7 @@ code.description {
 }
 @media (max-width: 767px) {
   .site-title {
-    font-size: 70px !important;
+    font-size: 40px !important;
     letter-spacing: 0px !important;
   }
   .site-subtitle {
