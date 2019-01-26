@@ -1819,7 +1819,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #ffff46;
+  background: #6f2218;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2805,8 +2805,8 @@ body {
   border-bottom-color: rgba(161,102,171,0);
 }
 .post {
-  margin-left: -50px;
-  margin-right: -50px;
+  margin-left: 0px;
+  margin-right: 0px;
   padding: 45px 36px 36px 36px;
   box-shadow: 0px 0px 0px 0px rgba(0,0,0,0.5);
   background-color: #fff;
@@ -3366,7 +3366,7 @@ code.description {
 .local-search-popup .popup-btn-close {
   border-left: none;
 }
-@media (max-width: 1023px) {
+@media (max-width: 1200px) {
   .container {
     background-color: rgba(0,0,0,0.75);
   }
