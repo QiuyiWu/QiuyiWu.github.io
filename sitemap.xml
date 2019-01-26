@@ -2,9 +2,30 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://qiuyiwu.github.io/2019/01/25/Hexo-Comment/</loc>
+    
+    <lastmod>2019-01-26T02:37:27.700Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://qiuyiwu.github.io/2019/01/25/Hexo-LocalSearch/</loc>
     
-    <lastmod>2019-01-25T20:29:42.010Z</lastmod>
+    <lastmod>2019-01-26T00:33:36.669Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://qiuyiwu.github.io/tags/index.html</loc>
+    
+    <lastmod>2019-01-25T21:02:18.422Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://qiuyiwu.github.io/categories/index.html</loc>
+    
+    <lastmod>2019-01-25T21:01:04.500Z</lastmod>
     
   </url>
   
@@ -12,20 +33,6 @@
     <loc>https://qiuyiwu.github.io/Teaching/index.html</loc>
     
     <lastmod>2019-01-22T02:15:01.073Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://qiuyiwu.github.io/tags/index.html</loc>
-    
-    <lastmod>2019-01-22T02:12:46.099Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://qiuyiwu.github.io/categories/index.html</loc>
-    
-    <lastmod>2019-01-22T02:08:41.257Z</lastmod>
     
   </url>
   
