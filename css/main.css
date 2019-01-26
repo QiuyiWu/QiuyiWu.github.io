@@ -1819,7 +1819,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #6f2218;
+  background: #a89dde;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2805,8 +2805,8 @@ body {
   border-bottom-color: rgba(161,102,171,0);
 }
 .post {
-  margin-left: 0px;
-  margin-right: 0px;
+  margin-left: -50px;
+  margin-right: -50px;
   padding: 45px 36px 36px 36px;
   box-shadow: 0px 0px 0px 0px rgba(0,0,0,0.5);
   background-color: #fff;
@@ -3366,7 +3366,7 @@ code.description {
 .local-search-popup .popup-btn-close {
   border-left: none;
 }
-@media (max-width: 1200px) {
+@media (max-width: 1023px) {
   .container {
     background-color: rgba(0,0,0,0.75);
   }
@@ -3395,15 +3395,15 @@ code.description {
   }
   .post {
     margin-bottom: 30px !important;
-    padding: 0px 0px 0px 0px !important;
+    padding: 20px 15px 15px 15px !important;
   }
   .post-body h2,
   h3,
   h4,
   h5,
   h6 {
-    margin-left: -20px;
-    padding-left: 30px;
+    margin-left: -15px;
+    padding-left: 11px;
   }
   .posts-expand .post-tags {
     margin-top: 10px;
@@ -3442,7 +3442,7 @@ code.description {
     z-index: 1024;
   }
 }
-@media (max-width: 1023px) {
+@media (max-width: 767px) {
   .site-title {
     font-size: 40px !important;
     letter-spacing: 0px !important;
