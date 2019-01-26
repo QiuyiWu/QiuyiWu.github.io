@@ -1819,7 +1819,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #063ca8;
+  background: #38bf13;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3366,7 +3366,7 @@ code.description {
 .local-search-popup .popup-btn-close {
   border-left: none;
 }
-@media (max-width: 1023px) {
+@media (max-width: 1200px) {
   .container {
     background-color: rgba(0,0,0,0.75);
   }
