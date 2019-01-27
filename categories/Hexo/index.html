@@ -372,9 +372,35 @@
 
       <h3 class="post-title">
         
+            <a class="post-title-link" href="/2019/01/26/Hexo-View/" itemprop="url">
+              
+                <span itemprop="name">Add Article Views to Your Hexo Blog</span>
+              
+            </a>
+        
+      </h3>
+
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated" datetime="2019-01-26T08:35:49-05:00" content="2019-01-26">
+          01-26
+        </time>
+      </div>
+
+    </header>
+  </article>
+
+
+      
+        
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <h3 class="post-title">
+        
             <a class="post-title-link" href="/2019/01/25/Hexo-Comment/" itemprop="url">
               
-                <span itemprop="name">Add Comments to Your Hexo Site</span>
+                <span itemprop="name">Add Comments Section to Your Hexo Blog</span>
               
             </a>
         
@@ -400,7 +426,7 @@
         
             <a class="post-title-link" href="/2019/01/25/Hexo-LocalSearch/" itemprop="url">
               
-                <span itemprop="name">Create Local Search for Your Blog with Hexo</span>
+                <span itemprop="name">Create Local Search for Your Hexo Blog</span>
               
             </a>
         
@@ -473,7 +499,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">15</span>
+                  <span class="site-state-item-count">16</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -495,7 +521,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">15</span>
+                  <span class="site-state-item-count">44</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
@@ -616,7 +642,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">12.7k</span>
+    <span title="Site words total count">13.9k</span>
   
 </div>    
 
@@ -1187,7 +1213,7 @@
       else if (!isArchive && !isCategory && !isTag) { //is index page
         var titles = [] //array to titles
 
-        var postsstr = 'titles.push("Add Comments to Your Hexo Site");titles.push("Create Local Search for Your Blog with Hexo");' //if you have a better way to get titles of posts, please change it
+        var postsstr = 'titles.push("Add Article Views to Your Hexo Blog");titles.push("Add Comments Section to Your Hexo Blog");titles.push("Create Local Search for Your Hexo Blog");' //if you have a better way to get titles of posts, please change it
         eval(postsstr)
 
         var promises = titles.map(function (title) {
