@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://qiuyiwu.github.io/2019/01/27/BlogTheme/</loc>
+    
+    <lastmod>2019-01-28T16:38:10.412Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://qiuyiwu.github.io/2019/01/26/Hexo-View/</loc>
     
     <lastmod>2019-01-28T16:04:08.635Z</lastmod>
@@ -12,13 +19,6 @@
     <loc>https://qiuyiwu.github.io/2019/01/25/Hexo-LocalSearch/</loc>
     
     <lastmod>2019-01-28T04:41:17.970Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://qiuyiwu.github.io/2019/01/27/BlogTheme/</loc>
-    
-    <lastmod>2019-01-28T04:37:34.813Z</lastmod>
     
   </url>
   
