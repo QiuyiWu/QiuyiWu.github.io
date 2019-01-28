@@ -115,13 +115,13 @@
     <link href="https://qiuyiwu.github.io/2019/01/25/Hexo-LocalSearch/"/>
     <id>https://qiuyiwu.github.io/2019/01/25/Hexo-LocalSearch/</id>
     <published>2019-01-25T16:17:48.000Z</published>
-    <updated>2019-01-27T16:54:41.958Z</updated>
+    <updated>2019-01-28T04:41:17.970Z</updated>
     
     <summary type="html">
     
       &lt;p&gt;I created my blog with &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hexo&lt;/a&gt; and in this article I’ll talk about how to create Local Search with &lt;a href=&quot;https://github.com/wzpan/hexo-generator-search&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;hexo-generator-search plugin&lt;/a&gt;. I use &lt;a href=&quot;https://github.com/theme-next&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;hexo-theme-next&lt;/a&gt; version 5.1.4. (for the previous version &lt;strong&gt;localsearch.swig&lt;/strong&gt; file needs to be modified.) &lt;/p&gt;
 &lt;h2 id=&quot;Install-Plugin&quot;&gt;&lt;a href=&quot;#Install-Plugin&quot; class=&quot;headerlink&quot; title=&quot;Install Plugin&quot;&gt;&lt;/a&gt;Install Plugin&lt;/h2&gt;&lt;p&gt;First, install &lt;a href=&quot;https://github.com/wzpan/hexo-generator-search&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;hexo-generator-search plugin&lt;/a&gt; plugin by the command below:&lt;br&gt;&lt;figure class=&quot;highlight&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ npm install hexo-generator-search --save&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;p&gt;Then configure this plugin in &lt;strong&gt;_config.yml&lt;/strong&gt; file of your theme.&lt;br&gt;&lt;figure class=&quot;highlight yml&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;attr&quot;&gt;search:&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;attr&quot;&gt;  path:&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;search.xml&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;attr&quot;&gt;  field:&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;post&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;attr&quot;&gt;  content:&lt;/span&gt; &lt;span class=&quot;literal&quot;&gt;true&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;Then configure this plugin in &lt;strong&gt;_config.yml&lt;/strong&gt; file of your theme.
     
     </summary>
     
@@ -147,7 +147,6 @@
     
       &lt;p&gt;I’m starting to read Feigelson &amp;amp; Babu’s &lt;em&gt;Modern Statistical Methods for Astronomy&lt;/em&gt; this Christmas and hope to finish it before Spring break in March, 2019. This book covers the fundamental statistics theories and methodologies in application on Astronomy. It also aims to help astronomers perceive megadatas from celestial objects via modern statistical analysis and interpret cosmic phenomena in advanced statistical language. It is the bible for Astrostatistics! I take notes and record here for myself better understanding this fantastic field. &lt;/p&gt;
 &lt;h1 id=&quot;Introduction&quot;&gt;&lt;a href=&quot;#Introduction&quot; class=&quot;headerlink&quot; title=&quot;Introduction&quot;&gt;&lt;/a&gt;Introduction&lt;/h1&gt;&lt;p&gt;Collaborations betweeen astronomers and statisticians:&lt;br&gt;&lt;a href=&quot;http://hea-www.harvard.edu/AstroStat&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;California–Harvard Astro-Statistical Collaboration&lt;/a&gt;&lt;br&gt;&lt;a href=&quot;http://www.incagroup.org&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;International Computational Astrostatistics Group centered in Pittsburgh&lt;/a&gt;&lt;br&gt;&lt;a href=&quot;http://astrostatistics.psu.edu&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Center for Astrostatistics at Penn State&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id=&quot;Astronomy&quot;&gt;&lt;a href=&quot;#Astronomy&quot; class=&quot;headerlink&quot; title=&quot;Astronomy&quot;&gt;&lt;/a&gt;Astronomy&lt;/h2&gt;&lt;h3 id=&quot;Term&quot;&gt;&lt;a href=&quot;#Term&quot; class=&quot;headerlink&quot; title=&quot;Term:&quot;&gt;&lt;/a&gt;Term:&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;Astronomy&lt;/strong&gt;: the observational study of matter beyond Earth.&lt;br&gt;&lt;strong&gt;Astrophysics&lt;/strong&gt;: the study of intrinsic nature of astronomical bodies and the processes by which they binteract and evolve. &lt;/p&gt;
     
     </summary>
     
@@ -325,13 +324,13 @@ f(x) = \begin{cases}
       <category term="TensorFlow" scheme="https://qiuyiwu.github.io/categories/TensorFlow/"/>
     
     
-      <category term="CNN" scheme="https://qiuyiwu.github.io/tags/CNN/"/>
-    
-      <category term="RNN" scheme="https://qiuyiwu.github.io/tags/RNN/"/>
-    
       <category term="TensorFlow" scheme="https://qiuyiwu.github.io/tags/TensorFlow/"/>
     
       <category term="DNN" scheme="https://qiuyiwu.github.io/tags/DNN/"/>
+    
+      <category term="CNN" scheme="https://qiuyiwu.github.io/tags/CNN/"/>
+    
+      <category term="RNN" scheme="https://qiuyiwu.github.io/tags/RNN/"/>
     
   </entry>
   
