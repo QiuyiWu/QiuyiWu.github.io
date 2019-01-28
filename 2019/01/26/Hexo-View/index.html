@@ -166,7 +166,7 @@
 <meta property="og:image" content="https://qiuyiwu.github.io/images/2019/01/f5.png">
 <meta property="og:image" content="https://qiuyiwu.github.io/images/2019/01/f6.png">
 <meta property="og:image" content="https://qiuyiwu.github.io/images/2019/01/console.png">
-<meta property="og:updated_time" content="2019-01-27T16:51:58.868Z">
+<meta property="og:updated_time" content="2019-01-28T16:04:08.635Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Add Article Views to Your Hexo Blog">
 <meta name="twitter:description" content="When we write articles, we always want to know the popularity of our work. As a Hexo blogger, I tried several different visitor counter system and here, like the previous post, I will summarize two op">
@@ -438,8 +438,8 @@
               
                 <span class="post-meta-item-text">Post modified&#58;</span>
               
-              <time title="Post modified" itemprop="dateModified" datetime="2019-01-27T11:51:58-05:00">
-                2019-01-27
+              <time title="Post modified" itemprop="dateModified" datetime="2019-01-28T11:04:08-05:00">
+                2019-01-28
               </time>
             
           </span>
@@ -632,7 +632,7 @@
 <h2 id="Comparison-amp-My-Choice"><a href="#Comparison-amp-My-Choice" class="headerlink" title="Comparison &amp; My Choice"></a>Comparison &amp; My Choice</h2><p>If you read the whole rambling steps above, I bet you would go for <strong>Firestore Counter</strong> as I did. Actually I failed to make <strong>Firestore Counter</strong> work at first. So I went for <strong>LeanCloud Counter</strong>. It works well, but very soon I noticed a problem – the weboage loading is very slow!<br>Use <code>alt</code>+<code>cmd</code>+<code>i</code> to open the console</p>
 <p><img src="/images/2019/01/console.png" alt="Sample Image Added via Markdown"><br>It is obvious that <strong>LeanCloud Counter</strong> gave me the trouble. One possible reason could be the system is not smooth enough for international users because most users located in China don’t have this problem. So I went for <strong>Firestore Counter</strong> again. This time I made it, and fix the bug as I mentioned in <em>Step 8</em> of the previous section. </p>
 <p>Apart from this, original <strong>LeanCloud Counter</strong> has a big <a href="https://github.com/theme-next/hexo-leancloud-counter-security" target="_blank" rel="noopener">security bug</a>, by which someone could change your visitor number easily and even add/delete records in your database. So you need to do <em>Advance Steps</em> I added in Section 1.2.</p>
-<p>I also notice for <strong>Firestore Counter</strong>, refreshing webpage won’t change the count number, while for <strong>LeanCloud Counter</strong> you can easily modify the record number via visit the same page for multiple times. Somehow <strong>Firestore Counter</strong> recording is more close to the truth. </p>
+<p>I also notice for <strong>Firestore Counter</strong>, refreshing webpage won’t change the count number, while for <strong>LeanCloud Counter</strong> you can easily modify the record number via visit the same page for multiple times. Somehow <strong>Firestore Counter</strong> recording is closer to the truth. </p>
 <p>In all, I vote for <strong>Firestore Counter</strong> based on the following merits:</p>
 <ul>
 <li>Non-repetitive counter number</li>

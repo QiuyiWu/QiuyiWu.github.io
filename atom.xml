@@ -47,7 +47,7 @@
     <link href="https://qiuyiwu.github.io/2019/01/26/Hexo-View/"/>
     <id>https://qiuyiwu.github.io/2019/01/26/Hexo-View/</id>
     <published>2019-01-26T13:35:49.000Z</published>
-    <updated>2019-01-27T16:51:58.868Z</updated>
+    <updated>2019-01-28T16:04:08.635Z</updated>
     
     <summary type="html">
     
@@ -100,13 +100,13 @@
     
       <category term="Hexo" scheme="https://qiuyiwu.github.io/tags/Hexo/"/>
     
+      <category term="blog" scheme="https://qiuyiwu.github.io/tags/blog/"/>
+    
       <category term="comment" scheme="https://qiuyiwu.github.io/tags/comment/"/>
     
       <category term="Disqus" scheme="https://qiuyiwu.github.io/tags/Disqus/"/>
     
       <category term="Valine" scheme="https://qiuyiwu.github.io/tags/Valine/"/>
-    
-      <category term="blog" scheme="https://qiuyiwu.github.io/tags/blog/"/>
     
   </entry>
   
@@ -153,11 +153,11 @@
       <category term="Astrostatistics" scheme="https://qiuyiwu.github.io/categories/Astrostatistics/"/>
     
     
+      <category term="Statistics" scheme="https://qiuyiwu.github.io/tags/Statistics/"/>
+    
       <category term="Astrostatistics" scheme="https://qiuyiwu.github.io/tags/Astrostatistics/"/>
     
       <category term="Astronomy" scheme="https://qiuyiwu.github.io/tags/Astronomy/"/>
-    
-      <category term="Statistics" scheme="https://qiuyiwu.github.io/tags/Statistics/"/>
     
   </entry>
   
@@ -230,13 +230,13 @@
       <category term="Research" scheme="https://qiuyiwu.github.io/categories/Research/"/>
     
     
-      <category term="Statistics" scheme="https://qiuyiwu.github.io/tags/Statistics/"/>
-    
       <category term="storm surge" scheme="https://qiuyiwu.github.io/tags/storm-surge/"/>
     
       <category term="Spatial Statistics" scheme="https://qiuyiwu.github.io/tags/Spatial-Statistics/"/>
     
       <category term="hurrican tracks" scheme="https://qiuyiwu.github.io/tags/hurrican-tracks/"/>
+    
+      <category term="Statistics" scheme="https://qiuyiwu.github.io/tags/Statistics/"/>
     
   </entry>
   
