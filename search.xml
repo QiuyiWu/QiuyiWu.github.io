@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>Make a Birthday Cake in R</title>
+      <link href="/2019/01/29/Birthday/"/>
+      <url>/2019/01/29/Birthday/</url>
+      
+        <content type="html"><![CDATA[<p>Today is my friend’s BIG DAY! Happy Birthday!!! He is one of the four people who changed my life (yes four people have seminal impact in my life so far). I want to thank him for all the things he has done for me and all the opportunites he gave me. So I decide to make a birthday cake for him. </p><p>Here it is!!!<br><a id="more"></a><br><img src="/images/2019/01/cake.png" alt="Sample Image Added via Markdown"></p><p>Initially I was trying to make a 3D fancy cake in MATLAB, after one-hour struggling I realized how bad I am in MATLAB… so I turned to R for a simple 2D tasty cake lol.<br><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">candle = <span class="keyword">function</span>(pos)</span><br><span class="line">&#123;</span><br><span class="line">  x=pos[<span class="number">1</span>]</span><br><span class="line">  y=pos[<span class="number">2</span>]</span><br><span class="line">  rect(x,y,x+<span class="number">.2</span>,y+<span class="number">2</span>,col=<span class="string">"red"</span>)</span><br><span class="line">  polygon(c(x+<span class="number">.05</span>,x-<span class="number">.1</span>,x+<span class="number">.1</span>,x+<span class="number">.3</span>,x+<span class="number">.15</span>,x+<span class="number">0.05</span>), c(y+<span class="number">2</span>,y+<span class="number">2.3</span>,y+<span class="number">2.6</span>,y+<span class="number">2.3</span>,y+<span class="number">2</span>,y+<span class="number">2</span>),col=<span class="string">"#EECF08"</span>)</span><br><span class="line">  </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">plot(c(<span class="number">0</span>,<span class="number">10</span>), c(<span class="number">0</span>,<span class="number">10</span>),type=<span class="string">"n"</span>, bty=<span class="string">"n"</span>,xaxt=<span class="string">"n"</span>,yaxt=<span class="string">"n"</span>, main=<span class="string">"Cake"</span>, xlab=<span class="string">""</span>,ylab=<span class="string">""</span>)</span><br><span class="line">draw.ellipse(<span class="number">5</span>,<span class="number">2</span>,col=<span class="string">"#73EA71"</span>,a=<span class="number">4.4</span>,b=<span class="number">1.7</span>,border=<span class="number">1</span>)</span><br><span class="line">draw.ellipse(<span class="number">5</span>,<span class="number">2</span>,col=<span class="string">"#BAE5FF"</span>,a=<span class="number">4</span>,b=<span class="number">1.4</span>,border=<span class="number">1</span>)</span><br><span class="line">rect(<span class="number">1</span>,<span class="number">2</span>,<span class="number">9</span>,<span class="number">5</span>,col=<span class="string">"#BAE5FF"</span>,border=<span class="string">"#BAE5FF"</span>)</span><br><span class="line">lines(c(<span class="number">1</span>,<span class="number">1</span>),c(<span class="number">2</span>,<span class="number">5</span>))</span><br><span class="line">lines(c(<span class="number">9</span>,<span class="number">9</span>),c(<span class="number">2</span>,<span class="number">5</span>))</span><br><span class="line">draw.ellipse(<span class="number">5</span>,<span class="number">5</span>,col=<span class="string">"#FCD2DE"</span>,a=<span class="number">4</span>,b=<span class="number">1.4</span>)</span><br><span class="line"></span><br><span class="line">candle(c(<span class="number">2.5</span>,<span class="number">4.5</span>))</span><br><span class="line">candle(c(<span class="number">3</span>,<span class="number">5</span>))</span><br><span class="line">candle(c(<span class="number">4</span>,<span class="number">4.5</span>))</span><br><span class="line">candle(c(<span class="number">5</span>,<span class="number">5</span>))</span><br><span class="line">candle(c(<span class="number">6</span>,<span class="number">4.5</span>))</span><br><span class="line">candle(c(<span class="number">7</span>,<span class="number">5.2</span>))</span><br></pre></td></tr></table></figure></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> JUJUs </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Birthday </tag>
+            
+            <tag> R </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Blog Theme 日神 x 酒神</title>
       <link href="/2019/01/27/BlogTheme/"/>
       <url>/2019/01/27/BlogTheme/</url>
@@ -146,11 +173,11 @@
       
         <tags>
             
+            <tag> Statistics </tag>
+            
             <tag> Astrostatistics </tag>
             
             <tag> Astronomy </tag>
-            
-            <tag> Statistics </tag>
             
         </tags>
       
@@ -200,11 +227,11 @@
       
         <tags>
             
+            <tag> Topic Modeling </tag>
+            
             <tag> music </tag>
             
             <tag> Data Mining </tag>
-            
-            <tag> Topic Modeling </tag>
             
         </tags>
       
@@ -229,13 +256,13 @@
       
         <tags>
             
-            <tag> Statistics </tag>
-            
             <tag> storm surge </tag>
             
             <tag> Spatial Statistics </tag>
             
             <tag> hurrican tracks </tag>
+            
+            <tag> Statistics </tag>
             
         </tags>
       
@@ -316,13 +343,13 @@
       
         <tags>
             
-            <tag> TensorFlow </tag>
-            
-            <tag> DNN </tag>
-            
             <tag> CNN </tag>
             
             <tag> RNN </tag>
+            
+            <tag> TensorFlow </tag>
+            
+            <tag> DNN </tag>
             
         </tags>
       
