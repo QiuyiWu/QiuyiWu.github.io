@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://qiuyiwu.github.io/"/>
-  <updated>2019-01-30T06:21:26.579Z</updated>
+  <updated>2019-02-19T20:38:27.467Z</updated>
   <id>https://qiuyiwu.github.io/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Why are Gaussian Process Models called Nonparametric?</title>
+    <link href="https://qiuyiwu.github.io/2019/02/19/GaussianProcess/"/>
+    <id>https://qiuyiwu.github.io/2019/02/19/GaussianProcess/</id>
+    <published>2019-02-19T17:56:54.000Z</published>
+    <updated>2019-02-19T20:38:27.467Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;As we know, &lt;a href=&quot;https://en.wikipedia.org/wiki/Gaussian_process&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Gaussian processes&lt;/a&gt; modeling is often refer to as nonparametric modeling. But why? It has parameters in its covariance kernel:&lt;br&gt;&lt;span&gt;$$\begin{align*}
+K(x_i,x_j) = h^2\text{exp}\left(\frac{-(x_i-x_j)^2}{\lambda^2}\right)
+\end{align*}$$&lt;/span&gt;&lt;!-- Has MathJax --&gt;&lt;br&gt;From the example of Gaussian kernel above, $h$ and $\lambda$ are the hyperparameters.&lt;/p&gt;
+&lt;h3 id=&quot;Some-Points&quot;&gt;&lt;a href=&quot;#Some-Points&quot; class=&quot;headerlink&quot; title=&quot;Some Points:&quot;&gt;&lt;/a&gt;Some Points:&lt;/h3&gt;
+    
+    </summary>
+    
+      <category term="Statistics" scheme="https://qiuyiwu.github.io/categories/Statistics/"/>
+    
+    
+      <category term="Gaussian Process" scheme="https://qiuyiwu.github.io/tags/Gaussian-Process/"/>
+    
+      <category term="Nonparametric" scheme="https://qiuyiwu.github.io/tags/Nonparametric/"/>
+    
+  </entry>
   
   <entry>
     <title>Make a Birthday Cake in R</title>
@@ -123,13 +148,13 @@
     
       <category term="Hexo" scheme="https://qiuyiwu.github.io/tags/Hexo/"/>
     
+      <category term="blog" scheme="https://qiuyiwu.github.io/tags/blog/"/>
+    
       <category term="comment" scheme="https://qiuyiwu.github.io/tags/comment/"/>
     
       <category term="Disqus" scheme="https://qiuyiwu.github.io/tags/Disqus/"/>
     
       <category term="Valine" scheme="https://qiuyiwu.github.io/tags/Valine/"/>
-    
-      <category term="blog" scheme="https://qiuyiwu.github.io/tags/blog/"/>
     
   </entry>
   
@@ -176,11 +201,11 @@
       <category term="Astrostatistics" scheme="https://qiuyiwu.github.io/categories/Astrostatistics/"/>
     
     
-      <category term="Statistics" scheme="https://qiuyiwu.github.io/tags/Statistics/"/>
-    
       <category term="Astrostatistics" scheme="https://qiuyiwu.github.io/tags/Astrostatistics/"/>
     
       <category term="Astronomy" scheme="https://qiuyiwu.github.io/tags/Astronomy/"/>
+    
+      <category term="Statistics" scheme="https://qiuyiwu.github.io/tags/Statistics/"/>
     
   </entry>
   
@@ -228,11 +253,11 @@
       <category term="Research" scheme="https://qiuyiwu.github.io/categories/Research/"/>
     
     
-      <category term="Topic Modeling" scheme="https://qiuyiwu.github.io/tags/Topic-Modeling/"/>
-    
       <category term="music" scheme="https://qiuyiwu.github.io/tags/music/"/>
     
       <category term="Data Mining" scheme="https://qiuyiwu.github.io/tags/Data-Mining/"/>
+    
+      <category term="Topic Modeling" scheme="https://qiuyiwu.github.io/tags/Topic-Modeling/"/>
     
   </entry>
   
@@ -253,13 +278,13 @@
       <category term="Research" scheme="https://qiuyiwu.github.io/categories/Research/"/>
     
     
+      <category term="Statistics" scheme="https://qiuyiwu.github.io/tags/Statistics/"/>
+    
       <category term="storm surge" scheme="https://qiuyiwu.github.io/tags/storm-surge/"/>
     
       <category term="Spatial Statistics" scheme="https://qiuyiwu.github.io/tags/Spatial-Statistics/"/>
     
       <category term="hurrican tracks" scheme="https://qiuyiwu.github.io/tags/hurrican-tracks/"/>
-    
-      <category term="Statistics" scheme="https://qiuyiwu.github.io/tags/Statistics/"/>
     
   </entry>
   
@@ -347,13 +372,13 @@ f(x) = \begin{cases}
       <category term="TensorFlow" scheme="https://qiuyiwu.github.io/categories/TensorFlow/"/>
     
     
-      <category term="CNN" scheme="https://qiuyiwu.github.io/tags/CNN/"/>
-    
-      <category term="RNN" scheme="https://qiuyiwu.github.io/tags/RNN/"/>
-    
       <category term="TensorFlow" scheme="https://qiuyiwu.github.io/tags/TensorFlow/"/>
     
       <category term="DNN" scheme="https://qiuyiwu.github.io/tags/DNN/"/>
+    
+      <category term="CNN" scheme="https://qiuyiwu.github.io/tags/CNN/"/>
+    
+      <category term="RNN" scheme="https://qiuyiwu.github.io/tags/RNN/"/>
     
   </entry>
   

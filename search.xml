@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>Why are Gaussian Process Models called Nonparametric?</title>
+      <link href="/2019/02/19/GaussianProcess/"/>
+      <url>/2019/02/19/GaussianProcess/</url>
+      
+        <content type="html"><![CDATA[<p>As we know, <a href="https://en.wikipedia.org/wiki/Gaussian_process" target="_blank" rel="noopener">Gaussian processes</a> modeling is often refer to as nonparametric modeling. But why? It has parameters in its covariance kernel:<br><span>$$\begin{align*}K(x_i,x_j) = h^2\text{exp}\left(\frac{-(x_i-x_j)^2}{\lambda^2}\right)\end{align*}$$</span><!-- Has MathJax --><br>From the example of Gaussian kernel above, $h$ and $\lambda$ are the hyperparameters.</p><h3 id="Some-Points"><a href="#Some-Points" class="headerlink" title="Some Points:"></a>Some Points:</h3><a id="more"></a><ul><li>“Parametric” versus “Nonparametric” are terms that do not apply to particular processes, they apply to the entire family of processes that could be fit to data. </li><li>So if there’s no limit tothe number of parameters, we are estimating the parameter of infinite dimension, it turns out to be a nonparametric problem. </li><li>Models can be nonparametric in one sense and parametric in another (e.g. semiparametric models). </li><li>Nonparametric just means we cannot describe the model by a fixed set of parameters but they still can have parameters. </li><li>Return back to the example above, $h$ and $\lambda$ are not parameters because they do not represent anything physical about the data itself. They just parametrize the covariance. </li></ul><p><br></p><h3 id="Relevant-Materials"><a href="#Relevant-Materials" class="headerlink" title="Relevant Materials:"></a>Relevant Materials:</h3><p>[1] Anna Scaife: Machine Learning: Gaussian Process Modelling in Python <a href="https://www.youtube.com/watch?v=UpsV1y6wMQ8&amp;feature=youtu.be&amp;t=1386" target="_blank" rel="noopener">[lecture]</a><br>[2] Yee Whye Teh: Bayesian Nonparametric <a href="http://videolectures.net/mlss2011_teh_nonparametrics/" target="_blank" rel="noopener">[lecture]</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Statistics </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Gaussian Process </tag>
+            
+            <tag> Nonparametric </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Make a Birthday Cake in R</title>
       <link href="/2019/01/29/Birthday/"/>
       <url>/2019/01/29/Birthday/</url>
@@ -113,13 +140,13 @@
             
             <tag> Hexo </tag>
             
+            <tag> blog </tag>
+            
             <tag> comment </tag>
             
             <tag> Disqus </tag>
             
             <tag> Valine </tag>
-            
-            <tag> blog </tag>
             
         </tags>
       
@@ -173,11 +200,11 @@
       
         <tags>
             
-            <tag> Statistics </tag>
-            
             <tag> Astrostatistics </tag>
             
             <tag> Astronomy </tag>
+            
+            <tag> Statistics </tag>
             
         </tags>
       
@@ -227,11 +254,11 @@
       
         <tags>
             
-            <tag> Topic Modeling </tag>
-            
             <tag> music </tag>
             
             <tag> Data Mining </tag>
+            
+            <tag> Topic Modeling </tag>
             
         </tags>
       
@@ -256,13 +283,13 @@
       
         <tags>
             
+            <tag> Statistics </tag>
+            
             <tag> storm surge </tag>
             
             <tag> Spatial Statistics </tag>
             
             <tag> hurrican tracks </tag>
-            
-            <tag> Statistics </tag>
             
         </tags>
       
@@ -343,13 +370,13 @@
       
         <tags>
             
-            <tag> CNN </tag>
-            
-            <tag> RNN </tag>
-            
             <tag> TensorFlow </tag>
             
             <tag> DNN </tag>
+            
+            <tag> CNN </tag>
+            
+            <tag> RNN </tag>
             
         </tags>
       
