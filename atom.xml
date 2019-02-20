@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://qiuyiwu.github.io/"/>
-  <updated>2019-02-19T20:38:27.467Z</updated>
+  <updated>2019-02-20T00:18:29.818Z</updated>
   <id>https://qiuyiwu.github.io/</id>
   
   <author>
@@ -21,14 +21,13 @@
     <link href="https://qiuyiwu.github.io/2019/02/19/GaussianProcess/"/>
     <id>https://qiuyiwu.github.io/2019/02/19/GaussianProcess/</id>
     <published>2019-02-19T17:56:54.000Z</published>
-    <updated>2019-02-19T20:38:27.467Z</updated>
+    <updated>2019-02-20T00:18:29.818Z</updated>
     
     <summary type="html">
     
       &lt;p&gt;As we know, &lt;a href=&quot;https://en.wikipedia.org/wiki/Gaussian_process&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Gaussian processes&lt;/a&gt; modeling is often refer to as nonparametric modeling. But why? It has parameters in its covariance kernel:&lt;br&gt;&lt;span&gt;$$\begin{align*}
 K(x_i,x_j) = h^2\text{exp}\left(\frac{-(x_i-x_j)^2}{\lambda^2}\right)
-\end{align*}$$&lt;/span&gt;&lt;!-- Has MathJax --&gt;&lt;br&gt;From the example of Gaussian kernel above, $h$ and $\lambda$ are the hyperparameters.&lt;/p&gt;
-&lt;h3 id=&quot;Some-Points&quot;&gt;&lt;a href=&quot;#Some-Points&quot; class=&quot;headerlink&quot; title=&quot;Some Points:&quot;&gt;&lt;/a&gt;Some Points:&lt;/h3&gt;
+\end{align*}$$&lt;/span&gt;&lt;!-- Has MathJax --&gt;&lt;br&gt;From the example of Gaussian kernel above, $h$ and $\lambda$ are the hyperparameters.&lt;br&gt;
     
     </summary>
     
