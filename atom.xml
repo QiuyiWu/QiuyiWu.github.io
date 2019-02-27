@@ -371,13 +371,13 @@ f(x) = \begin{cases}
       <category term="TensorFlow" scheme="https://qiuyiwu.github.io/categories/TensorFlow/"/>
     
     
-      <category term="TensorFlow" scheme="https://qiuyiwu.github.io/tags/TensorFlow/"/>
-    
-      <category term="DNN" scheme="https://qiuyiwu.github.io/tags/DNN/"/>
-    
       <category term="CNN" scheme="https://qiuyiwu.github.io/tags/CNN/"/>
     
       <category term="RNN" scheme="https://qiuyiwu.github.io/tags/RNN/"/>
+    
+      <category term="TensorFlow" scheme="https://qiuyiwu.github.io/tags/TensorFlow/"/>
+    
+      <category term="DNN" scheme="https://qiuyiwu.github.io/tags/DNN/"/>
     
   </entry>
   
@@ -423,30 +423,6 @@ f(x) = \begin{cases}
     
     
       <category term="TwoSum" scheme="https://qiuyiwu.github.io/tags/TwoSum/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Data Mining Note 4 - Discriminant Analysis and Naive Bayes</title>
-    <link href="https://qiuyiwu.github.io/2018/01/07/Data-Mining-Note4/"/>
-    <id>https://qiuyiwu.github.io/2018/01/07/Data-Mining-Note4/</id>
-    <published>2018-01-07T19:11:53.000Z</published>
-    <updated>2019-01-26T15:13:07.436Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;The intuitive motivation of discriminant analysis is to estimate a function based on a given dataset. However, unless a funtion is derived as a result of optimizing the expected loss of interest, more has to be done to find out if that function is good with respect to the standards set by the loss funtion. Ideally, one would like to build funtions as solutions to the criterion of optimality. Unfortunately, that can be hard in both classification (and even regression). Hence it is common for researchers to come up with a decent (reasonable) function, and then compute the estimated average loss to find out if what the discovered is a pearl.&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="Data Mining" scheme="https://qiuyiwu.github.io/categories/Data-Mining/"/>
-    
-    
-      <category term="LDA" scheme="https://qiuyiwu.github.io/tags/LDA/"/>
-    
-      <category term="QDA" scheme="https://qiuyiwu.github.io/tags/QDA/"/>
-    
-      <category term="Navie Bayes" scheme="https://qiuyiwu.github.io/tags/Navie-Bayes/"/>
     
   </entry>
   

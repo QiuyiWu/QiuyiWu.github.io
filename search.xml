@@ -370,13 +370,13 @@
       
         <tags>
             
-            <tag> TensorFlow </tag>
-            
-            <tag> DNN </tag>
-            
             <tag> CNN </tag>
             
             <tag> RNN </tag>
+            
+            <tag> TensorFlow </tag>
+            
+            <tag> DNN </tag>
             
         </tags>
       
@@ -431,35 +431,6 @@
         <tags>
             
             <tag> TwoSum </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>Data Mining Note 4 - Discriminant Analysis and Naive Bayes</title>
-      <link href="/2018/01/07/Data-Mining-Note4/"/>
-      <url>/2018/01/07/Data-Mining-Note4/</url>
-      
-        <content type="html"><![CDATA[<p>The intuitive motivation of discriminant analysis is to estimate a function based on a given dataset. However, unless a funtion is derived as a result of optimizing the expected loss of interest, more has to be done to find out if that function is good with respect to the standards set by the loss funtion. Ideally, one would like to build funtions as solutions to the criterion of optimality. Unfortunately, that can be hard in both classification (and even regression). Hence it is common for researchers to come up with a decent (reasonable) function, and then compute the estimated average loss to find out if what the discovered is a pearl.</p><a id="more"></a>]]></content>
-      
-      
-      <categories>
-          
-          <category> Data Mining </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> LDA </tag>
-            
-            <tag> QDA </tag>
-            
-            <tag> Navie Bayes </tag>
             
         </tags>
       
