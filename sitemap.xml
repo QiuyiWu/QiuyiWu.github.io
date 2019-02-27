@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://qiuyiwu.github.io/2018/12/20/DataFusion/</loc>
+    
+    <lastmod>2019-02-26T19:04:08.028Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://qiuyiwu.github.io/2019/02/19/GaussianProcess/</loc>
     
     <lastmod>2019-02-20T00:18:29.818Z</lastmod>
@@ -152,13 +159,6 @@
     <loc>https://qiuyiwu.github.io/Book/index.html</loc>
     
     <lastmod>2019-01-22T02:08:01.461Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://qiuyiwu.github.io/2018/12/20/DataFusion/</loc>
-    
-    <lastmod>2019-01-03T03:11:47.848Z</lastmod>
     
   </url>
   

@@ -147,13 +147,13 @@ K(x_i,x_j) = h^2\text{exp}\left(\frac{-(x_i-x_j)^2}{\lambda^2}\right)
     
       <category term="Hexo" scheme="https://qiuyiwu.github.io/tags/Hexo/"/>
     
-      <category term="blog" scheme="https://qiuyiwu.github.io/tags/blog/"/>
-    
       <category term="comment" scheme="https://qiuyiwu.github.io/tags/comment/"/>
     
       <category term="Disqus" scheme="https://qiuyiwu.github.io/tags/Disqus/"/>
     
       <category term="Valine" scheme="https://qiuyiwu.github.io/tags/Valine/"/>
+    
+      <category term="blog" scheme="https://qiuyiwu.github.io/tags/blog/"/>
     
   </entry>
   
@@ -213,12 +213,12 @@ K(x_i,x_j) = h^2\text{exp}\left(\frac{-(x_i-x_j)^2}{\lambda^2}\right)
     <link href="https://qiuyiwu.github.io/2018/12/20/DataFusion/"/>
     <id>https://qiuyiwu.github.io/2018/12/20/DataFusion/</id>
     <published>2018-12-20T19:47:15.000Z</published>
-    <updated>2019-01-03T03:11:47.848Z</updated>
+    <updated>2019-02-26T19:04:08.028Z</updated>
     
     <summary type="html">
     
       &lt;p&gt;&lt;center&gt;&lt;br&gt;Ongoing resaerch projects in SAMSI Program on Model Uncertainty.&lt;br&gt;To be announced in May, 2019.&lt;/center&gt;&lt;/p&gt;
-&lt;p&gt;Summary:&lt;br&gt;In fall 2018, I presented my previous work (collaborating with Ernest Fokoue) about music mining in the group meeting, and also submitted a paper [1] to introduce the idea of representing any given piece of music as a collection of “musical words” that we codenamed “muselets”, which are essentially musical words of various lengths. We specifically herein construct a naive dictionary featuring a corpus made up of African American, Chinese, Japanese and Arabic music, on which we perform both topic modelling and pattern recognition. Although some of the results based on the Naive Dictionary are reasonably good, we anticipate phenomenal predictive performances once we get around to actually building a full scale complete version of our intended dictionary of muselets. The idea of Data Fusion in this work is that we create uniform representation of music based on different sources and forms of musical data.&lt;br&gt;In spring 2019, I will collaborate with Dr. Jong-Min Kim who extensively studies Mixture of D-vine copulas [2]. We plan to combine text mining and copula methods in the application of movie markets. Specifically, we study Chinese and American movie markets, to see the effects of different types of movies on the returns. For the most profitable movies, we study multiple effects that make those movies win the sales (potential factors: movie types, movie director, actors, actress etc.). &lt;/p&gt;
+&lt;p&gt;Summary:&lt;br&gt;In fall 2018, I presented my previous work (collaborating with Ernest Fokoue) about music mining in the group meeting, and also submitted a paper [1] to introduce the idea of representing any given piece of music as a collection of “musical words” that we codenamed “muselets”, which are essentially musical words of various lengths. We specifically herein construct a naive dictionary featuring a corpus made up of African American, Chinese, Japanese and Arabic music, on which we perform both topic modelling and pattern recognition. Although some of the results based on the Naive Dictionary are reasonably good, we anticipate phenomenal predictive performances once we get around to actually building a full scale complete version of our intended dictionary of muselets. The idea of Data Fusion in this work is that we create uniform representation of music based on different sources and forms of musical data.&lt;br&gt;
     
     </summary>
     
