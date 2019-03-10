@@ -20,11 +20,13 @@
       
         <tags>
             
-            <tag> Bayesian Nonparametrics </tag>
+            <tag> Nonparametric </tag>
             
             <tag> Chinese Restaurant </tag>
             
             <tag> Indian Buffet </tag>
+            
+            <tag> Statistics </tag>
             
         </tags>
       
@@ -49,9 +51,9 @@
       
         <tags>
             
-            <tag> Gaussian Process </tag>
-            
             <tag> Nonparametric </tag>
+            
+            <tag> Gaussian Process </tag>
             
         </tags>
       
@@ -229,11 +231,11 @@
       
         <tags>
             
+            <tag> Statistics </tag>
+            
             <tag> Astrostatistics </tag>
             
             <tag> Astronomy </tag>
-            
-            <tag> Statistics </tag>
             
         </tags>
       

@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://qiuyiwu.github.io/"/>
-  <updated>2019-03-10T06:49:52.257Z</updated>
+  <updated>2019-03-10T17:54:50.865Z</updated>
   <id>https://qiuyiwu.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://qiuyiwu.github.io/2019/03/07/BayesianNonparametrics/"/>
     <id>https://qiuyiwu.github.io/2019/03/07/BayesianNonparametrics/</id>
     <published>2019-03-07T16:36:37.000Z</published>
-    <updated>2019-03-10T06:49:52.257Z</updated>
+    <updated>2019-03-10T17:54:50.865Z</updated>
     
     <summary type="html">
     
@@ -33,11 +33,13 @@
       <category term="Statistics" scheme="https://qiuyiwu.github.io/categories/Statistics/"/>
     
     
-      <category term="Bayesian Nonparametrics" scheme="https://qiuyiwu.github.io/tags/Bayesian-Nonparametrics/"/>
+      <category term="Nonparametric" scheme="https://qiuyiwu.github.io/tags/Nonparametric/"/>
     
       <category term="Chinese Restaurant" scheme="https://qiuyiwu.github.io/tags/Chinese-Restaurant/"/>
     
       <category term="Indian Buffet" scheme="https://qiuyiwu.github.io/tags/Indian-Buffet/"/>
+    
+      <category term="Statistics" scheme="https://qiuyiwu.github.io/tags/Statistics/"/>
     
   </entry>
   
@@ -59,9 +61,9 @@ K(x_i,x_j) = h^2\text{exp}\left(\frac{-(x_i-x_j)^2}{\lambda^2}\right)
       <category term="Statistics" scheme="https://qiuyiwu.github.io/categories/Statistics/"/>
     
     
-      <category term="Gaussian Process" scheme="https://qiuyiwu.github.io/tags/Gaussian-Process/"/>
-    
       <category term="Nonparametric" scheme="https://qiuyiwu.github.io/tags/Nonparametric/"/>
+    
+      <category term="Gaussian Process" scheme="https://qiuyiwu.github.io/tags/Gaussian-Process/"/>
     
   </entry>
   
@@ -225,11 +227,11 @@ K(x_i,x_j) = h^2\text{exp}\left(\frac{-(x_i-x_j)^2}{\lambda^2}\right)
       <category term="Astrostatistics" scheme="https://qiuyiwu.github.io/categories/Astrostatistics/"/>
     
     
+      <category term="Statistics" scheme="https://qiuyiwu.github.io/tags/Statistics/"/>
+    
       <category term="Astrostatistics" scheme="https://qiuyiwu.github.io/tags/Astrostatistics/"/>
     
       <category term="Astronomy" scheme="https://qiuyiwu.github.io/tags/Astronomy/"/>
-    
-      <category term="Statistics" scheme="https://qiuyiwu.github.io/tags/Statistics/"/>
     
   </entry>
   
