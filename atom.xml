@@ -174,13 +174,13 @@ K(x_i,x_j) = h^2\text{exp}\left(\frac{-(x_i-x_j)^2}{\lambda^2}\right)
     
       <category term="Hexo" scheme="https://qiuyiwu.github.io/tags/Hexo/"/>
     
+      <category term="blog" scheme="https://qiuyiwu.github.io/tags/blog/"/>
+    
       <category term="comment" scheme="https://qiuyiwu.github.io/tags/comment/"/>
     
       <category term="Disqus" scheme="https://qiuyiwu.github.io/tags/Disqus/"/>
     
       <category term="Valine" scheme="https://qiuyiwu.github.io/tags/Valine/"/>
-    
-      <category term="blog" scheme="https://qiuyiwu.github.io/tags/blog/"/>
     
   </entry>
   
@@ -279,11 +279,11 @@ K(x_i,x_j) = h^2\text{exp}\left(\frac{-(x_i-x_j)^2}{\lambda^2}\right)
       <category term="Research" scheme="https://qiuyiwu.github.io/categories/Research/"/>
     
     
+      <category term="Topic Modeling" scheme="https://qiuyiwu.github.io/tags/Topic-Modeling/"/>
+    
       <category term="music" scheme="https://qiuyiwu.github.io/tags/music/"/>
     
       <category term="Data Mining" scheme="https://qiuyiwu.github.io/tags/Data-Mining/"/>
-    
-      <category term="Topic Modeling" scheme="https://qiuyiwu.github.io/tags/Topic-Modeling/"/>
     
   </entry>
   
@@ -398,13 +398,13 @@ f(x) = \begin{cases}
       <category term="TensorFlow" scheme="https://qiuyiwu.github.io/categories/TensorFlow/"/>
     
     
-      <category term="TensorFlow" scheme="https://qiuyiwu.github.io/tags/TensorFlow/"/>
-    
-      <category term="DNN" scheme="https://qiuyiwu.github.io/tags/DNN/"/>
-    
       <category term="CNN" scheme="https://qiuyiwu.github.io/tags/CNN/"/>
     
       <category term="RNN" scheme="https://qiuyiwu.github.io/tags/RNN/"/>
+    
+      <category term="TensorFlow" scheme="https://qiuyiwu.github.io/tags/TensorFlow/"/>
+    
+      <category term="DNN" scheme="https://qiuyiwu.github.io/tags/DNN/"/>
     
   </entry>
   
