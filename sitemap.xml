@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://qiuyiwu.github.io/2019/03/07/BayesianNonparametrics/</loc>
+    
+    <lastmod>2019-03-10T06:45:49.448Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://qiuyiwu.github.io/2018/01/22/TensorFlow-for-Deep-Learning-3/</loc>
+    
+    <lastmod>2019-03-08T15:48:42.594Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://qiuyiwu.github.io/about/index.html</loc>
     
     <lastmod>2019-03-04T18:34:38.472Z</lastmod>
@@ -61,13 +75,6 @@
     <loc>https://qiuyiwu.github.io/2018/12/19/StormSurge/</loc>
     
     <lastmod>2019-01-26T15:26:00.176Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://qiuyiwu.github.io/2018/01/22/TensorFlow-for-Deep-Learning-3/</loc>
-    
-    <lastmod>2019-01-26T15:18:47.491Z</lastmod>
     
   </url>
   

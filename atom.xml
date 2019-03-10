@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://qiuyiwu.github.io/"/>
-  <updated>2019-02-20T00:18:29.818Z</updated>
+  <updated>2019-03-10T06:45:49.448Z</updated>
   <id>https://qiuyiwu.github.io/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Bayesian Nonparametrics Notes</title>
+    <link href="https://qiuyiwu.github.io/2019/03/07/BayesianNonparametrics/"/>
+    <id>https://qiuyiwu.github.io/2019/03/07/BayesianNonparametrics/</id>
+    <published>2019-03-07T16:36:37.000Z</published>
+    <updated>2019-03-10T06:45:49.448Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;The note is partially based on the Bayesian Nonparametrics Machine Learning lectures by Yee Whye Teh at Max Planck Institute for Intelligent Systems in Tübingen, Germany. &lt;/p&gt;
+&lt;p&gt;Machine learning is all about data, and the uncertainty and complex process in the data. Probability theory is a rich language to express uncertainties. Graphical tool and complex models are develped to help visualize and derive algorithmic solutions.&lt;br&gt;
+    
+    </summary>
+    
+      <category term="Statistics" scheme="https://qiuyiwu.github.io/categories/Statistics/"/>
+    
+    
+      <category term="Bayesian Nonparametrics" scheme="https://qiuyiwu.github.io/tags/Bayesian-Nonparametrics/"/>
+    
+      <category term="Chinese Restaurant" scheme="https://qiuyiwu.github.io/tags/Chinese-Restaurant/"/>
+    
+      <category term="Indian Buffet" scheme="https://qiuyiwu.github.io/tags/Indian-Buffet/"/>
+    
+  </entry>
   
   <entry>
     <title>Why are Gaussian Process Models called Nonparametric?</title>
@@ -322,7 +347,7 @@ K(x_i,x_j) = h^2\text{exp}\left(\frac{-(x_i-x_j)^2}{\lambda^2}\right)
     <link href="https://qiuyiwu.github.io/2018/01/22/TensorFlow-for-Deep-Learning-3/"/>
     <id>https://qiuyiwu.github.io/2018/01/22/TensorFlow-for-Deep-Learning-3/</id>
     <published>2018-01-23T01:44:46.000Z</published>
-    <updated>2019-01-26T15:18:47.491Z</updated>
+    <updated>2019-03-08T15:48:42.594Z</updated>
     
     <summary type="html">
     
@@ -331,7 +356,7 @@ K(x_i,x_j) = h^2\text{exp}\left(\frac{-(x_i-x_j)^2}{\lambda^2}\right)
     
     </summary>
     
-      <category term="Tensorflow" scheme="https://qiuyiwu.github.io/categories/Tensorflow/"/>
+      <category term="TensorFlow" scheme="https://qiuyiwu.github.io/categories/TensorFlow/"/>
     
     
       <category term="CNN" scheme="https://qiuyiwu.github.io/tags/CNN/"/>
@@ -371,13 +396,13 @@ f(x) = \begin{cases}
       <category term="TensorFlow" scheme="https://qiuyiwu.github.io/categories/TensorFlow/"/>
     
     
-      <category term="TensorFlow" scheme="https://qiuyiwu.github.io/tags/TensorFlow/"/>
-    
-      <category term="DNN" scheme="https://qiuyiwu.github.io/tags/DNN/"/>
-    
       <category term="CNN" scheme="https://qiuyiwu.github.io/tags/CNN/"/>
     
       <category term="RNN" scheme="https://qiuyiwu.github.io/tags/RNN/"/>
+    
+      <category term="TensorFlow" scheme="https://qiuyiwu.github.io/tags/TensorFlow/"/>
+    
+      <category term="DNN" scheme="https://qiuyiwu.github.io/tags/DNN/"/>
     
   </entry>
   

@@ -1,0 +1,1632 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="en">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta name="google-site-verification" content="k0ybHPAc2FXFYFrg4NuDx_CJxUUBzxHAtptDHuGaqJk">
+
+
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+  <meta name="google-site-verification" content="googleb1be81889b9b1f8c.html">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.lug.ustc.edu.cn/css?family=Monda:300,300italic,400,400italic,700,700italic|Monda:300,300italic,400,400italic,700,700italic|Lato:300,300italic,400,400italic,700,700italic|Roboto Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+<link rel="stylesheet" href="<%- config.root %>css/font-awesome.css" media="screen" type="text/css">
+
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/safari-pinned-tab.svg?v=5.1.4" color="#222">
+
+
+  <link rel="manifest" href="/images/manifest.json">
+
+
+  <meta name="msapplication-config" content="/images/browserconfig.xml">
+
+
+
+  <meta name="keywords" content="Bayesian Nonparametrics,Chinese Restaurant,Indian Buffet,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Qiuyi's Blog" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="The note is partially based on the Bayesian Nonparametrics Machine Learning lectures by Yee Whye Teh at Max Planck Institute for Intelligent Systems in Tübingen, Germany.  Machine learning is all abou">
+<meta name="keywords" content="Bayesian Nonparametrics,Chinese Restaurant,Indian Buffet">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Bayesian Nonparametrics Notes">
+<meta property="og:url" content="https://qiuyiwu.github.io/2019/03/07/BayesianNonparametrics/index.html">
+<meta property="og:site_name" content="Qiuyi&#39;s Blog">
+<meta property="og:description" content="The note is partially based on the Bayesian Nonparametrics Machine Learning lectures by Yee Whye Teh at Max Planck Institute for Intelligent Systems in Tübingen, Germany.  Machine learning is all abou">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https://qiuyiwu.github.io/images/2019/03/model.png">
+<meta property="og:image" content="https://qiuyiwu.github.io/images/2019/03/HMM.png">
+<meta property="og:image" content="https://qiuyiwu.github.io/images/2019/03/recommend.png">
+<meta property="og:image" content="https://qiuyiwu.github.io/images/2019/03/dirichlet.png">
+<meta property="og:image" content="https://qiuyiwu.github.io/images/2019/03/model.png">
+<meta property="og:image" content="https://qiuyiwu.github.io/images/2019/03/crp.png">
+<meta property="og:image" content="https://qiuyiwu.github.io/images/2019/03/crpmm.png">
+<meta property="og:updated_time" content="2019-03-10T06:45:49.448Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Bayesian Nonparametrics Notes">
+<meta name="twitter:description" content="The note is partially based on the Bayesian Nonparametrics Machine Learning lectures by Yee Whye Teh at Max Planck Institute for Intelligent Systems in Tübingen, Germany.  Machine learning is all abou">
+<meta name="twitter:image" content="https://qiuyiwu.github.io/images/2019/03/model.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"display":"always","offset":12,"b2t":false,"scrollpercent":true,"onmobile":true},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":true,"transition":{"post_block":"perspectiveLeftIn","post_header":"fadeIn","post_body":"fadeIn","coll_header":"perspectiveLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://qiuyiwu.github.io/2019/03/07/BayesianNonparametrics/">
+
+
+
+
+
+  <title>Bayesian Nonparametrics Notes | Qiuyi's Blog</title>
+  
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', '131473565', 'auto');
+  ga('send', 'pageview');
+</script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+
+
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container  page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Qiuyi's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">Researcher✨Qiuyi Wu</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            About
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-research">
+          <a href="/Research/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-graduation-cap"></i> <br>
+            
+            Research
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-teaching">
+          <a href="/Teaching/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-calendar"></i> <br>
+            
+            Teaching
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-book">
+          <a href="/Book/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-bookmark"></i> <br>
+            
+            Book
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="Searching..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://qiuyiwu.github.io/2019/03/07/BayesianNonparametrics/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Qiuyi Wu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar1.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Qiuyi's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">Bayesian Nonparametrics Notes</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-07T11:36:37-05:00">
+                2019-03-07
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Post modified&#58;</span>
+              
+              <time title="Post modified" itemprop="dateModified" datetime="2019-03-10T01:45:49-05:00">
+                2019-03-10
+              </time>
+            
+          </span>
+
+
+
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/03/07/BayesianNonparametrics/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/03/07/BayesianNonparametrics/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+
+
+
+          
+
+
+
+          
+            <div class="post-wordcount">
+              
+                
+                  <span class="post-meta-divider">|</span>
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  1.7k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">
+                  10
+                </span>
+              
+
+
+
+          
+
+
+
+
+
+            </div>
+          
+
+
+
+
+
+
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>The note is partially based on the Bayesian Nonparametrics Machine Learning lectures by Yee Whye Teh at Max Planck Institute for Intelligent Systems in Tübingen, Germany. </p>
+<p>Machine learning is all about data, and the uncertainty and complex process in the data. Probability theory is a rich language to express uncertainties. Graphical tool and complex models are develped to help visualize and derive algorithmic solutions.<br><a id="more"></a></p>
+<h1 id="Probabilistic-Modelling"><a href="#Probabilistic-Modelling" class="headerlink" title="Probabilistic Modelling"></a>Probabilistic Modelling</h1><ul>
+<li>Data: $x_1, x_2, …, x_n$</li>
+<li>Latent variables: $y_1, y_2, …, y_n$</li>
+<li>Parameter: $\theta$</li>
+<li>Probabilistic model (generative model): parametrized joint distribution over variables<br>$P(x_1, x_2, …, x_n, y_1, y_2, …, y_n|\theta)$</li>
+<li>Inference, of latent variables given observed data:<br>$P(y_1, y_2, …, y_n|x_1, x_2, …, x_n, \theta) = \frac{P(x_1, x_2, …, x_n, y_1, y_2, …, y_n|\theta)}{P(x_1, x_2, …, x_n|\theta)}$</li>
+<li>Learning, of parameters by maximum likelihood:<br>$\theta^{ML} = \underset{\theta}{\text{argmax }}P(x_1, x_2, …, x_n|\theta) $</li>
+<li>Prediction: $P( x_{n+1}, y_{n+1} |x_1, x_2, …, x_n,\theta)$</li>
+<li>Classification: $\underset{c}{\text{argmax }}P(x_{n+1}|\theta^c) $</li>
+</ul>
+<h1 id="Bayesian-Modelling"><a href="#Bayesian-Modelling" class="headerlink" title="Bayesian Modelling"></a>Bayesian Modelling</h1><ul>
+<li>Prior distribution: $P(\theta)$</li>
+<li>Posterior distribution (both inference and learning):<br>$P(y_1, y_2, …, y_n,\theta |x_1, x_2, …, x_n) = \frac{P(x_1, x_2, …, x_n, y_1, y_2, …, y_n|\theta) P(\theta)  }{  P(x_1, x_2, …, x_n) }$</li>
+<li>Prediction: $P( x_{n+1}| x_1, x_2, …, x_n) = \int P( x_{n+1}|\theta )P(\theta| x_1, x_2, …, x_n  )d\theta $</li>
+<li>Classification: $P( x_{n+1}^c| x_1^c, x_2^c, …, x_n^c) = \int P( x_{n+1}|\theta^c )P(\theta^c| x_1^c, x_2^c, …, x_n^c  )d\theta^c $</li>
+</ul>
+<h2 id="Model-based-Clustering"><a href="#Model-based-Clustering" class="headerlink" title="Model-based Clustering"></a>Model-based Clustering</h2><p>Given data from heterogeneous unknown sources, and each cluster modelled using a parametric model:</p>
+<ul>
+<li>Data item:<br>$z_i|\pi\sim \text{Discrete}(\pi)$<br>$x_i|z_i,\theta_k \sim F(\theta))$</li>
+<li>Mising proportions: $\pi = (\pi_1, \pi_2,…, \pi_K)|\alpha \sim \text{Dirichlet}(\alpha/K,…, \alpha/K)$</li>
+<li>Cluster k: $\theta_k|\beta \sim \beta$<center><br><img class="left" src="/images/2019/03/model.png" width="50%" height="50%"><br></center>
+
+</li>
+</ul>
+<h2 id="Hidden-Markov-Models"><a href="#Hidden-Markov-Models" class="headerlink" title="Hidden Markov Models"></a>Hidden Markov Models</h2><ul>
+<li>Popular model for time series data (clustering over time)</li>
+<li>Unobserved dynamic modelled using a Markov model</li>
+<li>Observations modelled as independent conditioned on current state<center><br><img class="left" src="/images/2019/03/HMM.png" width="70%" height="70%"><br></center>
+
+</li>
+</ul>
+<h2 id="Collaborative-Filtering"><a href="#Collaborative-Filtering" class="headerlink" title="Collaborative Filtering"></a>Collaborative Filtering</h2><p>A kind of recommendation system. e.g.: predict how much users would like products that they haven’t seen based on the previous data. </p>
+<p>Data: Rating $R_{ij}$ of a user $\xi_i$ for a certain product $\eta_j$<br>$R_{ij}|\xi_i,\eta_j  \sim \mathcal{N}(\xi_i^\top \eta_j, \sigma^2) $</p>
+<center><br><img class="left" src="/images/2019/03/recommend.png" width="40%" height="40%"><br></center>
+
+
+<h1 id="Bayesian-Nonparametrics"><a href="#Bayesian-Nonparametrics" class="headerlink" title="Bayesian Nonparametrics"></a>Bayesian Nonparametrics</h1><p>As I discussed in the previous blog post (<a href="https://qiuyiwu.github.io/2019/02/19/GaussianProcess/">Why are Gaussian Process Models called Nonparametric?</a>), nonparametric model is a <strong>parametric</strong> model where the number of parameters increases with data. It just cannot be described by fixed number of parameters. And nonparametric models still make model assumptions, but they are less constrained. </p>
+<p>Why do we want Bayesian nonparametrics?</p>
+<ol>
+<li>Model Selection:<br>Typically we use parametric model, say clustering, we need to decide the number of clusters. If we have too many clusters we would encounter overfitting issue, and underfitting if we have too little clusters. In Bayesian model we don’t do model optimization to find the maximum likelihood parameters for the optimal number of clusters, we just compute posterior distribution for the unknown part. And the Bayesian nonparametric model grows with amount of data, thus we can prevent overfitting and underfitting issues. </li>
+<li>Large Function Spaces:<br>We would like to learn the large function space and infer the infinite dimensional objects themselves, and we want to learn the density of the input space.</li>
+<li>Structural Learning:<br>We want to learn the structures of the data (e.g. hierarchical clustering), and we can use bayesian prior over combinatorial structures. Commonly, nonparametric priors alwayes lead to simpler learning algorithm than parametric priors because you don’t need to worry about complicated model selection (e.g. number of latent variables, the way of latent variables connecting to other variables etc.). </li>
+<li>Novel &amp; Useful Properties<ul>
+<li>Exchangeability: permute your dataset without effecting the analysis</li>
+<li>Power laws behaviors: Pitman-Yor process, Indian Buffet process</li>
+<li>Flexible to build complex models: hierarchical nonparametric models, dependent Dirichlet process</li>
+</ul>
+</li>
+</ol>
+<h1 id="Dirichlet-Process"><a href="#Dirichlet-Process" class="headerlink" title="Dirichlet Process"></a>Dirichlet Process</h1><p>Dirichlet process is the cornerstone of modern Bayesian nonparametrics. It is the infinite limit of finite mixture models. It was defined by Ferguson in 1973 as a distribution over measures.  </p>
+<h2 id="Finite-Mixture-Models"><a href="#Finite-Mixture-Models" class="headerlink" title="Finite Mixture Models"></a>Finite Mixture Models</h2><p>Dirichlet distrbution on K-dimensional probability simplex $\{\pi | \sum_k \pi_k=1 \}$:<br>$P(d\pi| \alpha) = \frac{\Gamma (\alpha)}{\Pi_k\Gamma(\alpha/K)}\Pi_{k=1}^K \pi_k^{\alpha/K-1}d\pi \quad$     with $\Gamma (\alpha) = \int_0^\infty x^{\alpha -1} e^x dx$</p>
+<center><br><img class="left" src="/images/2019/03/dirichlet.png" width="80%" height="80%"><br></center>
+
+<p>See <strong>Model-based Clustering</strong> part in the previous section. Given the observations $\mathbf{x}$ we want to learn the latent variables $\mathbf{z}, \pi, \mathbf{\theta}$. We can use MCMC sampling to infer the unknown parameters. We are constructing a Markov chain such that we can do the inference in an iterative manner as the chain would converge at some point. </p>
+<h3 id="Gibbs-Sampling"><a href="#Gibbs-Sampling" class="headerlink" title="Gibbs Sampling"></a>Gibbs Sampling</h3><center><br><img class="left" src="/images/2019/03/model.png" width="50%" height="50%"><br></center>
+
+<ul>
+<li>Calculate the conditional distribution of the latent variables given the parameters and the observations: $ p(z_i=k|\text{ others }) \propto \pi_k f(x_i |\theta_k^*) $<br>$ \pi|\text{ others } \sim \text{Dirichlet}(\frac{\alpha}{K}+n_1,…, \frac{\alpha}{K}+n_K) $</li>
+<li>Calculate the conditional distribution of the parameters given the latent variables and the observations: $ p(\theta_k^*=\theta|\text{ others }) \propto B(\theta)\Pi_{j:z_j=k} f(x_j |\theta) $ </li>
+<li>Iterate this process until they (latent variables and parameters) converge to the posterior distribution. </li>
+</ul>
+<h3 id="Collapsed-Gibbs-Sampling"><a href="#Collapsed-Gibbs-Sampling" class="headerlink" title="Collapsed Gibbs Sampling"></a>Collapsed Gibbs Sampling</h3><p>A more efficient approach of MCMC argorithm: integrate out $\pi, \theta^*$</p>
+<ul>
+<li>Marginalize out the parameters of the model </li>
+<li>All we don’t know is the latent variable (the clusters), and now we have the reduced space to update.<br>$ p(z_i=k|\text{ others }) \propto  \frac{\frac{\alpha}{K} + n_k^{-i}}{\alpha+n-1}f(x_i|z_j=k)$<br>where $ f(x_i|z_j=k) \propto \int B(\theta)f(x_i|\theta)\Pi_{j\neq i: z_j = k} f(x_j|\theta)d\theta  $<br>The prior term $\frac{\frac{\alpha}{K} + n_k^{-i}}{\alpha+n-1}$ is interpretable, $n_k^{-i}$ denotes the number of other data iterms currently assigned to cluster $k$ besides the current item $i$ we are interested in. $\frac{\alpha}{K}$ means even no item belongs to cluster $k$, we still have some probability for cluster $k$. The likelihood $f(x_i|z_j=k)$ means the conditional probability of the observation given the observations that are currently assigned to cluster $k$</li>
+<li>Conditional distributions can be easily computed if $F$ is conjugate to $B$.</li>
+</ul>
+<h3 id="Infinite-Limit-of-Collapsed-Gibbs-Sampling"><a href="#Infinite-Limit-of-Collapsed-Gibbs-Sampling" class="headerlink" title="Infinite Limit of Collapsed Gibbs Sampling"></a>Infinite Limit of Collapsed Gibbs Sampling</h3><p>Assume a very large varlue of $K \rightarrow \infty$, there are at most $n&lt;K$ occupied clusters (most components are empty). We can combine these empty components together:<br>$ p(z_i=k|\text{ others }) = \frac{n_k^{-i}+ \frac{\alpha}{K}}{n-1+\alpha}f(x_i|z_j=k)$<br>$ p(z_i=k_{empty}|\text{ others }) = \frac{\alpha\frac{K-K^*}{K}}{n-1+\alpha}f(x_i|\{\})$<br>When $K \rightarrow \infty$, we get:<br>$ p(z_i=k|\text{ others }) = \frac{n_k^{-i}}{n-1+\alpha}f(x_i|z_j=k)$<br>$ p(z_i=k_{empty}|\text{ others }) = \frac{\alpha}{n-1+\alpha}f(x_i|\{\})$</p>
+<ul>
+<li>The actual infinite limit of the finite mixture model has problems: any particular cluster will get a mixing proportion of 0.</li>
+<li>Better way for the infinite limit thinking:<ol>
+<li>Chinese restaurant process</li>
+<li>Stick-breaking construction</li>
+</ol>
+</li>
+<li>Both are infinite dimensional Dirichlet distributions of Dirichlet Process(DP) </li>
+</ul>
+<h3 id="Chinese-Restaurant-Process"><a href="#Chinese-Restaurant-Process" class="headerlink" title="Chinese Restaurant Process"></a>Chinese Restaurant Process</h3><h4 id="Partitions"><a href="#Partitions" class="headerlink" title="Partitions"></a>Partitions</h4><p>A partition $\varrho$ of a set $S$ is</p>
+<ul>
+<li>A disjoint family of non-empty of subsets $S$ whose union in $S$</li>
+<li>e.g. $S = \{ A,B,C,D,E,F,G  \}$</li>
+<li>e.g. $\varrho = \{ \{A\},\{B,C\},\{D,E,F,G\}  \}$</li>
+<li>The set of all partitions of $S$ is $\mathcal{P}_S$</li>
+<li><em>Random partitions</em> are random variables taking values in $\mathcal{P}_S$</li>
+</ul>
+<h4 id="Chinese-Restaurant-Process-1"><a href="#Chinese-Restaurant-Process-1" class="headerlink" title="Chinese Restaurant Process"></a>Chinese Restaurant Process</h4><ul>
+<li>Each customer comes into restaurant and sits at a table<br>$P(\text{sit at table }c) = \frac{n_c}{\alpha+\sum_{c\in \varrho} n_c} $<br>$P(\text{sit at new table}) = \frac{\alpha}{\alpha+\sum_{c\in \varrho} n_c} $</li>
+<li>Customers correspond to element $S$, tables correspond to clusters in $\varrho$</li>
+<li>Rich-gets-richer: larger clusters are more likely to attract more customers</li>
+<li>Multiplying conditional probabilities together, the overall probability of $\varrho$ (exchangeable partition probability function (EPPF)) is<br>$P(\varrho|\alpha)=\frac{\alpha^{|\varrho|}\Gamma(\alpha)}{\Gamma(n+\alpha)}\Pi_{c\in \varrho} \Gamma(|c|) $<br>The distribution over the partition does not relate to the order of the customers enter the restaurant, and it only depends on the number of the clusters and the size of the clusters. </li>
+</ul>
+<h5 id="Number-of-Clusters"><a href="#Number-of-Clusters" class="headerlink" title="Number of Clusters"></a>Number of Clusters</h5><p>The prior mean and variance of $K$ are:<br>$ E[ \rho| \alpha, n ] = \alpha(\psi(\alpha+n)-\psi(\alpha))\approx \alpha \text{ log}(1+\frac{n}{\alpha}) $<br>$ V[ \rho| \alpha, n ] = \alpha(\psi(\alpha+n)-\psi(\alpha)) + \alpha^2(\psi’(\alpha+n) - \psi’(\alpha)) \approx \alpha \text{ log}(1+\frac{n}{\alpha}) $<br>where $\psi(\alpha) = \frac{\partial }{\partial \alpha}\text{ log }\Gamma(\alpha)$<br><img src="/images/2019/03/crp.png" alt="Sample Image Added via Markdown"></p>
+<h4 id="CRP-Mixture-Model"><a href="#CRP-Mixture-Model" class="headerlink" title="CRP Mixture Model"></a>CRP Mixture Model</h4><p>Given a dataset $S$, we want to partition it into clusters of similar items. And we can use CRP prior over partitioins $\varrho$.</p>
+<ul>
+<li>$\varrho\sim \text{CRP }(\alpha)$</li>
+<li>$\theta^*|\varrho \sim H \text{ for } c\in \rho$</li>
+<li><p>$x_i|\theta,\varrho \sim F(\theta_c^*) \text{ for }c\in \varrho \text{ with } i\in c$</p>
+</li>
+<li><p>CRP prior over $\varrho$, iid prior $H$ over cluster parameters</p>
+<center><br><img class="left" src="/images/2019/03/crpmm.png" width="40%" height="40%"><br></center>
+</li>
+<li><p>CRP can thus induce distribution over partitions: </p>
+<ul>
+<li>$P(\mathbf{z}|\alpha) = \frac{\Gamma(\alpha)}{\Pi_k\Gamma(\alpha/K)}\frac{\Pi_k\Gamma(n_k+\alpha/K)}{\Gamma(\alpha+n)}$ describes a partition of the data set into clusters, and a labelling of<br>each cluster with a mixture component index.</li>
+<li>Induces a distribution over partitions $\varrho$ (without labelling) of the data set:<br>$P(\varrho|\alpha) = [K]^k_{-1}\frac{\Gamma(\alpha)}{\Gamma(\alpha+n)} \Pi_{c\in\varrho} \frac{\Gamma(|c|+\alpha/K)}{\Gamma(\alpha/K)}$</li>
+<li>Assume $K\rightarrow \infty$ (maximum number of clusters in our partitions),  we get a proper distribution over partitions without a limit on the number of clusters:<br>$P (\varrho|\alpha) \rightarrow \frac{\alpha^{|\varrho|}\Gamma(\alpha)}{\Gamma(\alpha+n)} \Pi_{c\in\varrho} \Gamma(|c|)$ </li>
+<li>So the induced distribution over partitions approach Chinese Restaurant Process. </li>
+</ul>
+</li>
+</ul>
+<p>In Chinese Restaurant Process is the distribution over partitions of a collection of objects, which can be used to build nonparametric model-based clustering models. It is related to the infinite limit of finite mixture models (solve the limitation of the originial infinite models).</p>
+<h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><ol>
+<li><a href="https://kourouklides.fandom.com/wiki/Bayesian_Nonparametrics" target="_blank" rel="noopener">Bayesian Nonparametrics Fandom Page</a></li>
+<li><a href="http://blog.bogatron.net/blog/2014/02/02/visualizing-dirichlet-distributions/" target="_blank" rel="noopener">Visualizing Dirichlet Distributions with Matplotlib</a></li>
+<li><a href="https://www.youtube.com/watch?v=dNeW5zoNJ7g" target="_blank" rel="noopener">Bayesian Nonparametrics 1 - Yee Whye Teh - MLSS 2013 Tübingen</a></li>
+</ol>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Bayesian-Nonparametrics/" rel="tag"># Bayesian Nonparametrics</a>
+          
+            <a href="/tags/Chinese-Restaurant/" rel="tag"># Chinese Restaurant</a>
+          
+            <a href="/tags/Indian-Buffet/" rel="tag"># Indian Buffet</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/02/19/GaussianProcess/" rel="next" title="Why are Gaussian Process Models called Nonparametric?">
+                <i class="fa fa-chevron-left"></i> Why are Gaussian Process Models called Nonparametric?
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+      <div id="sidebar-dimmer"></div>
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/avatar1.png" alt="Qiuyi Wu">
+            
+              <p class="site-author-name" itemprop="name">Qiuyi Wu</p>
+              <p class="site-description motion-element" itemprop="description">日神 x 酒神</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">19</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">51</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="http://www.qiuyi-wu.com" target="_blank" title="Website">
+                      
+                        <i class="fa fa-fw fa-globe"></i>Website</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/QiuyiWu" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://twitter.com/ChoweeWu" target="_blank" title="Twitter">
+                      
+                        <i class="fa fa-fw fa-twitter"></i>Twitter</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:qw2199@columbia.edu" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.linkedin.com/in/qiuyi-wu" target="_blank" title="LinkedIn">
+                      
+                        <i class="fa fa-fw fa-linkedin"></i>LinkedIn</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.researchgate.net/profile/Qiuyi_Wu5" target="_blank" title="RG">
+                      
+                        <i class="fa fa-fw fa-university"></i>RG</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Probabilistic-Modelling"><span class="nav-number">1.</span> <span class="nav-text">Probabilistic Modelling</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Bayesian-Modelling"><span class="nav-number">2.</span> <span class="nav-text">Bayesian Modelling</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Model-based-Clustering"><span class="nav-number">2.1.</span> <span class="nav-text">Model-based Clustering</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Hidden-Markov-Models"><span class="nav-number">2.2.</span> <span class="nav-text">Hidden Markov Models</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Collaborative-Filtering"><span class="nav-number">2.3.</span> <span class="nav-text">Collaborative Filtering</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Bayesian-Nonparametrics"><span class="nav-number">3.</span> <span class="nav-text">Bayesian Nonparametrics</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Dirichlet-Process"><span class="nav-number">4.</span> <span class="nav-text">Dirichlet Process</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Finite-Mixture-Models"><span class="nav-number">4.1.</span> <span class="nav-text">Finite Mixture Models</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Gibbs-Sampling"><span class="nav-number">4.1.1.</span> <span class="nav-text">Gibbs Sampling</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Collapsed-Gibbs-Sampling"><span class="nav-number">4.1.2.</span> <span class="nav-text">Collapsed Gibbs Sampling</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Infinite-Limit-of-Collapsed-Gibbs-Sampling"><span class="nav-number">4.1.3.</span> <span class="nav-text">Infinite Limit of Collapsed Gibbs Sampling</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Chinese-Restaurant-Process"><span class="nav-number">4.1.4.</span> <span class="nav-text">Chinese Restaurant Process</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Partitions"><span class="nav-number">4.1.4.1.</span> <span class="nav-text">Partitions</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Chinese-Restaurant-Process-1"><span class="nav-number">4.1.4.2.</span> <span class="nav-text">Chinese Restaurant Process</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Number-of-Clusters"><span class="nav-number">4.1.4.2.1.</span> <span class="nav-text">Number of Clusters</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#CRP-Mixture-Model"><span class="nav-number">4.1.4.3.</span> <span class="nav-text">CRP Mixture Model</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Reference"><span class="nav-number">5.</span> <span class="nav-text">Reference</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+
+
+      <div id="days">已运行274天04小时55分06秒</div>
+        <script language="javascript">function show_date_time(){window.setTimeout("show_date_time()",1e3),BirthDay=new Date("12/31/2017 21:59:28"),today=new Date,timeold=today.getTime()-BirthDay.getTime(),sectimeold=timeold/1e3,secondsold=Math.floor(sectimeold),msPerDay=864e5,e_daysold=timeold/msPerDay,daysold=Math.floor(e_daysold),e_hrsold=24*(e_daysold-daysold),hrsold=setzero(Math.floor(e_hrsold)),e_minsold=60*(e_hrsold-hrsold),minsold=setzero(Math.floor(60*(e_hrsold-hrsold))),seconds=setzero(Math.floor(60*(e_minsold-minsold))),document.getElementById("days").innerHTML="Qiuyi's Blog has been running for <br/>"+daysold+" days "+hrsold+" hrs "+minsold+" mins "+seconds+" secs✨"}function setzero(e){return e<10&&(e="0"+e),e}show_date_time() </script> 
+
+
+
+        <script type="text/javascript" src="//rf.revolvermaps.com/0/0/6.js?i=5n1bjk0rdxu&amp;m=<script type=" text="" javascript"="" async="async"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2017 &mdash; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Qiuyi Wu</span>
+
+
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">16.3k</span>
+  
+</div>    
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+      <div id="needsharebutton-float">
+        <span class="btn">
+          <i class="fa fa-share-alt" aria-hidden="true"></i>
+        </span>
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://https-qiuyiwu-github-io.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'https://qiuyiwu.github.io/2019/03/07/BayesianNonparametrics/';
+          this.page.identifier = '2019/03/07/BayesianNonparametrics/';
+          this.page.title = 'Bayesian Nonparametrics Notes';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://https-qiuyiwu-github-io.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('-1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+  <script src="https://www.gstatic.com/firebasejs/4.6.0/firebase.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/4.6.0/firebase-firestore.js"></script>
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bluebird/3.5.1/bluebird.core.min.js"></script>
+  
+  <script>
+    (function () {
+
+      firebase.initializeApp({
+        apiKey: 'AIzaSyC8zI_jjXsznIE2dCCcOAiY-EAnMUymtm0',
+        projectId: 'hexo-next-1'
+      })
+
+      function getCount(doc, increaseCount) {
+        //increaseCount will be false when not in article page
+
+        return doc.get().then(function (d) {
+          var count
+          if (!d.exists) { //has no data, initialize count
+            if (increaseCount) {
+              doc.set({
+                count: 1
+              })
+              count = 1
+            }
+            else {
+              count = 0
+            }
+          }
+          else { //has data
+            count = d.data().count
+            if (increaseCount) {
+              if (!(window.localStorage && window.localStorage.getItem(title))) { //if first view this article
+                doc.set({ //increase count
+                  count: count + 1
+                })
+                count++
+              }
+            }
+          }
+          if (window.localStorage && increaseCount) { //mark as visited
+            localStorage.setItem(title, true)
+          }
+
+          return count
+        })
+      }
+
+      function appendCountTo(el) {
+        return function (count) {
+          $(el).append(
+            $('<span>').addClass('post-visitors-count').append(
+              $('<span>').addClass('post-meta-divider').text('|')
+            ).append(
+              $('<span>').addClass('post-meta-item-icon').append(
+                $('<i>').addClass('fa fa-eye')
+              )
+              ).append($('<span>').text('Views: ' + count))
+          )
+        }
+      }
+
+      var db = firebase.firestore()
+      var articles = db.collection('articles')
+
+      //https://hexo.io/docs/variables.html
+      var isPost = 'Bayesian Nonparametrics Notes'.length > 0
+      var isArchive = '' === 'true'
+      var isCategory = ''.length > 0
+      var isTag = ''.length > 0
+
+      if (isPost) { //is article page
+        var title = 'Bayesian Nonparametrics Notes'
+        var doc = articles.doc(title)
+
+        getCount(doc, true).then(appendCountTo($('.post-meta')))
+      }
+      else if (!isArchive && !isCategory && !isTag) { //is index page
+        var titles = [] //array to titles
+
+        var postsstr = '' //if you have a better way to get titles of posts, please change it
+        eval(postsstr)
+
+        var promises = titles.map(function (title) {
+          return articles.doc(title)
+        }).map(function (doc) {
+          return getCount(doc)
+        })
+        Promise.all(promises).then(function (counts) {
+          var metas = $('.post-meta')
+          counts.forEach(function (val, idx) {
+            appendCountTo(metas[idx])(val)
+          })
+        })
+      }
+    })()
+  </script>
+
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/needsharebutton/needsharebutton.css">
+
+  
+  
+  <script src="/lib/needsharebutton/needsharebutton.js"></script>
+
+  <script>
+    
+    
+      flOptions = {};
+      
+          flOptions.iconStyle = "box";
+      
+          flOptions.boxForm = "vertical";
+      
+          flOptions.position = "topRight";
+      
+          flOptions.networks = "Weibo,Douban,QQZone,Twitter,Linkedin,Mailto,Reddit,GooglePlus,GoogleBookmarks,Evernote";
+      
+      new needShareButton('#needsharebutton-float', flOptions);
+    
+  </script>
+
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config("");
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="custom_mathjax_source">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->
+  
+
+
+  
+
+  
+
+</body>
+</html>
