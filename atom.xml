@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://qiuyiwu.github.io/"/>
-  <updated>2019-03-14T03:14:15.008Z</updated>
+  <updated>2019-03-17T04:49:21.771Z</updated>
   <id>https://qiuyiwu.github.io/</id>
   
   <author>
@@ -21,17 +21,12 @@
     <link href="https://qiuyiwu.github.io/2019/03/13/ABM/"/>
     <id>https://qiuyiwu.github.io/2019/03/13/ABM/</id>
     <published>2019-03-13T23:05:14.000Z</published>
-    <updated>2019-03-14T03:14:15.008Z</updated>
+    <updated>2019-03-17T04:49:21.771Z</updated>
     
     <summary type="html">
     
-      
-      
-        
-        
-          &lt;p&gt;I attended the &lt;a
-        
-      
+      &lt;p&gt;I attended the &lt;a href=&quot;https://www.samsi.info/programs-and-activities/year-long-research-programs/model-uncertainty-mathematical-statistical-mums/agent-based-modeling-workshop-march-11-12-2019/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;SAMSI Agent-based Modeling Workshop&lt;/a&gt; in Duke University on March 11-12, 2019. As one of the youngest attendants I would like to share some of the limelights discussed in this workshop. &lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Description&lt;/strong&gt;: Agent-based modeling is widely used across many disciplines to study complex emergent behavior generated from simulated entities that interact with each other and their environment according to relatively simple rules. Applications include automobile traffic modeling, weather forecasting, and the study of epidemics. The inferential challenge of agent-based models is that (in general) there is no tractable likelihood function, and thus it is difficult to fit the model or make quantified statements about the accuracy of predictions. This workshop addressed that challenge from the perspective of uncertainty quantification, so that emulator methodology could be used to make approximate principled inferences about agent-based simulations.&lt;br&gt;
     
     </summary>
     
@@ -202,13 +197,13 @@ K(x_i,x_j) = h^2\text{exp}\left(\frac{-(x_i-x_j)^2}{\lambda^2}\right)
     
       <category term="Hexo" scheme="https://qiuyiwu.github.io/tags/Hexo/"/>
     
+      <category term="blog" scheme="https://qiuyiwu.github.io/tags/blog/"/>
+    
       <category term="comment" scheme="https://qiuyiwu.github.io/tags/comment/"/>
     
       <category term="Disqus" scheme="https://qiuyiwu.github.io/tags/Disqus/"/>
     
       <category term="Valine" scheme="https://qiuyiwu.github.io/tags/Valine/"/>
-    
-      <category term="blog" scheme="https://qiuyiwu.github.io/tags/blog/"/>
     
   </entry>
   
