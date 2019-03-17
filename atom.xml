@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://qiuyiwu.github.io/"/>
-  <updated>2019-03-10T17:54:50.865Z</updated>
+  <updated>2019-03-14T03:14:15.008Z</updated>
   <id>https://qiuyiwu.github.io/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Agent-based Modeling Wrap-up</title>
+    <link href="https://qiuyiwu.github.io/2019/03/13/ABM/"/>
+    <id>https://qiuyiwu.github.io/2019/03/13/ABM/</id>
+    <published>2019-03-13T23:05:14.000Z</published>
+    <updated>2019-03-14T03:14:15.008Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;I attended the &lt;a
+        
+      
+    
+    </summary>
+    
+      <category term="Agent-based Modeling" scheme="https://qiuyiwu.github.io/categories/Agent-based-Modeling/"/>
+    
+      <category term="SAMSI" scheme="https://qiuyiwu.github.io/categories/Agent-based-Modeling/SAMSI/"/>
+    
+      <category term="Statistics" scheme="https://qiuyiwu.github.io/categories/Agent-based-Modeling/SAMSI/Statistics/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>Bayesian Nonparametrics Notes</title>
@@ -398,11 +426,11 @@ f(x) = \begin{cases}
       <category term="TensorFlow" scheme="https://qiuyiwu.github.io/categories/TensorFlow/"/>
     
     
-      <category term="TensorFlow" scheme="https://qiuyiwu.github.io/tags/TensorFlow/"/>
-    
       <category term="CNN" scheme="https://qiuyiwu.github.io/tags/CNN/"/>
     
       <category term="RNN" scheme="https://qiuyiwu.github.io/tags/RNN/"/>
+    
+      <category term="TensorFlow" scheme="https://qiuyiwu.github.io/tags/TensorFlow/"/>
     
       <category term="DNN" scheme="https://qiuyiwu.github.io/tags/DNN/"/>
     

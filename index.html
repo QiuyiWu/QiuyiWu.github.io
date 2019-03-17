@@ -2,10 +2,8 @@
 
 
 
-  
 
-
-<html class="theme-next muse use-motion" lang="en">
+<html class="theme-next muse" lang="en">
 <head><meta name="generator" content="Hexo 3.8.0">
   <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta name="google-site-verification" content="k0ybHPAc2FXFYFrg4NuDx_CJxUUBzxHAtptDHuGaqJk">
 
@@ -157,7 +155,7 @@
     sidebar: {"display":"always","scrollpercent":true,"b2t":false,"onmobile":true},
     fancybox: true,
     tabs: true,
-    motion: {"enable":true,"async":true,"transition":{"post_block":"perspectiveLeftIn","post_header":"fadeIn","post_body":"fadeIn","coll_header":"perspectiveLeftIn","sidebar":"slideUpIn"}},
+    motion: {"enable":false,"async":false,"transition":{"post_block":"perspectiveLeftIn","post_header":"fadeIn","post_body":"fadeIn","coll_header":"perspectiveLeftIn","sidebar":"slideUpIn"}},
     duoshuo: {
       userId: '0',
       author: 'Author'
@@ -354,6 +352,209 @@
           <div id="content" class="content">
             
   <section id="posts" class="posts-expand">
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://qiuyiwu.github.io/2019/03/13/ABM/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Qiuyi Wu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar1.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Qiuyi's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/03/13/ABM/" itemprop="url">Agent-based Modeling Wrap-up</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-13T19:05:14-04:00">
+                2019-03-13
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Post modified&#58;</span>
+              
+              <time title="Post modified" itemprop="dateModified" datetime="2019-03-13T23:14:15-04:00">
+                2019-03-13
+              </time>
+            
+          </span>
+
+
+
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/03/13/ABM/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/03/13/ABM/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+
+
+
+          
+
+
+
+          
+            <div class="post-wordcount">
+              
+                
+                  <span class="post-meta-divider">|</span>
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  222
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">
+                  1
+                </span>
+              
+
+
+
+          
+
+
+
+
+
+            </div>
+          
+
+
+
+
+
+
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>I attended the <a href="https://www.samsi.info/programs-and-activities/year-long-research-programs/model-uncertainty-mathematical-statistical-mums/agent-based-modeling-workshop-march-11-12-2019/" target="_blank" rel="noopener">SAMSI Agent-based Modeling Workshop</a> in Duke University on March 11-12, 2019. As one of the youngest attendants I would like to share some of the limelights discussed in this workshop. </p>
+<p><strong>Description</strong>: Agent-based modeling is widely used across many disciplines to study complex emergent behavior generated from simulated entities that interact with each other and their environment according to relatively simple rules. Applications include automobile traffic modeling, weather forecasting, and the study of epidemics. The inferential challenge of agent-based models is that (in general) there is no tractable likelihood function, and thus it is difficult to fit the model or make quantified statements about the accuracy of predictions. This workshop addressed that challenge from the perspective of uncertainty quantification, so that emulator methodology could be used to make approximate principled inferences about agent-based simulations.</p>
+<h1 id="Challenges-for-Statistics-History-of-ABM"><a href="#Challenges-for-Statistics-History-of-ABM" class="headerlink" title="Challenges for Statistics (History of ABM)"></a>Challenges for Statistics (History of ABM)</h1><ul>
+<li>Statistical theory for agent-based model is almost primitive. More work needs to be done in methodology scenario.</li>
+<li>Understanding of the parameterization is essential. We can possibly try to map from $\mathbb{R}^p$ to the input space.</li>
+<li>Calibration method for agent-based model (face validity currently) can miss important structure.</li>
+<li>Uncertainty expression in agent-based model hasn’t been adressed yet. </li>
+</ul>
+<h1 id="Active-Subspaces-vs-Deep-Neural-Netowrk-Transprtation-System"><a href="#Active-Subspaces-vs-Deep-Neural-Netowrk-Transprtation-System" class="headerlink" title="Active Subspaces vs Deep Neural Netowrk (Transprtation System)"></a>Active Subspaces vs Deep Neural Netowrk (Transprtation System)</h1><h1 id="Economics-Exchange-Equilibrium"><a href="#Economics-Exchange-Equilibrium" class="headerlink" title="Economics (Exchange Equilibrium)"></a>Economics (Exchange Equilibrium)</h1><h1 id="Stochastic-Simulation"><a href="#Stochastic-Simulation" class="headerlink" title="Stochastic Simulation"></a>Stochastic Simulation</h1>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
     
       
 
@@ -2181,213 +2382,6 @@ K(x_i,x_j) = h^2\text{exp}\left(\frac{-(x_i-x_j)^2}{\lambda^2}\right)
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://qiuyiwu.github.io/2018/12/20/MusicMining/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Qiuyi Wu">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar1.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Qiuyi's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/12/20/MusicMining/" itemprop="url">Music Mining</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-12-20T14:40:32-05:00">
-                2018-12-20
-              </time>
-            
-
-            
-              <span class="post-meta-divider">|</span>
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-check-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Post modified&#58;</span>
-              
-              <time title="Post modified" itemprop="dateModified" datetime="2019-01-26T10:16:49-05:00">
-                2019-01-26
-              </time>
-            
-          </span>
-
-
-
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/12/20/MusicMining/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/12/20/MusicMining/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-
-
-
-          
-
-
-
-          
-            <div class="post-wordcount">
-              
-                
-                  <span class="post-meta-divider">|</span>
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Words count in article&#58;</span>
-                
-                <span title="Words count in article">
-                  359
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Reading time &asymp;</span>
-                
-                <span title="Reading time">
-                  2
-                </span>
-              
-
-
-
-          
-
-
-
-
-
-            </div>
-          
-
-
-
-
-
-
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>Music and text are similar in the way that both of them can be regraded as information carrier and emotion deliverer. People get daily information from reading newspaper, magazines, blogs etc., and they can also write diary or personal journal to reflect on daily life, let out pent up emotions, record ideas and experience. Same power could come from music! Composers express their feelings through music with different combinations of notes, diverse tempo, and dynamics levels, as another version of language. All these similarities drive people to ask questions like:</p>
-<ul>
-<li>Could music deliver information tantamount to text?</li>
-<li>Can we efficiently use text mining approach in music field?</li>
-<li>Why music from diverse culture can bring people so many different feelings?</li>
-<li>What’s the similarity between music from different culture, or composers, or genres?</li>
-<li>To what extend do people grasp the meaning behind each piece of music expressed by the composer?</li>
-</ul>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/12/20/MusicMining/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2442,7 +2436,7 @@ K(x_i,x_j) = h^2\text{exp}\left(\frac{-(x_i-x_j)^2}{\lambda^2}\right)
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">19</span>
+                  <span class="site-state-item-count">20</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -2453,7 +2447,7 @@ K(x_i,x_j) = h^2\text{exp}\left(\frac{-(x_i-x_j)^2}{\lambda^2}\right)
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-count">12</span>
                   <span class="site-state-item-name">categories</span>
                 </a>
               </div>
@@ -2592,7 +2586,7 @@ K(x_i,x_j) = h^2\text{exp}\left(\frac{-(x_i-x_j)^2}{\lambda^2}\right)
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">16.3k</span>
+    <span title="Site words total count">16.5k</span>
   
 </div>    
 
@@ -3163,7 +3157,7 @@ K(x_i,x_j) = h^2\text{exp}\left(\frac{-(x_i-x_j)^2}{\lambda^2}\right)
       else if (!isArchive && !isCategory && !isTag) { //is index page
         var titles = [] //array to titles
 
-        var postsstr = 'titles.push("Bayesian Nonparametrics Notes");titles.push("Why are Gaussian Process Models called Nonparametric?");titles.push("Make a Birthday Cake in R");titles.push("Blog Theme 日神 x 酒神");titles.push("Add Article Views to Your Hexo Blog");titles.push("Add Comments Section to Your Hexo Blog");titles.push("Create Local Search for Your Hexo Blog");titles.push("Reading Notes for Astrostatistics");titles.push("Data Fusion");titles.push("Music Mining");' //if you have a better way to get titles of posts, please change it
+        var postsstr = 'titles.push("Agent-based Modeling Wrap-up");titles.push("Bayesian Nonparametrics Notes");titles.push("Why are Gaussian Process Models called Nonparametric?");titles.push("Make a Birthday Cake in R");titles.push("Blog Theme 日神 x 酒神");titles.push("Add Article Views to Your Hexo Blog");titles.push("Add Comments Section to Your Hexo Blog");titles.push("Create Local Search for Your Hexo Blog");titles.push("Reading Notes for Astrostatistics");titles.push("Data Fusion");' //if you have a better way to get titles of posts, please change it
         eval(postsstr)
 
         var promises = titles.map(function (title) {
