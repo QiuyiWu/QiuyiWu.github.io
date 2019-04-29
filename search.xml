@@ -51,11 +51,11 @@
       
         <tags>
             
-            <tag> Statistics </tag>
-            
             <tag> Agent-based Modeling </tag>
             
             <tag> SAMSI </tag>
+            
+            <tag> Statistics </tag>
             
         </tags>
       
@@ -80,13 +80,13 @@
       
         <tags>
             
+            <tag> Statistics </tag>
+            
             <tag> Nonparametric </tag>
             
             <tag> Chinese Restaurant </tag>
             
             <tag> Indian Buffet </tag>
-            
-            <tag> Statistics </tag>
             
         </tags>
       
@@ -231,13 +231,13 @@
             
             <tag> Hexo </tag>
             
-            <tag> blog </tag>
-            
             <tag> comment </tag>
             
             <tag> Disqus </tag>
             
             <tag> Valine </tag>
+            
+            <tag> blog </tag>
             
         </tags>
       
@@ -345,11 +345,11 @@
       
         <tags>
             
+            <tag> Topic Modeling </tag>
+            
             <tag> music </tag>
             
             <tag> Data Mining </tag>
-            
-            <tag> Topic Modeling </tag>
             
         </tags>
       
