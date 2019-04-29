@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://qiuyiwu.github.io/"/>
-  <updated>2019-03-17T04:49:21.771Z</updated>
+  <updated>2019-04-29T02:05:29.979Z</updated>
   <id>https://qiuyiwu.github.io/</id>
   
   <author>
@@ -17,11 +17,38 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Bayesian Decision Theory Notes</title>
+    <link href="https://qiuyiwu.github.io/2019/03/29/DecisionTheory/"/>
+    <id>https://qiuyiwu.github.io/2019/03/29/DecisionTheory/</id>
+    <published>2019-03-29T05:12:47.000Z</published>
+    <updated>2019-04-29T02:05:29.979Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Deep gratitude to Prof. Ed George, who opened a door to the world of emperical bayes for me, I began to read Prof. Jim Berger’s book &lt;a href=&quot;https://www.springer.com/us/book/9780387960982&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;&lt;em&gt;Statistical Decision Theory and Bayesian Analysis&lt;/em&gt;&lt;/a&gt; (1985). Here I mainly focus on Chapter 1, 3, 4, 5 of Jim’s book and also share some thoughts on Ed’s paper &lt;a href=&quot;https://projecteuclid.org/euclid.aos/1176349849&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;&lt;em&gt;Minimax Multiple Shrinkage Estimation&lt;/em&gt;&lt;/a&gt; (1986). &lt;/p&gt;
+&lt;h1 id=&quot;Why-Bayesian&quot;&gt;&lt;a href=&quot;#Why-Bayesian&quot; class=&quot;headerlink&quot; title=&quot;Why Bayesian?&quot;&gt;&lt;/a&gt;Why Bayesian?&lt;/h1&gt;&lt;p&gt;Different people would have different conclusions based on their prior beliefs of the plausibility of the event, Baysian analysis is to seek to utilize prior information.&lt;br&gt;
+    
+    </summary>
+    
+      <category term="Statistics" scheme="https://qiuyiwu.github.io/categories/Statistics/"/>
+    
+    
+      <category term="Statistics" scheme="https://qiuyiwu.github.io/tags/Statistics/"/>
+    
+      <category term="Minimax" scheme="https://qiuyiwu.github.io/tags/Minimax/"/>
+    
+      <category term="Decision Theory" scheme="https://qiuyiwu.github.io/tags/Decision-Theory/"/>
+    
+      <category term="Bayesian Analysis" scheme="https://qiuyiwu.github.io/tags/Bayesian-Analysis/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Agent-based Modeling Wrap-up</title>
     <link href="https://qiuyiwu.github.io/2019/03/13/ABM/"/>
     <id>https://qiuyiwu.github.io/2019/03/13/ABM/</id>
     <published>2019-03-13T23:05:14.000Z</published>
-    <updated>2019-03-17T04:49:21.771Z</updated>
+    <updated>2019-03-29T05:16:45.208Z</updated>
     
     <summary type="html">
     
@@ -30,12 +57,14 @@
     
     </summary>
     
-      <category term="Agent-based Modeling" scheme="https://qiuyiwu.github.io/categories/Agent-based-Modeling/"/>
+      <category term="Conference" scheme="https://qiuyiwu.github.io/categories/Conference/"/>
     
-      <category term="SAMSI" scheme="https://qiuyiwu.github.io/categories/Agent-based-Modeling/SAMSI/"/>
     
-      <category term="Statistics" scheme="https://qiuyiwu.github.io/categories/Agent-based-Modeling/SAMSI/Statistics/"/>
+      <category term="Statistics" scheme="https://qiuyiwu.github.io/tags/Statistics/"/>
     
+      <category term="Agent-based Modeling" scheme="https://qiuyiwu.github.io/tags/Agent-based-Modeling/"/>
+    
+      <category term="SAMSI" scheme="https://qiuyiwu.github.io/tags/SAMSI/"/>
     
   </entry>
   
@@ -197,13 +226,13 @@ K(x_i,x_j) = h^2\text{exp}\left(\frac{-(x_i-x_j)^2}{\lambda^2}\right)
     
       <category term="Hexo" scheme="https://qiuyiwu.github.io/tags/Hexo/"/>
     
+      <category term="blog" scheme="https://qiuyiwu.github.io/tags/blog/"/>
+    
       <category term="comment" scheme="https://qiuyiwu.github.io/tags/comment/"/>
     
       <category term="Disqus" scheme="https://qiuyiwu.github.io/tags/Disqus/"/>
     
       <category term="Valine" scheme="https://qiuyiwu.github.io/tags/Valine/"/>
-    
-      <category term="blog" scheme="https://qiuyiwu.github.io/tags/blog/"/>
     
   </entry>
   
@@ -247,7 +276,7 @@ K(x_i,x_j) = h^2\text{exp}\left(\frac{-(x_i-x_j)^2}{\lambda^2}\right)
     
     </summary>
     
-      <category term="Astrostatistics" scheme="https://qiuyiwu.github.io/categories/Astrostatistics/"/>
+      <category term="Statistics" scheme="https://qiuyiwu.github.io/categories/Statistics/"/>
     
     
       <category term="Statistics" scheme="https://qiuyiwu.github.io/tags/Statistics/"/>
@@ -525,35 +554,6 @@ f(x) = \begin{cases}
       <category term="Vapnik-Chervonenkis" scheme="https://qiuyiwu.github.io/tags/Vapnik-Chervonenkis/"/>
     
       <category term="binary" scheme="https://qiuyiwu.github.io/tags/binary/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Data Mining Note 1 - Introduction</title>
-    <link href="https://qiuyiwu.github.io/2018/01/05/Data-Mining-Note1/"/>
-    <id>https://qiuyiwu.github.io/2018/01/05/Data-Mining-Note1/</id>
-    <published>2018-01-05T19:20:09.000Z</published>
-    <updated>2019-01-26T15:12:01.276Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;I took Dr. Ernest Fokoue’s course Data Mining (STAT 747) in my Master study in RIT and gained tremendous fascinating modern Statistical Machine Learning technique skills. I want to share the marvelous essence of this course and my self-learning and self-reflection towards this course.&lt;/p&gt;
-&lt;p&gt;This course covers topics such as clustering, classification and regression trees, multiple linear regression under various conditions, logistic regression, PCA and kernel PCA, model-based clustering via mixture of gaussians, spectral clustering, text mining, neural networks, support vector machines, multidimensional scaling, variable selection, model selection, k-means clustering, k-nearest neighbors classifiers, statistical tools for modern machine learning and data mining, naïve Bayes classifiers, variance reduction methods (bagging) and ensemble methods for predictive optimality.&lt;br&gt;
-    
-    </summary>
-    
-      <category term="Data Mining" scheme="https://qiuyiwu.github.io/categories/Data-Mining/"/>
-    
-    
-      <category term="SVM" scheme="https://qiuyiwu.github.io/tags/SVM/"/>
-    
-      <category term="KNN" scheme="https://qiuyiwu.github.io/tags/KNN/"/>
-    
-      <category term="KMeans" scheme="https://qiuyiwu.github.io/tags/KMeans/"/>
-    
-      <category term="Ensemble" scheme="https://qiuyiwu.github.io/tags/Ensemble/"/>
-    
-      <category term="Neural Network" scheme="https://qiuyiwu.github.io/tags/Neural-Network/"/>
     
   </entry>
   

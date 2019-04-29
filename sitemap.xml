@@ -2,9 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://qiuyiwu.github.io/2019/03/29/DecisionTheory/</loc>
+    
+    <lastmod>2019-04-29T02:05:29.979Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://qiuyiwu.github.io/about/index.html</loc>
+    
+    <lastmod>2019-04-28T05:04:35.037Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://qiuyiwu.github.io/2019/03/13/ABM/</loc>
     
-    <lastmod>2019-03-17T04:49:21.771Z</lastmod>
+    <lastmod>2019-03-29T05:16:45.208Z</lastmod>
     
   </url>
   
@@ -19,13 +33,6 @@
     <loc>https://qiuyiwu.github.io/2018/01/22/TensorFlow-for-Deep-Learning-3/</loc>
     
     <lastmod>2019-03-08T15:48:42.594Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://qiuyiwu.github.io/about/index.html</loc>
-    
-    <lastmod>2019-03-04T18:34:38.472Z</lastmod>
     
   </url>
   
