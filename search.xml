@@ -51,11 +51,11 @@
       
         <tags>
             
+            <tag> Statistics </tag>
+            
             <tag> Agent-based Modeling </tag>
             
             <tag> SAMSI </tag>
-            
-            <tag> Statistics </tag>
             
         </tags>
       
@@ -80,13 +80,13 @@
       
         <tags>
             
-            <tag> Statistics </tag>
-            
             <tag> Nonparametric </tag>
             
             <tag> Chinese Restaurant </tag>
             
             <tag> Indian Buffet </tag>
+            
+            <tag> Statistics </tag>
             
         </tags>
       
@@ -345,11 +345,11 @@
       
         <tags>
             
-            <tag> Topic Modeling </tag>
-            
             <tag> music </tag>
             
             <tag> Data Mining </tag>
+            
+            <tag> Topic Modeling </tag>
             
         </tags>
       
@@ -463,11 +463,11 @@
             
             <tag> TensorFlow </tag>
             
-            <tag> DNN </tag>
-            
             <tag> CNN </tag>
             
             <tag> RNN </tag>
+            
+            <tag> DNN </tag>
             
         </tags>
       
