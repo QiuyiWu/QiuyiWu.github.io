@@ -121,8 +121,8 @@ K(x_i,x_j) = h^2\text{exp}\left(\frac{-(x_i-x_j)^2}{\lambda^2}\right)
   
   <entry>
     <title>Make a Birthday Cake in R</title>
-    <link href="https://qiuyiwu.github.io/2019/01/29/Birthday/"/>
-    <id>https://qiuyiwu.github.io/2019/01/29/Birthday/</id>
+    <link href="https://qiuyiwu.github.io/2019/01/28/Birthday/"/>
+    <id>https://qiuyiwu.github.io/2019/01/28/Birthday/</id>
     <published>2019-01-29T05:57:40.000Z</published>
     <updated>2019-01-30T06:21:26.579Z</updated>
     
@@ -331,11 +331,11 @@ K(x_i,x_j) = h^2\text{exp}\left(\frac{-(x_i-x_j)^2}{\lambda^2}\right)
       <category term="Research" scheme="https://qiuyiwu.github.io/categories/Research/"/>
     
     
-      <category term="Topic Modeling" scheme="https://qiuyiwu.github.io/tags/Topic-Modeling/"/>
-    
       <category term="music" scheme="https://qiuyiwu.github.io/tags/music/"/>
     
       <category term="Data Mining" scheme="https://qiuyiwu.github.io/tags/Data-Mining/"/>
+    
+      <category term="Topic Modeling" scheme="https://qiuyiwu.github.io/tags/Topic-Modeling/"/>
     
   </entry>
   
