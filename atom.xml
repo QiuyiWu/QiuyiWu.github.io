@@ -60,11 +60,11 @@
       <category term="Conference" scheme="https://qiuyiwu.github.io/categories/Conference/"/>
     
     
+      <category term="Statistics" scheme="https://qiuyiwu.github.io/tags/Statistics/"/>
+    
       <category term="Agent-based Modeling" scheme="https://qiuyiwu.github.io/tags/Agent-based-Modeling/"/>
     
       <category term="SAMSI" scheme="https://qiuyiwu.github.io/tags/SAMSI/"/>
-    
-      <category term="Statistics" scheme="https://qiuyiwu.github.io/tags/Statistics/"/>
     
   </entry>
   
@@ -85,13 +85,13 @@
       <category term="Statistics" scheme="https://qiuyiwu.github.io/categories/Statistics/"/>
     
     
-      <category term="Statistics" scheme="https://qiuyiwu.github.io/tags/Statistics/"/>
-    
       <category term="Nonparametric" scheme="https://qiuyiwu.github.io/tags/Nonparametric/"/>
     
       <category term="Chinese Restaurant" scheme="https://qiuyiwu.github.io/tags/Chinese-Restaurant/"/>
     
       <category term="Indian Buffet" scheme="https://qiuyiwu.github.io/tags/Indian-Buffet/"/>
+    
+      <category term="Statistics" scheme="https://qiuyiwu.github.io/tags/Statistics/"/>
     
   </entry>
   
@@ -121,8 +121,8 @@ K(x_i,x_j) = h^2\text{exp}\left(\frac{-(x_i-x_j)^2}{\lambda^2}\right)
   
   <entry>
     <title>Make a Birthday Cake in R</title>
-    <link href="https://qiuyiwu.github.io/2019/01/28/Birthday/"/>
-    <id>https://qiuyiwu.github.io/2019/01/28/Birthday/</id>
+    <link href="https://qiuyiwu.github.io/2019/01/29/Birthday/"/>
+    <id>https://qiuyiwu.github.io/2019/01/29/Birthday/</id>
     <published>2019-01-29T05:57:40.000Z</published>
     <updated>2019-01-30T06:21:26.579Z</updated>
     
@@ -450,13 +450,13 @@ f(x) = \begin{cases}
       <category term="TensorFlow" scheme="https://qiuyiwu.github.io/categories/TensorFlow/"/>
     
     
-      <category term="CNN" scheme="https://qiuyiwu.github.io/tags/CNN/"/>
-    
-      <category term="RNN" scheme="https://qiuyiwu.github.io/tags/RNN/"/>
-    
       <category term="TensorFlow" scheme="https://qiuyiwu.github.io/tags/TensorFlow/"/>
     
       <category term="DNN" scheme="https://qiuyiwu.github.io/tags/DNN/"/>
+    
+      <category term="CNN" scheme="https://qiuyiwu.github.io/tags/CNN/"/>
+    
+      <category term="RNN" scheme="https://qiuyiwu.github.io/tags/RNN/"/>
     
   </entry>
   
