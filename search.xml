@@ -231,13 +231,13 @@
             
             <tag> Hexo </tag>
             
+            <tag> blog </tag>
+            
             <tag> comment </tag>
             
             <tag> Disqus </tag>
             
             <tag> Valine </tag>
-            
-            <tag> blog </tag>
             
         </tags>
       
@@ -461,13 +461,13 @@
       
         <tags>
             
-            <tag> CNN </tag>
-            
-            <tag> RNN </tag>
-            
             <tag> TensorFlow </tag>
             
             <tag> DNN </tag>
+            
+            <tag> CNN </tag>
+            
+            <tag> RNN </tag>
             
         </tags>
       
