@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://qiuyiwu.github.io/Teaching/index.html</loc>
+    
+    <lastmod>2019-12-22T16:27:53.351Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://qiuyiwu.github.io/about/index.html</loc>
     
     <lastmod>2019-12-22T16:21:09.797Z</lastmod>
@@ -159,13 +166,6 @@
     <loc>https://qiuyiwu.github.io/categories/index.html</loc>
     
     <lastmod>2019-01-25T21:01:04.500Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://qiuyiwu.github.io/Teaching/index.html</loc>
-    
-    <lastmod>2019-01-22T02:15:01.073Z</lastmod>
     
   </url>
   
