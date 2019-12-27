@@ -1,0 +1,1499 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="en">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta name="google-site-verification" content="k0ybHPAc2FXFYFrg4NuDx_CJxUUBzxHAtptDHuGaqJk">
+
+
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+  <meta name="google-site-verification" content="googleb1be81889b9b1f8c.html">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+<link rel="stylesheet" href="<%- config.root %>css/font-awesome.css" media="screen" type="text/css">
+
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/safari-pinned-tab.svg?v=5.1.4" color="#222">
+
+
+  <link rel="manifest" href="/images/manifest.json">
+
+
+  <meta name="msapplication-config" content="/images/browserconfig.xml">
+
+
+
+  <meta name="keywords" content="CNN,RNN,API,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Qiuyi's Blog" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="Continue the learning process of Convolutional Neural Networks and Recurrent Neural Networks with TensorFlow in Jupyter Notebook. RNN with TensorFlow123456789101112131415161718192021222324252627282930">
+<meta name="keywords" content="CNN,RNN,API">
+<meta property="og:type" content="article">
+<meta property="og:title" content="TensorFlow for Deep Learning 3">
+<meta property="og:url" content="https://qiuyiwu.github.io/2018/01/23/TensorFlow-for-Deep-Learning-3/index.html">
+<meta property="og:site_name" content="Qiuyi&#39;s Blog">
+<meta property="og:description" content="Continue the learning process of Convolutional Neural Networks and Recurrent Neural Networks with TensorFlow in Jupyter Notebook. RNN with TensorFlow123456789101112131415161718192021222324252627282930">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https://qiuyiwu.github.io/images/2018/01/sin1.png">
+<meta property="og:image" content="https://qiuyiwu.github.io/images/2018/01/sin2.png">
+<meta property="og:image" content="https://qiuyiwu.github.io/images/2018/01/sin3.png">
+<meta property="og:image" content="https://qiuyiwu.github.io/images/2018/01/sin4.png">
+<meta property="og:image" content="https://qiuyiwu.github.io/images/2018/01/sin5.png">
+<meta property="og:image" content="https://qiuyiwu.github.io/images/2018/01/sin6.png">
+<meta property="og:image" content="https://qiuyiwu.github.io/images/2018/01/sin7.png">
+<meta property="og:image" content="https://qiuyiwu.github.io/images/2018/01/sin8.png">
+<meta property="og:updated_time" content="2019-03-08T15:48:42.594Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="TensorFlow for Deep Learning 3">
+<meta name="twitter:description" content="Continue the learning process of Convolutional Neural Networks and Recurrent Neural Networks with TensorFlow in Jupyter Notebook. RNN with TensorFlow123456789101112131415161718192021222324252627282930">
+<meta name="twitter:image" content="https://qiuyiwu.github.io/images/2018/01/sin1.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"display":"always","scrollpercent":true,"b2t":false,"onmobile":true},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://qiuyiwu.github.io/2018/01/23/TensorFlow-for-Deep-Learning-3/">
+
+
+
+
+
+  <title>TensorFlow for Deep Learning 3 | Qiuyi's Blog</title>
+  
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', '131473565', 'auto');
+  ga('send', 'pageview');
+</script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+
+
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container  page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Qiuyi's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">Researcher✨Qiuyi Wu</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            About
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-research">
+          <a href="/Research/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-graduation-cap"></i> <br>
+            
+            Research
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-teaching">
+          <a href="/Teaching/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-calendar"></i> <br>
+            
+            Teaching
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-book">
+          <a href="/Book/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-bookmark"></i> <br>
+            
+            Book
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="Searching..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://qiuyiwu.github.io/2018/01/23/TensorFlow-for-Deep-Learning-3/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Qiuyi Wu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar1.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Qiuyi's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">TensorFlow for Deep Learning 3</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-01-22T20:44:46-05:00">
+                2018-01-22
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Post modified&#58;</span>
+              
+              <time title="Post modified" itemprop="dateModified" datetime="2019-03-08T10:48:42-05:00">
+                2019-03-08
+              </time>
+            
+          </span>
+
+
+
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/01/23/TensorFlow-for-Deep-Learning-3/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/01/23/TensorFlow-for-Deep-Learning-3/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+
+
+
+          
+
+
+
+          
+            <div class="post-wordcount">
+              
+                
+                  <span class="post-meta-divider">|</span>
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                <span title="Words count in article">
+                  820
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                <span title="Reading time">
+                  5
+                </span>
+              
+
+
+
+          
+
+
+
+
+
+            </div>
+          
+
+
+
+
+
+
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>Continue the learning process of Convolutional Neural Networks and Recurrent Neural Networks with TensorFlow in Jupyter Notebook.</p>
+<h1 id="RNN-with-TensorFlow"><a href="#RNN-with-TensorFlow" class="headerlink" title="RNN with TensorFlow"></a>RNN with TensorFlow</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> tensorflow <span class="keyword">as</span> tf</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line">%matplotlib inline</span><br><span class="line"><span class="comment"># class: create the data, generate the batches to send it back</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">TimeSeriesData</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, num_points, xmin, xmax)</span>:</span></span><br><span class="line">        self.xmin = xmin</span><br><span class="line">        self.xmax = xmax</span><br><span class="line">        self.num_points = num_points</span><br><span class="line">        self.resolution = (xmax - xmin)/num_points</span><br><span class="line">        self.x_data = np.linspace(xmin, xmax, num_points)</span><br><span class="line">        self.y_true = np.sin(self.x_data)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">ret_true</span><span class="params">(self, x_series)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> np.sin(x_series)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">next_batch</span><span class="params">(self, batch_size, steps, return_batch_ts = False)</span>:</span></span><br><span class="line">        <span class="comment"># grab a random starting point for each batch</span></span><br><span class="line">        random_start = np.random.rand(batch_size,<span class="number">1</span>)</span><br><span class="line">        <span class="comment"># convert the data to TS</span></span><br><span class="line">        ts_start = random_start * (self.xmax - self.xmin - (steps * self.resolution))</span><br><span class="line">        <span class="comment"># create batch time series on the x axis</span></span><br><span class="line">        batch_ts = ts_start + np.arange(<span class="number">0.0</span>,steps+<span class="number">1</span>) * self.resolution</span><br><span class="line">        <span class="comment"># create the Y data for the time series x axis from previous step</span></span><br><span class="line">        y_batch = np.sin(batch_ts)</span><br><span class="line">        <span class="comment"># formatting for RNN</span></span><br><span class="line">        <span class="keyword">if</span> return_batch_ts:</span><br><span class="line">            <span class="keyword">return</span> y_batch[:,:<span class="number">-1</span>].reshape(<span class="number">-1</span>,steps,<span class="number">1</span>), y_batch[:,<span class="number">1</span>:].reshape(<span class="number">-1</span>,steps,<span class="number">1</span>), batch_ts</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">return</span> y_batch[:,:<span class="number">-1</span>].reshape(<span class="number">-1</span>,steps,<span class="number">1</span>), y_batch[:,<span class="number">1</span>:].reshape(<span class="number">-1</span>,steps,<span class="number">1</span>)</span><br><span class="line">            <span class="comment"># original y_batch and y_batch shifted over 1 step in the future</span></span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Give the data and try the model!</span></span><br><span class="line">ts_data = TimeSeriesData(<span class="number">250</span>,<span class="number">0</span>,<span class="number">10</span>)</span><br><span class="line">plt.plot(ts_data.x_data, ts_data.y_true)</span><br></pre></td></tr></table></figure>
+<center><br><img class="left" src="/images/2018/01/sin1.png" width="50%" height="50%"><br></center>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">num_time_steps = <span class="number">60</span></span><br><span class="line"><span class="comment"># Set 1 batch, 60 steps, return batch time series on x axis</span></span><br><span class="line">y1, y2, ts = ts_data.next_batch(<span class="number">1</span>, num_time_steps, <span class="keyword">True</span>)</span><br><span class="line">plt.plot(ts.flatten()[<span class="number">1</span>:], y2.flatten(), <span class="string">'*'</span>)</span><br><span class="line"><span class="comment"># ts.flatten(): Return a copy of the array collapsed into one dimension.</span></span><br><span class="line"><span class="comment"># ts has total 251 points (including the prediction), so start from 1, to match y2</span></span><br></pre></td></tr></table></figure>
+<center><br><img class="left" src="/images/2018/01/sin2.png" width="50%" height="50%"><br></center>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">plt.plot(ts_data.x_data, ts_data.y_true, label =<span class="string">'Sin(t)'</span>)</span><br><span class="line">plt.plot(ts.flatten()[<span class="number">1</span>:], y2.flatten(), <span class="string">'*'</span>, label = <span class="string">'Single Training Example'</span>)</span><br><span class="line">plt.legend()</span><br><span class="line">plt.tight_layout()   <span class="comment"># Automatically adjust subplot parameters to give specified padding.</span></span><br></pre></td></tr></table></figure>
+<center><br><img class="left" src="/images/2018/01/sin3.png" width="50%" height="50%"><br></center>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Demonstrate what's going on of the training in the model, shift over 1 step</span></span><br><span class="line">num_time_steps = <span class="number">30</span></span><br><span class="line">train_example = np.linspace(<span class="number">5</span>, <span class="number">5</span>+ts_data.resolution*(num_time_steps + <span class="number">1</span>), num_time_steps + <span class="number">1</span>)</span><br><span class="line">plt.title(<span class="string">'A Traning Example'</span>)</span><br><span class="line">plt.plot(train_example[:<span class="number">-1</span>], ts_data.ret_true(train_example[:<span class="number">-1</span>]), <span class="string">'bo'</span>, markersize = <span class="number">15</span>, alpha = <span class="number">0.5</span>, label = <span class="string">'Example'</span>)</span><br><span class="line">plt.plot(train_example[<span class="number">1</span>:], ts_data.ret_true(train_example[<span class="number">1</span>:]), <span class="string">'ko'</span>, markersize = <span class="number">7</span>, label = <span class="string">'Target'</span>)</span><br><span class="line">plt.legend()</span><br></pre></td></tr></table></figure>
+<center><br><img class="left" src="/images/2018/01/sin4.png" width="50%" height="50%"><br></center>
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Create the model</span></span><br><span class="line">tf.reset_default_graph()</span><br><span class="line">num_inputs = <span class="number">1</span></span><br><span class="line">num_neurons = <span class="number">100</span></span><br><span class="line">num_outputs = <span class="number">1</span></span><br><span class="line">learning_rate = <span class="number">0.0001</span></span><br><span class="line">num_train_iterations = <span class="number">2000</span></span><br><span class="line">batch_size = <span class="number">1</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Placeholder</span></span><br><span class="line">X = tf.placeholder(tf.float32, [<span class="keyword">None</span>, num_time_steps, num_inputs])</span><br><span class="line">y = tf.placeholder(tf.float32, [<span class="keyword">None</span>, num_time_steps, num_outputs])</span><br><span class="line"><span class="comment"># Run cell layer</span></span><br><span class="line">cell_input = tf.contrib.rnn.BasicRNNCell(num_units = num_neurons, activation = tf.nn.relu) <span class="comment"># Can try other cell: GRUCell etc.</span></span><br><span class="line">cell = tf.contrib.rnn.OutputProjectionWrapper(cell_input, output_size = num_outputs)</span><br><span class="line"></span><br><span class="line">outputs, states = tf.nn.dynamic_rnn(cell, X, dtype = tf.float32)</span><br><span class="line"><span class="comment"># MSE</span></span><br><span class="line">loss = tf.reduce_mean(tf.square(outputs-y))</span><br><span class="line">optimizer = tf.train.AdamOptimizer(learning_rate = learning_rate)</span><br><span class="line">train = optimizer.minimize(loss)</span><br><span class="line">init = tf.global_variables_initializer()</span><br><span class="line"><span class="comment"># Session</span></span><br><span class="line">saver = tf.train.Saver()</span><br><span class="line"><span class="keyword">with</span> tf.Session() <span class="keyword">as</span> sess:</span><br><span class="line">    sess.run(init)</span><br><span class="line">    <span class="keyword">for</span> iteration <span class="keyword">in</span> range(num_train_iterations):</span><br><span class="line">        X_batch, y_batch = ts_data.next_batch(batch_size, num_time_steps)</span><br><span class="line">        sess.run(train, feed_dict = &#123;X: X_batch, y: y_batch&#125;)</span><br><span class="line">        <span class="keyword">if</span> iteration % <span class="number">100</span> == <span class="number">0</span>:</span><br><span class="line">            mse = loss.eval(feed_dict = &#123;X: X_batch, y: y_batch&#125;)</span><br><span class="line">            print(iteration, <span class="string">'\tMSE'</span>, mse)</span><br><span class="line">    saver.save(sess, <span class="string">'./rnn_time_series_model_codealong'</span>)</span><br></pre></td></tr></table></figure>
+<center><br><img class="left" src="/images/2018/01/sin5.png" width="30%" height="30%"><br></center>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># predict 1 step in the future</span></span><br><span class="line"><span class="keyword">with</span> tf.Session() <span class="keyword">as</span> sess:</span><br><span class="line">    saver.restore(sess, <span class="string">'./rnn_time_series_model_codealong'</span>)</span><br><span class="line"></span><br><span class="line">    X_new = np.sin(np.array(train_example[:<span class="number">-1</span>].reshape(<span class="number">-1</span>,num_time_steps, num_inputs)))</span><br><span class="line">    y_pred = sess.run(outputs, feed_dict = &#123;X: X_new&#125;)</span><br><span class="line"></span><br><span class="line">plt.title(<span class="string">'Test The Model'</span>)</span><br><span class="line"><span class="comment"># Training example</span></span><br><span class="line">plt.plot(train_example[:<span class="number">-1</span>], np.sin(train_example[:<span class="number">-1</span>]),<span class="string">'bo'</span>, markersize = <span class="number">15</span>, alpha = <span class="number">0.5</span>, label = <span class="string">'Training Example'</span>)</span><br><span class="line"><span class="comment"># Target to predict</span></span><br><span class="line">plt.plot(train_example[<span class="number">1</span>:], np.sin(train_example[<span class="number">1</span>:]),<span class="string">'ko'</span>, markersize = <span class="number">10</span>, label = <span class="string">'Target'</span>)</span><br><span class="line"><span class="comment"># Model prediction</span></span><br><span class="line">plt.plot(train_example[<span class="number">1</span>:], y_pred[<span class="number">0</span>,:,<span class="number">0</span>], <span class="string">'r.'</span>, markersize = <span class="number">10</span>, label = <span class="string">'Prediction'</span>)</span><br><span class="line"></span><br><span class="line">plt.xlabel(<span class="string">'Time'</span>)</span><br><span class="line">plt.legend()</span><br><span class="line">plt.tight_layout()</span><br></pre></td></tr></table></figure>
+<center><br><img class="left" src="/images/2018/01/sin6.png" width="50%" height="50%"><br></center><br>To further explore the performance of RNN model, we can change the number of iteration <code>num_train_iterations</code>, learning rate <code>learning_rate</code>, and model type <code>tf.contrib.rnn.BasicRNNCell()</code> and then play with it.<br><br>About just for time sequence that shifts 1 time step ahead, now we’ll generate a completely new sequence.<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">with</span> tf.Session() <span class="keyword">as</span> sess:</span><br><span class="line">    saver.restore(sess, <span class="string">'./rnn_time_series_model_codealong'</span>)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># seed zeros</span></span><br><span class="line">    <span class="comment"># 30 0s and the generated data</span></span><br><span class="line">    zero_seq_seed = [<span class="number">0.0</span> <span class="keyword">for</span> i <span class="keyword">in</span> range(num_time_steps)]</span><br><span class="line">    <span class="keyword">for</span> iteration <span class="keyword">in</span> range(len(ts_data.x_data) - num_time_steps):</span><br><span class="line">        X_batch = np.array(zero_seq_seed[-num_time_steps:]).reshape(<span class="number">1</span>, num_time_steps,<span class="number">1</span>)</span><br><span class="line">        y_pred = sess.run(outputs, feed_dict = &#123;X: X_batch&#125;)</span><br><span class="line">        zero_seq_seed.append(y_pred[<span class="number">0</span>,<span class="number">-1</span>,<span class="number">0</span>])</span><br><span class="line">    </span><br><span class="line">plt.plot(ts_data.x_data, zero_seq_seed, <span class="string">'b-'</span>)</span><br><span class="line">plt.plot(ts_data.x_data[:num_time_steps], zero_seq_seed[:num_time_steps], <span class="string">'r'</span>, linewidth =<span class="number">3</span>)</span><br><span class="line">plt.xlabel(<span class="string">'Time'</span>)</span><br><span class="line">plt.ylabel(<span class="string">'Y'</span>)</span><br></pre></td></tr></table></figure><br><br><center><br><img class="left" src="/images/2018/01/sin7.png" width="50%" height="50%"><br></center>
+
+<p>Instead of zeros at the beginning, now use training example, other parts remain the same<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">with</span> tf.Session() <span class="keyword">as</span> sess:</span><br><span class="line">    saver.restore(sess, <span class="string">'./rnn_time_series_model_codealong'</span>)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 30 training points and the generated data</span></span><br><span class="line">    training_example = list(ts_data.y_true[:<span class="number">30</span>])</span><br><span class="line">    <span class="keyword">for</span> iteration <span class="keyword">in</span> range(len(ts_data.x_data) - num_time_steps):</span><br><span class="line">        X_batch = np.array(training_example[-num_time_steps:]).reshape(<span class="number">1</span>, num_time_steps,<span class="number">1</span>)</span><br><span class="line">        y_pred = sess.run(outputs, feed_dict = &#123;X: X_batch&#125;)</span><br><span class="line">        training_example.append(y_pred[<span class="number">0</span>,<span class="number">-1</span>,<span class="number">0</span>])</span><br><span class="line">    </span><br><span class="line">plt.plot(ts_data.x_data, training_example, <span class="string">'b-'</span>)</span><br><span class="line">plt.plot(ts_data.x_data[:num_time_steps], training_example[:num_time_steps], <span class="string">'r'</span>, linewidth =<span class="number">3</span>)</span><br><span class="line">plt.xlabel(<span class="string">'Time'</span>)</span><br><span class="line">plt.ylabel(<span class="string">'Y'</span>)</span><br></pre></td></tr></table></figure></p>
+<center><br><img class="left" src="/images/2018/01/sin8.png" width="50%" height="50%"><br></center>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/CNN/" rel="tag"># CNN</a>
+          
+            <a href="/tags/RNN/" rel="tag"># RNN</a>
+          
+            <a href="/tags/API/" rel="tag"># API</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/01/22/TensorFlow-for-Deep-Learning-2/" rel="next" title="TensorFlow for Deep Learning 2">
+                <i class="fa fa-chevron-left"></i> TensorFlow for Deep Learning 2
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/06/05/Public-Policy-Blogs/" rel="prev" title="Research on Public Policy Blogs">
+                Research on Public Policy Blogs <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+      <div id="sidebar-dimmer"></div>
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/avatar1.png" alt="Qiuyi Wu">
+            
+              <p class="site-author-name" itemprop="name">Qiuyi Wu</p>
+              <p class="site-description motion-element" itemprop="description">日神 x 酒神</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">21</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">55</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="http://www.qiuyiwu.format.com" target="_blank" title="Website">
+                      
+                        <i class="fa fa-fw fa-globe"></i>Website</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/QiuyiWu" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://twitter.com/ChoweeWu" target="_blank" title="Twitter">
+                      
+                        <i class="fa fa-fw fa-twitter"></i>Twitter</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:qw2199@columbia.edu" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.linkedin.com/in/qiuyi-wu" target="_blank" title="LinkedIn">
+                      
+                        <i class="fa fa-fw fa-linkedin"></i>LinkedIn</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.researchgate.net/profile/Qiuyi_Wu5" target="_blank" title="RG">
+                      
+                        <i class="fa fa-fw fa-university"></i>RG</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+
+
+
+
+
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#RNN-with-TensorFlow"><span class="nav-number">1.</span> <span class="nav-text">RNN with TensorFlow</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+
+
+      <div id="days">已运行274天04小时55分06秒</div>
+        <script language="javascript">function show_date_time(){window.setTimeout("show_date_time()",1e3),BirthDay=new Date("12/31/2017 21:59:28"),today=new Date,timeold=today.getTime()-BirthDay.getTime(),sectimeold=timeold/1e3,secondsold=Math.floor(sectimeold),msPerDay=864e5,e_daysold=timeold/msPerDay,daysold=Math.floor(e_daysold),e_hrsold=24*(e_daysold-daysold),hrsold=setzero(Math.floor(e_hrsold)),e_minsold=60*(e_hrsold-hrsold),minsold=setzero(Math.floor(60*(e_hrsold-hrsold))),seconds=setzero(Math.floor(60*(e_minsold-minsold))),document.getElementById("days").innerHTML="Qiuyi's Blog has been running for <br/>"+daysold+" days "+hrsold+" hrs "+minsold+" mins "+seconds+" secs✨"}function setzero(e){return e<10&&(e="0"+e),e}show_date_time() </script> 
+
+
+
+        <script type="text/javascript" src="//rf.revolvermaps.com/0/0/6.js?i=5n1bjk0rdxu&amp;m=<script type=" text="" javascript"="" async="async"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2017 &mdash; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Qiuyi Wu</span>
+
+
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+    <span title="Site words total count">17.2k</span>
+  
+</div>    
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+      <div id="needsharebutton-float">
+        <span class="btn">
+          <i class="fa fa-share-alt" aria-hidden="true"></i>
+        </span>
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: true,
+        appId: '1o3sOD05aTh1aPaM0VhpMH6h-gzGzoHsz',
+        appKey: 'V58dJ7DT4VxfBmDHsMmI7GAL',
+        placeholder: 'Comment here...',
+        avatar:'retro',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('-1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+  <script src="https://www.gstatic.com/firebasejs/4.6.0/firebase.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/4.6.0/firebase-firestore.js"></script>
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bluebird/3.5.1/bluebird.core.min.js"></script>
+  
+  <script>
+    (function () {
+
+      firebase.initializeApp({
+        apiKey: 'AIzaSyC8zI_jjXsznIE2dCCcOAiY-EAnMUymtm0',
+        projectId: 'hexo-next-1'
+      })
+
+      function getCount(doc, increaseCount) {
+        //increaseCount will be false when not in article page
+
+        return doc.get().then(function (d) {
+          var count
+          if (!d.exists) { //has no data, initialize count
+            if (increaseCount) {
+              doc.set({
+                count: 1
+              })
+              count = 1
+            }
+            else {
+              count = 0
+            }
+          }
+          else { //has data
+            count = d.data().count
+            if (increaseCount) {
+              if (!(window.localStorage && window.localStorage.getItem(title))) { //if first view this article
+                doc.set({ //increase count
+                  count: count + 1
+                })
+                count++
+              }
+            }
+          }
+          if (window.localStorage && increaseCount) { //mark as visited
+            localStorage.setItem(title, true)
+          }
+
+          return count
+        })
+      }
+
+      function appendCountTo(el) {
+        return function (count) {
+          $(el).append(
+            $('<span>').addClass('post-visitors-count').append(
+              $('<span>').addClass('post-meta-divider').text('|')
+            ).append(
+              $('<span>').addClass('post-meta-item-icon').append(
+                $('<i>').addClass('fa fa-eye')
+              )
+              ).append($('<span>').text('Views: ' + count))
+          )
+        }
+      }
+
+      var db = firebase.firestore()
+      var articles = db.collection('articles')
+
+      //https://hexo.io/docs/variables.html
+      var isPost = 'TensorFlow for Deep Learning 3'.length > 0
+      var isArchive = '' === 'true'
+      var isCategory = ''.length > 0
+      var isTag = ''.length > 0
+
+      if (isPost) { //is article page
+        var title = 'TensorFlow for Deep Learning 3'
+        var doc = articles.doc(title)
+
+        getCount(doc, true).then(appendCountTo($('.post-meta')))
+      }
+      else if (!isArchive && !isCategory && !isTag) { //is index page
+        var titles = [] //array to titles
+
+        var postsstr = '' //if you have a better way to get titles of posts, please change it
+        eval(postsstr)
+
+        var promises = titles.map(function (title) {
+          return articles.doc(title)
+        }).map(function (doc) {
+          return getCount(doc)
+        })
+        Promise.all(promises).then(function (counts) {
+          var metas = $('.post-meta')
+          counts.forEach(function (val, idx) {
+            appendCountTo(metas[idx])(val)
+          })
+        })
+      }
+    })()
+  </script>
+
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/needsharebutton/needsharebutton.css">
+
+  
+  
+  <script src="/lib/needsharebutton/needsharebutton.js"></script>
+
+  <script>
+    
+    
+      flOptions = {};
+      
+          flOptions.iconStyle = "box";
+      
+          flOptions.boxForm = "vertical";
+      
+          flOptions.position = "topRight";
+      
+          flOptions.networks = "Weibo,Douban,QQZone,Twitter,Linkedin,Mailto,Reddit,GooglePlus,GoogleBookmarks,Evernote";
+      
+      new needShareButton('#needsharebutton-float', flOptions);
+    
+  </script>
+
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config("");
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="custom_mathjax_source">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->
+  
+
+
+  
+
+  
+
+</body>
+</html>

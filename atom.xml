@@ -45,8 +45,8 @@
   
   <entry>
     <title>Agent-based Modeling Wrap-up</title>
-    <link href="https://qiuyiwu.github.io/2019/03/13/ABM/"/>
-    <id>https://qiuyiwu.github.io/2019/03/13/ABM/</id>
+    <link href="https://qiuyiwu.github.io/2019/03/14/ABM/"/>
+    <id>https://qiuyiwu.github.io/2019/03/14/ABM/</id>
     <published>2019-03-13T23:05:14.000Z</published>
     <updated>2019-03-29T05:16:45.208Z</updated>
     
@@ -70,8 +70,8 @@
   
   <entry>
     <title>Bayesian Nonparametrics Notes</title>
-    <link href="https://qiuyiwu.github.io/2019/03/07/BayesianNonparametrics/"/>
-    <id>https://qiuyiwu.github.io/2019/03/07/BayesianNonparametrics/</id>
+    <link href="https://qiuyiwu.github.io/2019/03/08/BayesianNonparametrics/"/>
+    <id>https://qiuyiwu.github.io/2019/03/08/BayesianNonparametrics/</id>
     <published>2019-03-07T16:36:37.000Z</published>
     <updated>2019-03-10T17:54:50.865Z</updated>
     
@@ -97,8 +97,8 @@
   
   <entry>
     <title>Why are Gaussian Process Models called Nonparametric?</title>
-    <link href="https://qiuyiwu.github.io/2019/02/19/GaussianProcess/"/>
-    <id>https://qiuyiwu.github.io/2019/02/19/GaussianProcess/</id>
+    <link href="https://qiuyiwu.github.io/2019/02/20/GaussianProcess/"/>
+    <id>https://qiuyiwu.github.io/2019/02/20/GaussianProcess/</id>
     <published>2019-02-19T17:56:54.000Z</published>
     <updated>2019-02-20T00:18:29.818Z</updated>
     
@@ -144,8 +144,8 @@ K(x_i,x_j) = h^2\text{exp}\left(\frac{-(x_i-x_j)^2}{\lambda^2}\right)
   
   <entry>
     <title>Blog Theme 日神 x 酒神</title>
-    <link href="https://qiuyiwu.github.io/2019/01/27/BlogTheme/"/>
-    <id>https://qiuyiwu.github.io/2019/01/27/BlogTheme/</id>
+    <link href="https://qiuyiwu.github.io/2019/01/28/BlogTheme/"/>
+    <id>https://qiuyiwu.github.io/2019/01/28/BlogTheme/</id>
     <published>2019-01-28T03:12:19.000Z</published>
     <updated>2019-01-28T16:38:10.412Z</updated>
     
@@ -205,8 +205,8 @@ K(x_i,x_j) = h^2\text{exp}\left(\frac{-(x_i-x_j)^2}{\lambda^2}\right)
   
   <entry>
     <title>Add Comments Section to Your Hexo Blog</title>
-    <link href="https://qiuyiwu.github.io/2019/01/25/Hexo-Comment/"/>
-    <id>https://qiuyiwu.github.io/2019/01/25/Hexo-Comment/</id>
+    <link href="https://qiuyiwu.github.io/2019/01/26/Hexo-Comment/"/>
+    <id>https://qiuyiwu.github.io/2019/01/26/Hexo-Comment/</id>
     <published>2019-01-25T20:31:19.000Z</published>
     <updated>2019-01-27T16:54:04.575Z</updated>
     
@@ -226,20 +226,20 @@ K(x_i,x_j) = h^2\text{exp}\left(\frac{-(x_i-x_j)^2}{\lambda^2}\right)
     
       <category term="Hexo" scheme="https://qiuyiwu.github.io/tags/Hexo/"/>
     
+      <category term="blog" scheme="https://qiuyiwu.github.io/tags/blog/"/>
+    
       <category term="comment" scheme="https://qiuyiwu.github.io/tags/comment/"/>
     
       <category term="Disqus" scheme="https://qiuyiwu.github.io/tags/Disqus/"/>
     
       <category term="Valine" scheme="https://qiuyiwu.github.io/tags/Valine/"/>
     
-      <category term="blog" scheme="https://qiuyiwu.github.io/tags/blog/"/>
-    
   </entry>
   
   <entry>
     <title>Create Local Search for Your Hexo Blog</title>
-    <link href="https://qiuyiwu.github.io/2019/01/25/Hexo-LocalSearch/"/>
-    <id>https://qiuyiwu.github.io/2019/01/25/Hexo-LocalSearch/</id>
+    <link href="https://qiuyiwu.github.io/2019/01/26/Hexo-LocalSearch/"/>
+    <id>https://qiuyiwu.github.io/2019/01/26/Hexo-LocalSearch/</id>
     <published>2019-01-25T16:17:48.000Z</published>
     <updated>2019-01-28T04:41:17.970Z</updated>
     
@@ -264,8 +264,8 @@ K(x_i,x_j) = h^2\text{exp}\left(\frac{-(x_i-x_j)^2}{\lambda^2}\right)
   
   <entry>
     <title>Reading Notes for Astrostatistics</title>
-    <link href="https://qiuyiwu.github.io/2018/12/24/NoteAstro/"/>
-    <id>https://qiuyiwu.github.io/2018/12/24/NoteAstro/</id>
+    <link href="https://qiuyiwu.github.io/2018/12/25/NoteAstro/"/>
+    <id>https://qiuyiwu.github.io/2018/12/25/NoteAstro/</id>
     <published>2018-12-24T19:41:01.000Z</published>
     <updated>2018-12-31T05:00:00.000Z</updated>
     
@@ -289,8 +289,8 @@ K(x_i,x_j) = h^2\text{exp}\left(\frac{-(x_i-x_j)^2}{\lambda^2}\right)
   
   <entry>
     <title>Data Fusion</title>
-    <link href="https://qiuyiwu.github.io/2018/12/20/DataFusion/"/>
-    <id>https://qiuyiwu.github.io/2018/12/20/DataFusion/</id>
+    <link href="https://qiuyiwu.github.io/2018/12/21/DataFusion/"/>
+    <id>https://qiuyiwu.github.io/2018/12/21/DataFusion/</id>
     <published>2018-12-20T19:47:15.000Z</published>
     <updated>2019-02-26T19:04:08.028Z</updated>
     
@@ -310,8 +310,8 @@ K(x_i,x_j) = h^2\text{exp}\left(\frac{-(x_i-x_j)^2}{\lambda^2}\right)
   
   <entry>
     <title>Music Mining</title>
-    <link href="https://qiuyiwu.github.io/2018/12/20/MusicMining/"/>
-    <id>https://qiuyiwu.github.io/2018/12/20/MusicMining/</id>
+    <link href="https://qiuyiwu.github.io/2018/12/21/MusicMining/"/>
+    <id>https://qiuyiwu.github.io/2018/12/21/MusicMining/</id>
     <published>2018-12-20T19:40:32.000Z</published>
     <updated>2019-01-26T15:16:49.054Z</updated>
     
@@ -331,18 +331,18 @@ K(x_i,x_j) = h^2\text{exp}\left(\frac{-(x_i-x_j)^2}{\lambda^2}\right)
       <category term="Research" scheme="https://qiuyiwu.github.io/categories/Research/"/>
     
     
+      <category term="Topic Modeling" scheme="https://qiuyiwu.github.io/tags/Topic-Modeling/"/>
+    
       <category term="music" scheme="https://qiuyiwu.github.io/tags/music/"/>
     
       <category term="Data Mining" scheme="https://qiuyiwu.github.io/tags/Data-Mining/"/>
-    
-      <category term="Topic Modeling" scheme="https://qiuyiwu.github.io/tags/Topic-Modeling/"/>
     
   </entry>
   
   <entry>
     <title>Storm Surge</title>
-    <link href="https://qiuyiwu.github.io/2018/12/19/StormSurge/"/>
-    <id>https://qiuyiwu.github.io/2018/12/19/StormSurge/</id>
+    <link href="https://qiuyiwu.github.io/2018/12/20/StormSurge/"/>
+    <id>https://qiuyiwu.github.io/2018/12/20/StormSurge/</id>
     <published>2018-12-20T03:19:21.000Z</published>
     <updated>2019-01-26T15:26:00.176Z</updated>
     
@@ -398,8 +398,8 @@ K(x_i,x_j) = h^2\text{exp}\left(\frac{-(x_i-x_j)^2}{\lambda^2}\right)
   
   <entry>
     <title>TensorFlow for Deep Learning 3</title>
-    <link href="https://qiuyiwu.github.io/2018/01/22/TensorFlow-for-Deep-Learning-3/"/>
-    <id>https://qiuyiwu.github.io/2018/01/22/TensorFlow-for-Deep-Learning-3/</id>
+    <link href="https://qiuyiwu.github.io/2018/01/23/TensorFlow-for-Deep-Learning-3/"/>
+    <id>https://qiuyiwu.github.io/2018/01/23/TensorFlow-for-Deep-Learning-3/</id>
     <published>2018-01-23T01:44:46.000Z</published>
     <updated>2019-03-08T15:48:42.594Z</updated>
     
@@ -423,8 +423,8 @@ K(x_i,x_j) = h^2\text{exp}\left(\frac{-(x_i-x_j)^2}{\lambda^2}\right)
   
   <entry>
     <title>TensorFlow for Deep Learning 2</title>
-    <link href="https://qiuyiwu.github.io/2018/01/21/TensorFlow-for-Deep-Learning-2/"/>
-    <id>https://qiuyiwu.github.io/2018/01/21/TensorFlow-for-Deep-Learning-2/</id>
+    <link href="https://qiuyiwu.github.io/2018/01/22/TensorFlow-for-Deep-Learning-2/"/>
+    <id>https://qiuyiwu.github.io/2018/01/22/TensorFlow-for-Deep-Learning-2/</id>
     <published>2018-01-21T18:50:21.000Z</published>
     <updated>2019-01-26T15:18:30.832Z</updated>
     
@@ -462,8 +462,8 @@ f(x) = \begin{cases}
   
   <entry>
     <title>TensorFlow for Deep Learning 1</title>
-    <link href="https://qiuyiwu.github.io/2018/01/16/Tensorflow-for-Deep-Learning-1/"/>
-    <id>https://qiuyiwu.github.io/2018/01/16/Tensorflow-for-Deep-Learning-1/</id>
+    <link href="https://qiuyiwu.github.io/2018/01/17/Tensorflow-for-Deep-Learning-1/"/>
+    <id>https://qiuyiwu.github.io/2018/01/17/Tensorflow-for-Deep-Learning-1/</id>
     <published>2018-01-16T23:04:34.000Z</published>
     <updated>2019-01-26T15:18:12.322Z</updated>
     
@@ -487,8 +487,8 @@ f(x) = \begin{cases}
   
   <entry>
     <title>LeetCode in Python3 - Two Sum</title>
-    <link href="https://qiuyiwu.github.io/2018/01/09/LeetCode1/"/>
-    <id>https://qiuyiwu.github.io/2018/01/09/LeetCode1/</id>
+    <link href="https://qiuyiwu.github.io/2018/01/10/LeetCode1/"/>
+    <id>https://qiuyiwu.github.io/2018/01/10/LeetCode1/</id>
     <published>2018-01-09T21:48:51.000Z</published>
     <updated>2018-12-19T19:47:00.598Z</updated>
     
@@ -507,8 +507,8 @@ f(x) = \begin{cases}
   
   <entry>
     <title>Data Mining Note 3 - K Nearest Neighbors</title>
-    <link href="https://qiuyiwu.github.io/2018/01/06/Data-Mining-Note3/"/>
-    <id>https://qiuyiwu.github.io/2018/01/06/Data-Mining-Note3/</id>
+    <link href="https://qiuyiwu.github.io/2018/01/07/Data-Mining-Note3/"/>
+    <id>https://qiuyiwu.github.io/2018/01/07/Data-Mining-Note3/</id>
     <published>2018-01-06T16:37:58.000Z</published>
     <updated>2019-01-26T15:12:41.360Z</updated>
     
@@ -534,8 +534,8 @@ f(x) = \begin{cases}
   
   <entry>
     <title>Data Mining Note 2 - Binary Classification</title>
-    <link href="https://qiuyiwu.github.io/2018/01/05/Data-Mining-Note2/"/>
-    <id>https://qiuyiwu.github.io/2018/01/05/Data-Mining-Note2/</id>
+    <link href="https://qiuyiwu.github.io/2018/01/06/Data-Mining-Note2/"/>
+    <id>https://qiuyiwu.github.io/2018/01/06/Data-Mining-Note2/</id>
     <published>2018-01-06T01:07:53.000Z</published>
     <updated>2019-01-26T15:12:21.039Z</updated>
     

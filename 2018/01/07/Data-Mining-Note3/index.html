@@ -1,0 +1,1630 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="en">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta name="google-site-verification" content="k0ybHPAc2FXFYFrg4NuDx_CJxUUBzxHAtptDHuGaqJk">
+
+
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+  <meta name="google-site-verification" content="googleb1be81889b9b1f8c.html">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+<link rel="stylesheet" href="<%- config.root %>css/font-awesome.css" media="screen" type="text/css">
+
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/safari-pinned-tab.svg?v=5.1.4" color="#222">
+
+
+  <link rel="manifest" href="/images/manifest.json">
+
+
+  <meta name="msapplication-config" content="/images/browserconfig.xml">
+
+
+
+  <meta name="keywords" content="kNN,Classification,Regression,Distance,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Qiuyi's Blog" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="This chapter talks about k Nearest Neighbors (kNN) as a metholodogy for both classification and regression problems. The kNN method serves a basic and easy to understand foundational machine learning">
+<meta name="keywords" content="kNN,Classification,Regression,Distance">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Data Mining Note 3 - K Nearest Neighbors">
+<meta property="og:url" content="https://qiuyiwu.github.io/2018/01/07/Data-Mining-Note3/index.html">
+<meta property="og:site_name" content="Qiuyi&#39;s Blog">
+<meta property="og:description" content="This chapter talks about k Nearest Neighbors (kNN) as a metholodogy for both classification and regression problems. The kNN method serves a basic and easy to understand foundational machine learning">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-01-26T15:12:41.360Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Data Mining Note 3 - K Nearest Neighbors">
+<meta name="twitter:description" content="This chapter talks about k Nearest Neighbors (kNN) as a metholodogy for both classification and regression problems. The kNN method serves a basic and easy to understand foundational machine learning">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"display":"always","scrollpercent":true,"b2t":false,"onmobile":true},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://qiuyiwu.github.io/2018/01/07/Data-Mining-Note3/">
+
+
+
+
+
+  <title>Data Mining Note 3 - K Nearest Neighbors | Qiuyi's Blog</title>
+  
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', '131473565', 'auto');
+  ga('send', 'pageview');
+</script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+
+
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container  page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Qiuyi's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">Researcher✨Qiuyi Wu</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            About
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-research">
+          <a href="/Research/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-graduation-cap"></i> <br>
+            
+            Research
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-teaching">
+          <a href="/Teaching/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-calendar"></i> <br>
+            
+            Teaching
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-book">
+          <a href="/Book/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-bookmark"></i> <br>
+            
+            Book
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="Searching..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://qiuyiwu.github.io/2018/01/07/Data-Mining-Note3/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Qiuyi Wu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar1.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Qiuyi's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">Data Mining Note 3 - K Nearest Neighbors</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-01-06T11:37:58-05:00">
+                2018-01-06
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Post modified&#58;</span>
+              
+              <time title="Post modified" itemprop="dateModified" datetime="2019-01-26T10:12:41-05:00">
+                2019-01-26
+              </time>
+            
+          </span>
+
+
+
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/01/07/Data-Mining-Note3/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/01/07/Data-Mining-Note3/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+
+
+
+          
+
+
+
+          
+            <div class="post-wordcount">
+              
+                
+                  <span class="post-meta-divider">|</span>
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                <span title="Words count in article">
+                  2.1k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                <span title="Reading time">
+                  13
+                </span>
+              
+
+
+
+          
+
+
+
+
+
+            </div>
+          
+
+
+
+
+
+
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>This chapter talks about k Nearest Neighbors (kNN) as a metholodogy for both classification and regression problems. The kNN method serves a basic and easy to understand foundational machine learning and data mining technique. The kNN method is an excellent baseline machine learning technique, and also allows many extensions. It usually performs reasonable well or sometimes very well when compared to more sophisticated techniques.</p>
+<p>kNN classification basically means the estimated class of a vector $\mathbf{x}$ is the most frequent class label in the neighborhood of $\mathbf{x}$. kNN classifiers are inherently naturally multi-class, and are used extensively in applications such as image processing, character recognition and general pattern recognition tasks. For kNN regression, the estimated response value of a vector $\mathbf{x}$ is the average of the response values in the neighborhood of $\mathbf{x}$.<br><a id="more"></a></p>
+<p><strong>Principle for kNN Classification</strong>: The reasonable class/category for a given object is the most prevalent class among its nearest neighbors.<br><strong>Principle k-Nearest Neighbor Regression</strong>: The reasonable prediction of the response value for a given object is the average of the response values of its nearest neighbors.</p>
+<p><strong>General Steps for kNN</strong><br>Comparison of Classification and Regression</p>
+<ol>
+<li>Choose a distance for measuring how far a given point is from another</li>
+<li>Set the <strong>size</strong> of the neighborhood k</li>
+<li>Compute the distance from each existing point to the new point</li>
+<li>Identify the class labels of the k points closest/nearest to the new point (classification)<br>Identify the response values of the k points closest/nearest to the new point (regression)</li>
+<li>Assign the most frequent label to the new point (classification)<br>Compute the average of the response values of those k neighbors as the best estimate of the new point (regression)</li>
+</ol>
+<p><br></p>
+<h3 id="Distance"><a href="#Distance" class="headerlink" title="Distance"></a>Distance</h3><p>First introduce some most commonly used distance below, which would be applied later in kNN.</p>
+<ul>
+<li><p>Euclidean distance: also known as the $l_2$ distance</p>
+<span>$$\begin{align*}
+d(\mathbf{x}_i,\mathbf{x}_j)  = \sqrt{\sum_{l=1}^q(x_{il}-x_{jl})^2} = ||\mathbf{x}_i-\mathbf{x}_j||_2 
+\end{align*}$$</span><!-- Has MathJax -->
+</li>
+<li><p>Manhattan distance (city block): also known as $l_2$ distance</p>
+<span>$$\begin{align*}
+d(\mathbf{x}_i,\mathbf{x}_j)  = \sum_{l=1}^q|x_{il}-x_{jl}| = ||\mathbf{x}_i-\mathbf{x}_j||_1 
+\end{align*}$$</span><!-- Has MathJax -->
+</li>
+<li><p>Maximum distance: also known as the infinity distance</p>
+<span>$$\begin{align*}
+d(\mathbf{x}_i,\mathbf{x}_j)  = \underset{l=1,...,q}{\text{max}}|x_{il}-x_{jl}| = ||\mathbf{x}_i-\mathbf{x}_j||_\infty
+\end{align*}$$</span><!-- Has MathJax -->
+</li>
+<li><p>Minkowski distance: also known as $l_p$ distance</p>
+<span>$$\begin{align*}
+d(\mathbf{x}_i,\mathbf{x}_j)  = \Big\{\sum_{l=1}^q|x_{il}-x_{jl}| \Big\}^{1/p}
+\end{align*}$$</span><!-- Has MathJax -->
+</li>
+<li><p>Canberra distance:</p>
+<span>$$\begin{align*}
+d(\mathbf{x}_i,\mathbf{x}_j)  =\sum_{l=1}^q \frac{ |x_{il}-x_{jl}| }{ |x_{il}+x_{jl}| }  
+\end{align*}$$</span><!-- Has MathJax -->
+</li>
+<li><p>Jaccard/Tanimoto distance: For binary vectors ie $\mathbf{x}_i\in {0,1}^q$</p>
+<span>$$\begin{align*}
+d(\mathbf{x}_i,\mathbf{x}_j)  =1- \frac{ \mathbf{x}_i\cdot \mathbf{x}_j }{ |\mathbf{x}_i|^2 + |\mathbf{x}_j|^2  - \mathbf{x}_i\cdot \mathbf{x}_j}  
+\end{align*}$$</span><!-- Has MathJax -->
+</li>
+</ul>
+<p><br></p>
+<h3 id="kNN-Classification"><a href="#kNN-Classification" class="headerlink" title="kNN Classification"></a>kNN Classification</h3><h4 id="Detailed-Steps-for-kNN-Classification"><a href="#Detailed-Steps-for-kNN-Classification" class="headerlink" title="Detailed Steps for kNN Classification"></a>Detailed Steps for kNN Classification</h4><p>$\mathcal{D} = \Big\{(x_1, Y_1),…, (x_n, Y_n) \Big\}$, with $x_i\in \mathcal{X}^q, Y_i\in \{1,…,g\}$</p>
+<ol>
+<li>Choose the value of k and the distance to be used</li>
+<li>Let $\mathbf{x}^*$ be a new point. Compute  $d(\mathbf{x}^*,\mathbf{x}_i)  \quad i=1,2,…n $</li>
+<li>Rank all the distances $d^∗_i$ in increasing order: <span>$$\begin{align*}
+ d^&lowast;_{(1)} \leq  d^&lowast;_{(2)} \leq ...\leq  d^&lowast;_{(k)} \leq  d^&lowast;_{(k+1)} \leq ... d^&lowast;_{(n)} 
+\end{align*}$$</span><!-- Has MathJax --></li>
+<li>Form $\mathcal{V}_k(\mathbf{x}^∗)$, the k-Neighborhood of $\mathbf{x}^∗$<span>$$\begin{align*}
+ \mathcal{V}_k(\mathbf{x}^&lowast;) = \Big\{ \mathbf{x}_i:  d(\mathbf{x}^*,\mathbf{x}_i)\leq d^*_{(k)}  \Big\}
+\end{align*}$$</span><!-- Has MathJax --></li>
+<li>Compute the predicted response $\hat{Y}^*$ as <span>$$\begin{align*}
+\hat{Y}^*_{kNN} &amp;= \text{Most frequent label in } \mathcal{V}_k(\mathbf{x}^&lowast;) \\ 
+ &amp;=  \hat{f}^*_{kNN}(\mathbf{x}^*) = \underset{j\in\{1,...,g\}}{\texttt{argmax}} \Big\{  p_j^{(k)}(\mathbf{x}^*)  \Big\}\\ 
+\text{where }  p_j^{(k)}(\mathbf{x}^*)= \frac{1}{k}\sum_{\mathbf{x}^* \in  \mathcal{V}_k(\mathbf{x}^&lowast;) } I(Y_i=j) &amp;
+\text{ estimates the probability that } \mathbf{x}^* \text{ belongs to class j based on} \mathcal{V}_k(\mathbf{x}^&lowast;)
+\end{align*}$$</span><!-- Has MathJax --></li>
+</ol>
+<ul>
+<li>Note: <strong>[Posterior probability estimate]</strong> $ \frac{1}{k}\sum_{\mathbf{x}^* \in  \mathcal{V}_k(\mathbf{x}^∗) } I(Y_i=j) $ can be regarded as a rough estimate of $ \pi_j (\mathbf{x}^*) = Pr[Y^*=j| \mathbf{x}^* ] $ , the posterior probability of class membership of $ \mathbf{x}^* $</li>
+</ul>
+<h4 id="Comments"><a href="#Comments" class="headerlink" title="Comments:"></a>Comments:</h4><ul>
+<li>kNearest Neighbors (kNN) essentially performs classification by voting for the most popular response among the k nearest neighbors of $\mathbf{x}^*$.</li>
+<li>kNN provides the most basic form of nonparametric classification.</li>
+<li>Since the fundamental building block of kNN is the distance measure, one can easily perform classification beyond the traditional setting where the predictors are numeric. For instance, classification with kNN can be readily performed on indicator attributes<br>$$  \mathbf{x}^* = (x_{i1},…, x_{ip}  )^T \in \{ 0,1\}^p $$</li>
+<li>kNN classifiers are inherently naturally <strong>multi-class</strong>, and are used in many applications.</li>
+</ul>
+<p><br></p>
+<h3 id="kNN-Regression"><a href="#kNN-Regression" class="headerlink" title="kNN Regression"></a>kNN Regression</h3><h4 id="Detailed-Steps-for-kNN-Regression"><a href="#Detailed-Steps-for-kNN-Regression" class="headerlink" title="Detailed Steps for kNN Regression"></a>Detailed Steps for kNN Regression</h4><p>$\mathcal{D} = \Big\{(x_1, Y_1),…, (x_n, Y_n) \Big\}$, with $x_i\in \mathcal{X}^q, Y_i\in \mathbb{R}$</p>
+<ol>
+<li>Choose the value of k and the distance to be used</li>
+<li>Let $\mathbf{x}^*$ be a new point. Compute  $d(\mathbf{x}^*,\mathbf{x}_i)  \quad i=1,2,…n $</li>
+<li>Rank all the distances $d^∗_i$ in increasing order: <span>$$\begin{align*}
+ d^&lowast;_{(1)} \leq  d^&lowast;_{(2)} \leq ...\leq  d^&lowast;_{(k)} \leq  d^&lowast;_{(k+1)} \leq ... d^&lowast;_{(n)} 
+\end{align*}$$</span><!-- Has MathJax --></li>
+<li>Form $\mathcal{V}_k(\mathbf{x}^∗)$, the k-Neighborhood of $\mathbf{x}^∗$<span>$$\begin{align*}
+ \mathcal{V}_k(\mathbf{x}^&lowast;) = \Big\{ \mathbf{x}_i:  d(\mathbf{x}^*,\mathbf{x}_i)\leq d^*_{(k)}  \Big\}
+\end{align*}$$</span><!-- Has MathJax --></li>
+<li>Compute the predicted response $\hat{Y}^*$ as <span>$$\begin{align*}
+\hat{Y}^*_{kNN} &amp;=  \hat{f}^*_{kNN}(\mathbf{x}^*)\\
+ &amp;= \frac{1}{k}\sum_{\mathbf{x}^* \in  \mathcal{V}_k(\mathbf{x}^&lowast;) } Y_i \\ 
+ &amp;=  \frac{1}{k}\sum_{i=1}^n Y_i I( \mathbf{x}^* \in \mathcal{V}_k(\mathbf{x}^&lowast;) )
+\end{align*}$$</span><!-- Has MathJax -->
+</li>
+</ol>
+<h4 id="Comments-1"><a href="#Comments-1" class="headerlink" title="Comments:"></a>Comments:</h4><ul>
+<li>kNearest Neighbors (kNN) essentially performs regression by averaging the responses of the nearest neighbors of $\mathbf{x}^*$.</li>
+<li>kNN provides the most basic form of nonparametric regression</li>
+<li>Since the fundamental building block of kNN is the distance measure, one can easily perform regression beyond the traditional setting where the predictors are numeric. For instance, Regression vectors of binary with kNN can be readily performed on indicator attributes<br>$$  \mathbf{x}^* = (x_{i1},…, x_{ip}  )^T \in \{ 0,1\}^p $$ </li>
+<li>kNN somewhat performs smoothing (filtering).</li>
+<li>The estimated response kNN for $\mathbf{x}^*$ is estimator of the average response which is the <strong>conditional expectation of Y given $\mathbf{x}^*$</strong><br>$$ \hat{Y}^*_{kNN} =\mathbb{E}\widehat{[Y^*|\mathbf{x}^*]}  $$</li>
+</ul>
+<p><br></p>
+<h3 id="Basic-kNN-amp-Weighted-kNN"><a href="#Basic-kNN-amp-Weighted-kNN" class="headerlink" title="Basic kNN &amp; Weighted kNN"></a>Basic kNN &amp; Weighted kNN</h3><h4 id="Limitation-of-Basic-kNN"><a href="#Limitation-of-Basic-kNN" class="headerlink" title="Limitation of Basic kNN"></a>Limitation of Basic kNN</h4><ul>
+<li><p><strong>Equidistance</strong>: All neighbors are given the same contribution to the estimate of the response; In the estimated probability</p>
+<span>$$\begin{align*}
+ p_j^{(k)}(\mathbf{x}^*) &amp; = \frac{1}{k}\sum_{\mathbf{x}^* \in  \mathcal{V}_k(\mathbf{x}^&lowast;) } I(Y_i=j) =\sum_{\mathbf{x}^* \in  \mathcal{V}_k(\mathbf{x}^&lowast;) } w_i I(Y_i=j) \\
+ \text{the weight } w_i = \frac{1}{k}=\texttt{constant }&amp;\text{for all points in }  \mathcal{V}_k(\mathbf{x}^&lowast;) \text{ regardlessly
+of how far they are from } \mathbf{x}^&lowast;
+\end{align*}$$</span><!-- Has MathJax -->
+</li>
+<li><p><strong>No model, weak interpretability</strong>: There is no underlying model, therefore no interpretation of the response relative to the predictor variables. There is no training set, since all happens at prediction. For this reason, kNN is referred to as <strong>lazy method</strong>.</p>
+</li>
+<li><p><strong>Computationally intensive</strong>: Predictions are computationally very intensive, due to the fact that for each new observation, the whole dataset must be traversed to compute the response</p>
+</li>
+</ul>
+<p><br></p>
+<h4 id="Extension-Weighted-kNN"><a href="#Extension-Weighted-kNN" class="headerlink" title="Extension: Weighted kNN"></a>Extension: Weighted kNN</h4><p>kNN classification can be improved by weighting the votes as a function of the distance from $\mathbf{x}^∗$. The weights are defined so as to preserve convexity $ \sum_{i=1}^k w_i = 1$. Some of the common weighting schemes include:</p>
+<ul>
+<li>Exponential Decay:<span>$$\begin{align*}
+w_i = \frac{e^{-d_i^*}}{\sum_{l=1}^k e^{-d_l^*}  } 
+\end{align*}$$</span><!-- Has MathJax --></li>
+<li>Inverse Distance:<span>$$\begin{align*}
+w_i = \frac{ \frac{1}{1+d_i^*}}{\sum_{l=1}^k  \frac{1}{1+d_l^*} } 
+\end{align*}$$</span><!-- Has MathJax -->
+</li>
+</ul>
+<p><br></p>
+<h3 id="Effect-of-kNN"><a href="#Effect-of-kNN" class="headerlink" title="Effect of kNN"></a>Effect of kNN</h3><h4 id="Effect-of-k"><a href="#Effect-of-k" class="headerlink" title="Effect of k"></a>Effect of k</h4><ul>
+<li><p>k controls the complexity of the underlying classifier, with small k yielding very complex classifiers and large k yielding rather simple ones.</p>
+</li>
+<li><p>If k is <strong>small</strong>, the estimated class is determined based on very few neighbors, the resulting kNN classifier will have very <strong>low bias</strong>, but very <strong>high variance</strong>. Take the example of k=1, the decision boundary will perfectly separate the classes on the training set, but will perform poorly on the test set.</p>
+</li>
+<li><p>If k is <strong>large</strong>, the estimated class is determined based on very many neighbors from far and wide, the resulting kNN classifier will<br>have very <strong>large bias</strong>, but very <strong>low variance</strong>. In fact, for truly large k, the decision boundary will be a constant hyperplane.</p>
+</li>
+<li><p>The determination of an optimal k desires the trade-off between bias and variance:<br>Determine k by cross validation<br>Determine k by direct minimization of the estimated prediction error via a suitably chosen test set</p>
+<h4 id="Effect-of-n"><a href="#Effect-of-n" class="headerlink" title="Effect of n"></a>Effect of n</h4><p>As stated before, kNN is a lazy method, everything happens at prediction step. Thus the sample size n plays a crucial role, and <strong>large n</strong> would lead to <strong>intense</strong> prediction.</p>
+<h4 id="Effect-of-p"><a href="#Effect-of-p" class="headerlink" title="Effect of p"></a>Effect of p</h4><p>The dimensionality p of the input space is <strong>only</strong> felt by the function that computes the <strong>distances</strong>. If the function is optimized, kNN should be <strong>unaffected</strong> by this dimensionality</p>
+<h4 id="Effect-of-distance"><a href="#Effect-of-distance" class="headerlink" title="Effect of distance"></a>Effect of distance</h4><p>Some distances are more robust to extreme observations.</p>
+</li>
+</ul>
+<h3 id="Pros-amp-Cons-of-kNN"><a href="#Pros-amp-Cons-of-kNN" class="headerlink" title="Pros &amp; Cons of kNN"></a>Pros &amp; Cons of kNN</h3><h4 id="Strength"><a href="#Strength" class="headerlink" title="Strength"></a>Strength</h4><ul>
+<li>The kNN method is intuitively appealing and very easy to understand, explain, program/code and interpret</li>
+<li>The kNN method provides a decent estimate of $Pr[Y = j|x]$, the posterior probability of class membership</li>
+<li><span style="color:red"> <em>The kNN method easily handles missing values (by restricting distance calculations to subspace)</em></span></li>
+<li><span style="color:red"> <em>As the number of training samples grows larger, the asymptotic misclassification error rate is bounded by twice the Bayes risk.</em></span><br>$$ \underset{n\rightarrow \infty}{lim} R(\hat{f}_n^{(kNN)}) \leq 2R^* $$</li>
+<li><span style="color:red"> <em>The kNN method is naturally suitable for sequential/incremental machine learning.</em></span></li>
+<li><span style="color:red"> <em>The kNN method is also suitable where the hypothesis space is variable in size.</em></span></li>
+<li>The kNN method can handle <strong>non-numeric</strong> data as long as the <strong>distance</strong> can be defined.</li>
+<li>The kNN methods can handle <strong>mixed types</strong> of data as long as the <strong>distance</strong> are computed as <strong>hybrid or combinations</strong>.</li>
+<li>The kNN method is inherently multi-class. This is very important because for some other methods, going beyond binary classification requires some sophisticated mathematics. It also handles very flexible decision boundaries.</li>
+</ul>
+<h4 id="Weakness"><a href="#Weakness" class="headerlink" title="Weakness"></a>Weakness</h4><ul>
+<li>The <strong>computational complexity</strong> of kNN is very high in prediction. Specifically, it is $\mathcal{O}(nmp)$ where n is the training set size, m is the test set size and p is the number of predictor variables. This means that kNN requires <strong>large amount of memory</strong>, and therefore does NOT scale well. This <strong>failure in scalability</strong> is addressed using various heuristics and strategies.</li>
+<li>kNN methods <strong>suffer from the Curse of Dimensionality (COD)</strong>. When p is large and n is small (short fat data/ dimension of the space very high), the concept of nearness becomes meaningless to the point of being ill-defined, because the ”neighborhood” becomes very large. Thus, the nearest neighbor could be very far when the space is high dimensional and there are very few observations.</li>
+<li>The kNN method does not yield a model, and therefore no parameter to help explain why the method performs as it does.</li>
+<li>The kNN method is heavily affected by the local structure, and it is very sensitive to both irrelevant and correlated features. Unless the distance is well chosen and properly calibrated, kNN methods will be sensitive to outliers and all sorts of noise in the data.</li>
+<li>Unless the distance is used in some way to weight the neighbors, more <strong>frequent classes will dominate</strong> in the determination of the estimated label. This means one has to be careful with kNN when one class has a far larger proportion of observations than the others.</li>
+<li>The measurement scale of each variable affect the kNN method more than most methods. (measurement scale: standardizing, unitizing or cubizing/squeezing the data).</li>
+</ul>
+<p><br></p>
+<h3 id="Application-of-kNN"><a href="#Application-of-kNN" class="headerlink" title="Application of kNN"></a>Application of kNN</h3><ul>
+<li><strong>Handwritten Digit Recognition</strong> is usually the first task in some Data Analytics competitions.</li>
+<li><strong>Text Mining</strong> and specific topic of text categorization/classification has made successful use of kNearest Neighbors approach</li>
+<li><strong>Credit Scoring</strong> is another application that has been connected with k Nearest Neighbors Classification</li>
+<li><strong>Disease Diagnostics</strong> also has been tackled using k Nearest Neighbors Classifiers</li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/kNN/" rel="tag"># kNN</a>
+          
+            <a href="/tags/Classification/" rel="tag"># Classification</a>
+          
+            <a href="/tags/Regression/" rel="tag"># Regression</a>
+          
+            <a href="/tags/Distance/" rel="tag"># Distance</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/01/06/Data-Mining-Note2/" rel="next" title="Data Mining Note 2 - Binary Classification">
+                <i class="fa fa-chevron-left"></i> Data Mining Note 2 - Binary Classification
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/01/10/LeetCode1/" rel="prev" title="LeetCode in Python3 - Two Sum">
+                LeetCode in Python3 - Two Sum <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+      <div id="sidebar-dimmer"></div>
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/avatar1.png" alt="Qiuyi Wu">
+            
+              <p class="site-author-name" itemprop="name">Qiuyi Wu</p>
+              <p class="site-description motion-element" itemprop="description">日神 x 酒神</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">21</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">55</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="http://www.qiuyiwu.format.com" target="_blank" title="Website">
+                      
+                        <i class="fa fa-fw fa-globe"></i>Website</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/QiuyiWu" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://twitter.com/ChoweeWu" target="_blank" title="Twitter">
+                      
+                        <i class="fa fa-fw fa-twitter"></i>Twitter</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:qw2199@columbia.edu" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.linkedin.com/in/qiuyi-wu" target="_blank" title="LinkedIn">
+                      
+                        <i class="fa fa-fw fa-linkedin"></i>LinkedIn</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.researchgate.net/profile/Qiuyi_Wu5" target="_blank" title="RG">
+                      
+                        <i class="fa fa-fw fa-university"></i>RG</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+
+
+
+
+
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Distance"><span class="nav-number">1.</span> <span class="nav-text">Distance</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#kNN-Classification"><span class="nav-number">2.</span> <span class="nav-text">kNN Classification</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Detailed-Steps-for-kNN-Classification"><span class="nav-number">2.1.</span> <span class="nav-text">Detailed Steps for kNN Classification</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Comments"><span class="nav-number">2.2.</span> <span class="nav-text">Comments:</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#kNN-Regression"><span class="nav-number">3.</span> <span class="nav-text">kNN Regression</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Detailed-Steps-for-kNN-Regression"><span class="nav-number">3.1.</span> <span class="nav-text">Detailed Steps for kNN Regression</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Comments-1"><span class="nav-number">3.2.</span> <span class="nav-text">Comments:</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Basic-kNN-amp-Weighted-kNN"><span class="nav-number">4.</span> <span class="nav-text">Basic kNN &amp; Weighted kNN</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Limitation-of-Basic-kNN"><span class="nav-number">4.1.</span> <span class="nav-text">Limitation of Basic kNN</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Extension-Weighted-kNN"><span class="nav-number">4.2.</span> <span class="nav-text">Extension: Weighted kNN</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Effect-of-kNN"><span class="nav-number">5.</span> <span class="nav-text">Effect of kNN</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Effect-of-k"><span class="nav-number">5.1.</span> <span class="nav-text">Effect of k</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Effect-of-n"><span class="nav-number">5.2.</span> <span class="nav-text">Effect of n</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Effect-of-p"><span class="nav-number">5.3.</span> <span class="nav-text">Effect of p</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Effect-of-distance"><span class="nav-number">5.4.</span> <span class="nav-text">Effect of distance</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Pros-amp-Cons-of-kNN"><span class="nav-number">6.</span> <span class="nav-text">Pros &amp; Cons of kNN</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Strength"><span class="nav-number">6.1.</span> <span class="nav-text">Strength</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Weakness"><span class="nav-number">6.2.</span> <span class="nav-text">Weakness</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Application-of-kNN"><span class="nav-number">7.</span> <span class="nav-text">Application of kNN</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+
+
+      <div id="days">已运行274天04小时55分06秒</div>
+        <script language="javascript">function show_date_time(){window.setTimeout("show_date_time()",1e3),BirthDay=new Date("12/31/2017 21:59:28"),today=new Date,timeold=today.getTime()-BirthDay.getTime(),sectimeold=timeold/1e3,secondsold=Math.floor(sectimeold),msPerDay=864e5,e_daysold=timeold/msPerDay,daysold=Math.floor(e_daysold),e_hrsold=24*(e_daysold-daysold),hrsold=setzero(Math.floor(e_hrsold)),e_minsold=60*(e_hrsold-hrsold),minsold=setzero(Math.floor(60*(e_hrsold-hrsold))),seconds=setzero(Math.floor(60*(e_minsold-minsold))),document.getElementById("days").innerHTML="Qiuyi's Blog has been running for <br/>"+daysold+" days "+hrsold+" hrs "+minsold+" mins "+seconds+" secs✨"}function setzero(e){return e<10&&(e="0"+e),e}show_date_time() </script> 
+
+
+
+        <script type="text/javascript" src="//rf.revolvermaps.com/0/0/6.js?i=5n1bjk0rdxu&amp;m=<script type=" text="" javascript"="" async="async"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2017 &mdash; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Qiuyi Wu</span>
+
+
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+    <span title="Site words total count">17.2k</span>
+  
+</div>    
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+      <div id="needsharebutton-float">
+        <span class="btn">
+          <i class="fa fa-share-alt" aria-hidden="true"></i>
+        </span>
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: true,
+        appId: '1o3sOD05aTh1aPaM0VhpMH6h-gzGzoHsz',
+        appKey: 'V58dJ7DT4VxfBmDHsMmI7GAL',
+        placeholder: 'Comment here...',
+        avatar:'retro',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('-1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+  <script src="https://www.gstatic.com/firebasejs/4.6.0/firebase.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/4.6.0/firebase-firestore.js"></script>
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bluebird/3.5.1/bluebird.core.min.js"></script>
+  
+  <script>
+    (function () {
+
+      firebase.initializeApp({
+        apiKey: 'AIzaSyC8zI_jjXsznIE2dCCcOAiY-EAnMUymtm0',
+        projectId: 'hexo-next-1'
+      })
+
+      function getCount(doc, increaseCount) {
+        //increaseCount will be false when not in article page
+
+        return doc.get().then(function (d) {
+          var count
+          if (!d.exists) { //has no data, initialize count
+            if (increaseCount) {
+              doc.set({
+                count: 1
+              })
+              count = 1
+            }
+            else {
+              count = 0
+            }
+          }
+          else { //has data
+            count = d.data().count
+            if (increaseCount) {
+              if (!(window.localStorage && window.localStorage.getItem(title))) { //if first view this article
+                doc.set({ //increase count
+                  count: count + 1
+                })
+                count++
+              }
+            }
+          }
+          if (window.localStorage && increaseCount) { //mark as visited
+            localStorage.setItem(title, true)
+          }
+
+          return count
+        })
+      }
+
+      function appendCountTo(el) {
+        return function (count) {
+          $(el).append(
+            $('<span>').addClass('post-visitors-count').append(
+              $('<span>').addClass('post-meta-divider').text('|')
+            ).append(
+              $('<span>').addClass('post-meta-item-icon').append(
+                $('<i>').addClass('fa fa-eye')
+              )
+              ).append($('<span>').text('Views: ' + count))
+          )
+        }
+      }
+
+      var db = firebase.firestore()
+      var articles = db.collection('articles')
+
+      //https://hexo.io/docs/variables.html
+      var isPost = 'Data Mining Note 3 - K Nearest Neighbors'.length > 0
+      var isArchive = '' === 'true'
+      var isCategory = ''.length > 0
+      var isTag = ''.length > 0
+
+      if (isPost) { //is article page
+        var title = 'Data Mining Note 3 - K Nearest Neighbors'
+        var doc = articles.doc(title)
+
+        getCount(doc, true).then(appendCountTo($('.post-meta')))
+      }
+      else if (!isArchive && !isCategory && !isTag) { //is index page
+        var titles = [] //array to titles
+
+        var postsstr = '' //if you have a better way to get titles of posts, please change it
+        eval(postsstr)
+
+        var promises = titles.map(function (title) {
+          return articles.doc(title)
+        }).map(function (doc) {
+          return getCount(doc)
+        })
+        Promise.all(promises).then(function (counts) {
+          var metas = $('.post-meta')
+          counts.forEach(function (val, idx) {
+            appendCountTo(metas[idx])(val)
+          })
+        })
+      }
+    })()
+  </script>
+
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/needsharebutton/needsharebutton.css">
+
+  
+  
+  <script src="/lib/needsharebutton/needsharebutton.js"></script>
+
+  <script>
+    
+    
+      flOptions = {};
+      
+          flOptions.iconStyle = "box";
+      
+          flOptions.boxForm = "vertical";
+      
+          flOptions.position = "topRight";
+      
+          flOptions.networks = "Weibo,Douban,QQZone,Twitter,Linkedin,Mailto,Reddit,GooglePlus,GoogleBookmarks,Evernote";
+      
+      new needShareButton('#needsharebutton-float', flOptions);
+    
+  </script>
+
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config("");
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="custom_mathjax_source">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->
+  
+
+
+  
+
+  
+
+</body>
+</html>
